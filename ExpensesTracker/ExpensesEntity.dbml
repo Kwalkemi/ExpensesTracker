@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Expenses_Tracker" Class="ExpensesEntityDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-86PJE7FL\SQLEXPRESS;Initial Catalog=Expenses_Tracker;Integrated Security=True" SettingsObjectName="ExpensesTracker.Properties.Settings" SettingsPropertyName="Expenses_TrackerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HUSBAND_WIFE" Member="HUSBAND_WIFEs">
+    <Type Name="HUSBAND_WIFE">
+      <Column Name="HUSBAND_WIFE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HUSBAND_WIFE_TYPE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="HUSBAND_WIFE_AMT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HUSBAND_WIFE_DATE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HUSBAND_WIFE_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXPENSES_CATEGORY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
