@@ -1,4 +1,5 @@
 ﻿using ExpensesTracker.BusinessObject;
+using ExpensesTracker.Project;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,9 +51,9 @@ namespace ExpensesTracker
                         str = String.Format(str, Login.UserId);
                         DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
                     }
-                    //this.Hide();
-                    //Share form1 = new Share();
-                    //form1.Show();
+                    this.Hide();
+                    ExpensesMain form1 = new ExpensesMain();
+                    form1.Show();
                 }
                 else
                 {
