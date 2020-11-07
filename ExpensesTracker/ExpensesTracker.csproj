@@ -165,6 +165,8 @@
   <ItemGroup>
     <None Include="Resources\registration.png" />
     <None Include="Resources\Husband-Wife.jpg" />
+    <None Include="Resources\expense-report.jpg" />
+    <None Include="Resources\Shares.jpg" />
     <Content Include="Xml\Entity.xml" />
   </ItemGroup>
   <ItemGroup>

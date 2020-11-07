@@ -63,6 +63,16 @@ namespace ExpensesTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap expense_report {
+            get {
+                object obj = ResourceManager.GetObject("expense-report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Husband_Wife {
             get {
                 object obj = ResourceManager.GetObject("Husband-Wife", resourceCulture);
@@ -86,6 +96,16 @@ namespace ExpensesTracker.Properties {
         internal static System.Drawing.Bitmap registration {
             get {
                 object obj = ResourceManager.GetObject("registration", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shares {
+            get {
+                object obj = ResourceManager.GetObject("Shares", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

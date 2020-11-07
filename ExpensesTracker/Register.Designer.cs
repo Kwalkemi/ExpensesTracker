@@ -57,11 +57,11 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblUserName.Location = new System.Drawing.Point(480, 92);
+            this.lblUserName.Location = new System.Drawing.Point(496, 93);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(122, 22);
+            this.lblUserName.Size = new System.Drawing.Size(106, 22);
             this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "USER NAME : ";
+            this.lblUserName.Text = "E-MAIL ID : ";
             // 
             // lblPassword
             // 
@@ -75,15 +75,16 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(608, 92);
-            this.txtUsername.MaxLength = 10;
+            this.txtUsername.Location = new System.Drawing.Point(616, 92);
+            this.txtUsername.MaxLength = 30;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(222, 22);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(609, 135);
+            this.txtPassword.Location = new System.Drawing.Point(617, 135);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -103,7 +104,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(609, 182);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(617, 182);
             this.txtConfirmPassword.MaxLength = 10;
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
@@ -114,7 +115,7 @@
             // 
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmPassword.Location = new System.Drawing.Point(399, 182);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(398, 182);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(199, 22);
             this.lblConfirmPassword.TabIndex = 8;
@@ -122,7 +123,7 @@
             // 
             // txtFirstname
             // 
-            this.txtFirstname.Location = new System.Drawing.Point(608, 229);
+            this.txtFirstname.Location = new System.Drawing.Point(616, 229);
             this.txtFirstname.MaxLength = 12;
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(222, 22);
@@ -132,7 +133,7 @@
             // 
             this.lblFirstname.AutoSize = true;
             this.lblFirstname.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstname.Location = new System.Drawing.Point(476, 229);
+            this.lblFirstname.Location = new System.Drawing.Point(482, 229);
             this.lblFirstname.Name = "lblFirstname";
             this.lblFirstname.Size = new System.Drawing.Size(120, 22);
             this.lblFirstname.TabIndex = 10;
@@ -140,7 +141,7 @@
             // 
             // txtlastname
             // 
-            this.txtlastname.Location = new System.Drawing.Point(609, 273);
+            this.txtlastname.Location = new System.Drawing.Point(617, 273);
             this.txtlastname.MaxLength = 12;
             this.txtlastname.Name = "txtlastname";
             this.txtlastname.Size = new System.Drawing.Size(222, 22);
@@ -150,7 +151,7 @@
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(482, 273);
+            this.lblLastName.Location = new System.Drawing.Point(488, 273);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(116, 22);
             this.lblLastName.TabIndex = 12;
@@ -160,7 +161,7 @@
             // 
             this.lblRegistration.AutoSize = true;
             this.lblRegistration.Font = new System.Drawing.Font("Microsoft Tai Le", 13.8F, System.Drawing.FontStyle.Bold);
-            this.lblRegistration.Location = new System.Drawing.Point(541, 30);
+            this.lblRegistration.Location = new System.Drawing.Point(547, 30);
             this.lblRegistration.Name = "lblRegistration";
             this.lblRegistration.Size = new System.Drawing.Size(154, 31);
             this.lblRegistration.TabIndex = 14;
@@ -170,7 +171,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(509, 316);
+            this.label1.Location = new System.Drawing.Point(515, 316);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 22);
             this.label1.TabIndex = 15;
@@ -180,7 +181,7 @@
             // 
             this.radioMale.AutoSize = true;
             this.radioMale.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMale.Location = new System.Drawing.Point(618, 315);
+            this.radioMale.Location = new System.Drawing.Point(624, 315);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(68, 26);
             this.radioMale.TabIndex = 16;
@@ -192,7 +193,7 @@
             // 
             this.radioFemale.AutoSize = true;
             this.radioFemale.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioFemale.Location = new System.Drawing.Point(697, 316);
+            this.radioFemale.Location = new System.Drawing.Point(703, 316);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(85, 26);
             this.radioFemale.TabIndex = 17;

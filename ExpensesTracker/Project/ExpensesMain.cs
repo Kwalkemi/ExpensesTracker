@@ -16,5 +16,15 @@ namespace ExpensesTracker.Project
         {
             InitializeComponent();
         }
+
+        private void btnHusbandWife_MouseHover(object sender, EventArgs e)
+        {
+            btnHusbandWife.BackColor = Color.Red;
+        }
+
+        private void btnHusbandWife_MouseLeave(object sender, EventArgs e)
+        {
+            btnHusbandWife.BackColor = Color.DarkOrange;
+        }
     }
 }

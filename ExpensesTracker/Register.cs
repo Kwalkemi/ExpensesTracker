@@ -71,11 +71,29 @@ namespace ExpensesTracker
             this.Close();
         }
 
+
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             Login login = new Login();
             login.Show();
+        }
+
+        /// <summary>
+        /// Validation Text Changed Method
+        /// </summary>
+        /// <param name="sender">Pass the object of sender</param>
+        /// <param name="e">Pass the parameter of e</param>
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtUsername.Text.Contains(Constant.Common.SPECIAL_CHARACTER_AT_THE_RATE) || !txtUsername.Text.Contains(Constant.Common.DOT_COM))
+            {
+                errorProvider1.SetError(txtUsername, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_9));
+            }
+            else
+            {
+                errorProvider1.SetError(txtUsername, string.Empty);
+            }
         }
     }
 }

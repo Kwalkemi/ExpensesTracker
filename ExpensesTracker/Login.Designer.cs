@@ -49,17 +49,17 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold);
-            this.lblUserName.Location = new System.Drawing.Point(462, 112);
+            this.lblUserName.Location = new System.Drawing.Point(480, 112);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(122, 22);
+            this.lblUserName.Size = new System.Drawing.Size(106, 22);
             this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "USER NAME : ";
+            this.lblUserName.Text = "E-MAIL ID : ";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(465, 155);
+            this.lblPassword.Location = new System.Drawing.Point(468, 155);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(116, 22);
             this.lblPassword.TabIndex = 2;
@@ -67,14 +67,15 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(591, 112);
+            this.txtUser.Location = new System.Drawing.Point(597, 112);
+            this.txtUser.MaxLength = 30;
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(222, 22);
             this.txtUser.TabIndex = 3;
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(592, 155);
+            this.txtpassword.Location = new System.Drawing.Point(598, 155);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(222, 22);
@@ -155,7 +156,7 @@
             // 
             this.checkBoxRemember.AutoSize = true;
             this.checkBoxRemember.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRemember.Location = new System.Drawing.Point(589, 194);
+            this.checkBoxRemember.Location = new System.Drawing.Point(595, 194);
             this.checkBoxRemember.Name = "checkBoxRemember";
             this.checkBoxRemember.Size = new System.Drawing.Size(144, 26);
             this.checkBoxRemember.TabIndex = 16;

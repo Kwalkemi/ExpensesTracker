@@ -63,6 +63,9 @@
     <Build Include="StoreProcedure\HusbandWifeProcedure.sql" />
     <Build Include="Table\EXPENSES_CATEGORY.sql" />
     <Build Include="Table\HUSBAND_WIFE.sql" />
+    <Build Include="Table\LOGIN_INFO.sql" />
+    <Build Include="Table\CODE_ID.sql" />
+    <Build Include="Table\CODE_VALUE.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ExpensesTrackerDB.sqlproj.user" />

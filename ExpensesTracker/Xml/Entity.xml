@@ -15,6 +15,7 @@
     <message Id="Error_6">Enter the first name.</message>
     <message Id="Error_7">Enter the last name.</message>
     <message Id="Error_8">Enter the gender.</message>
+    <message Id="Error_9">User Id must be XXXX@XXX.com</message>
     <message Id="RegSuc">Registration Successfully</message>
   </messages>
 </entity>
