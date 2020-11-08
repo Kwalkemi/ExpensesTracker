@@ -6,6 +6,9 @@
     <query Id="GetUserInfoById">Select * from login_info where LOGIN_INFO_ID = {0}</query>
     <query Id="UpdateRememberMeCodeValue">Update CODE_VALUE SET DATA1 = '{0}' WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
     <query Id="GetUpdateRememberCodeValue">SELECT * FROM CODE_VALUE WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
+    <query Id="LoadHusbandWifeCategory">Select Expenses_Category_Name from Expenses_Category where Expenses_Category_Table_Value = 'HUWF'</query>
+    <query Id="GetExpensesCategoryIdByName">Select Expenses_Category_Id from Expenses_Category where Expenses_Category_Table_Value = 'HUWF' and Expenses_Category_Name = '{0}'</query>
+    <query Id="DeleteExpensesCategory">Delete Expenses_Category where Expenses_Category_Id = {0}</query>
   </queries>
 
   <messages>
@@ -18,6 +21,12 @@
     <message Id="Error_7">Enter the last name.</message>
     <message Id="Error_8">Enter the gender.</message>
     <message Id="Error_9">User Id must be XXXX@XXX.com</message>
+    <message Id="Error_10">Please Enter Number</message>
+    <message Id="Error_11">Please Enter the Amount</message>
     <message Id="RegSuc">Registration Successfully</message>
+    <message Id="HusbandGive">Husband will give {0} Rs to Wife.</message>
+    <message Id="WifeExtra">Wife have {0} extra Rs</message>
+    <message Id="AllClear">All Clear</message>
+    
   </messages>
 </entity>

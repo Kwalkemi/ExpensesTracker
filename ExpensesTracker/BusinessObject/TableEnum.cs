@@ -44,5 +44,13 @@ namespace ExpensesTracker.BusinessObject
             HUSBAND_WIFE_DATE,
             EXPENSES_CATEGORY_ID
         }
+
+        public enum enmExpenses_Category
+        {
+            EXPENSES_CATEGORY_ID,
+            EXPENSES_CATEGORY_NAME,
+            EXPENSES_CATEGORY_TABLE_ID,
+            EXPENSES_CATEGORY_TABLE_VALUE
+        }
     }
 }

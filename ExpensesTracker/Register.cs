@@ -55,13 +55,13 @@ namespace ExpensesTracker
             }
             else
             {
-                string str = radioMale.Checked ? Constant.Common.Gender.Male : radioFemale.Checked ? Constant.Common.Gender.Female : string.Empty;
+                string str = radioMale.Checked ? Constant.Common.Gender.MALE : radioFemale.Checked ? Constant.Common.Gender.FEMALE : string.Empty;
                 ldict.Add(TableEnum.enmLogin_Info.GENDER.ToString(), str);
             }
             int Id = DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.LOGIN_INFO.ToString(), ldict);
             if (Id > 0)
             {
-                MessageBox.Show(XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Common.REGISTRATION_SUCCESSFULY));
+                MessageBox.Show(XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Message.REGISTRATION_SUCCESSFULY));
             }
         }
 
