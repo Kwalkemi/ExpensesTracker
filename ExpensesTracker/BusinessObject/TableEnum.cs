@@ -10,16 +10,39 @@ namespace ExpensesTracker.BusinessObject
     {
         public enum enmTableName
         {
-            Login_Info
+            LOGIN_INFO,
+            CODE_VALUE,
+            HUSBAND_WIFE
         }
 
         public enum enmLogin_Info
         {
-            Username,
-            Password,
-            First_Name,
-            Last_Name,
-            Gender
+            LOGIN_INFO_ID,
+            USERNAME,
+            PASSWORD,
+            FIRST_NAME,
+            LAST_NAME,
+            GENDER
+        }
+
+        public enum enmCode_Value
+        {
+            CODE_SERIAL_ID,
+            CODE_ID,
+            CODE_VALUE,
+            CODE_VALUE_DESCRIPTION,
+            DATA1,
+            DATA2
+        }
+
+        public enum enmHusband_Wife
+        {
+            HUSBAND_WIFE_ID,
+            HUSBAND_WIFE_TYPE_ID,
+            HUSBAND_WIFE_TYPE_VALUE,
+            HUSBAND_WIFE_AMT,
+            HUSBAND_WIFE_DATE,
+            EXPENSES_CATEGORY_ID
         }
     }
 }

@@ -38,7 +38,7 @@ namespace ExpensesTracker
             if (txtUser.Text != string.Empty && txtpassword.Text != string.Empty)
             {
                 errorProvider1.Clear();
-                string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Queryies.GET_USER_INFO);
+                string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.GET_USER_INFO);
                 str = String.Format(str, txtUser.Text, txtpassword.Text);
 
                 string result = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, str);
@@ -47,7 +47,7 @@ namespace ExpensesTracker
                     Login.UserId = Convert.ToInt32(result);
                     if (checkBoxRemember.Checked)
                     {
-                        str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Queryies.UPDATE_REMEMBER_ME_CODE_VALUE);
+                        str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.UPDATE_REMEMBER_ME_CODE_VALUE);
                         str = String.Format(str, Login.UserId);
                         DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
                     }

@@ -2,8 +2,10 @@
 <entity>
 
   <queries>
-    <query Id="GetUserInfo">Select Login_Info_Id from login_info where Username = '{0}' and Password = '{1}'</query>
-    <query Id="UpdateRememberMeCodeValue">Update CODE_VALUE SET DATA1 = '{0}' WHERE CODE_ID = 6 AND CODE_VALUE = 'USER'</query>
+    <query Id="GetUserInfo">Select * from login_info where Username = '{0}' and Password = '{1}'</query>
+    <query Id="GetUserInfoById">Select * from login_info where LOGIN_INFO_ID = {0}</query>
+    <query Id="UpdateRememberMeCodeValue">Update CODE_VALUE SET DATA1 = '{0}' WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
+    <query Id="GetUpdateRememberCodeValue">SELECT * FROM CODE_VALUE WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
   </queries>
 
   <messages>

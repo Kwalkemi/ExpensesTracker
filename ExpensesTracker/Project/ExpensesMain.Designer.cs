@@ -32,19 +32,19 @@
             this.lblUserMain = new System.Windows.Forms.Label();
             this.groupBoxHusbWife = new System.Windows.Forms.GroupBox();
             this.btnHusbandWife = new System.Windows.Forms.Button();
-            this.groupBoxExpenses = new System.Windows.Forms.GroupBox();
-            this.groupBoxShare = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxHusbWife = new System.Windows.Forms.PictureBox();
+            this.groupBoxExpenses = new System.Windows.Forms.GroupBox();
+            this.btnExpensesTracker = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBoxShare = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnShareTracker = new System.Windows.Forms.Button();
             this.groupBoxHusbWife.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).BeginInit();
             this.groupBoxExpenses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxShare.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMainHeading
@@ -90,12 +90,23 @@
             this.btnHusbandWife.TabIndex = 0;
             this.btnHusbandWife.Text = "Husband Wife";
             this.btnHusbandWife.UseVisualStyleBackColor = false;
+            this.btnHusbandWife.Click += new System.EventHandler(this.btnHusbandWife_Click);
             this.btnHusbandWife.MouseLeave += new System.EventHandler(this.btnHusbandWife_MouseLeave);
             this.btnHusbandWife.MouseHover += new System.EventHandler(this.btnHusbandWife_MouseHover);
             // 
+            // pictureBoxHusbWife
+            // 
+            this.pictureBoxHusbWife.Image = global::ExpensesTracker.Properties.Resources.Husband_Wife;
+            this.pictureBoxHusbWife.Location = new System.Drawing.Point(6, 21);
+            this.pictureBoxHusbWife.Name = "pictureBoxHusbWife";
+            this.pictureBoxHusbWife.Size = new System.Drawing.Size(268, 287);
+            this.pictureBoxHusbWife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHusbWife.TabIndex = 0;
+            this.pictureBoxHusbWife.TabStop = false;
+            // 
             // groupBoxExpenses
             // 
-            this.groupBoxExpenses.Controls.Add(this.button1);
+            this.groupBoxExpenses.Controls.Add(this.btnExpensesTracker);
             this.groupBoxExpenses.Controls.Add(this.pictureBox1);
             this.groupBoxExpenses.Location = new System.Drawing.Point(323, 64);
             this.groupBoxExpenses.Name = "groupBoxExpenses";
@@ -104,50 +115,20 @@
             this.groupBoxExpenses.TabStop = false;
             this.groupBoxExpenses.Text = "Expenses Tracker";
             // 
-            // groupBoxShare
+            // btnExpensesTracker
             // 
-            this.groupBoxShare.Controls.Add(this.pictureBox2);
-            this.groupBoxShare.Controls.Add(this.button2);
-            this.groupBoxShare.Location = new System.Drawing.Point(631, 64);
-            this.groupBoxShare.Name = "groupBoxShare";
-            this.groupBoxShare.Size = new System.Drawing.Size(280, 421);
-            this.groupBoxShare.TabIndex = 4;
-            this.groupBoxShare.TabStop = false;
-            this.groupBoxShare.Text = "Shares Tracker";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(274, 104);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Expenses Tracker";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DarkOrange;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 314);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(274, 104);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Shares Tracker";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ExpensesTracker.Properties.Resources.Shares;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 21);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(268, 287);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.btnExpensesTracker.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnExpensesTracker.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExpensesTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExpensesTracker.Location = new System.Drawing.Point(3, 314);
+            this.btnExpensesTracker.Name = "btnExpensesTracker";
+            this.btnExpensesTracker.Size = new System.Drawing.Size(274, 104);
+            this.btnExpensesTracker.TabIndex = 2;
+            this.btnExpensesTracker.Text = "Expenses Tracker";
+            this.btnExpensesTracker.UseVisualStyleBackColor = false;
+            this.btnExpensesTracker.Click += new System.EventHandler(this.btnExpensesTracker_Click);
+            this.btnExpensesTracker.MouseLeave += new System.EventHandler(this.btnExpensesTracker_MouseLeave);
+            this.btnExpensesTracker.MouseHover += new System.EventHandler(this.btnExpensesTracker_MouseHover);
             // 
             // pictureBox1
             // 
@@ -159,15 +140,41 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBoxHusbWife
+            // groupBoxShare
             // 
-            this.pictureBoxHusbWife.Image = global::ExpensesTracker.Properties.Resources.Husband_Wife;
-            this.pictureBoxHusbWife.Location = new System.Drawing.Point(6, 21);
-            this.pictureBoxHusbWife.Name = "pictureBoxHusbWife";
-            this.pictureBoxHusbWife.Size = new System.Drawing.Size(268, 287);
-            this.pictureBoxHusbWife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxHusbWife.TabIndex = 0;
-            this.pictureBoxHusbWife.TabStop = false;
+            this.groupBoxShare.Controls.Add(this.pictureBox2);
+            this.groupBoxShare.Controls.Add(this.btnShareTracker);
+            this.groupBoxShare.Location = new System.Drawing.Point(631, 64);
+            this.groupBoxShare.Name = "groupBoxShare";
+            this.groupBoxShare.Size = new System.Drawing.Size(280, 421);
+            this.groupBoxShare.TabIndex = 4;
+            this.groupBoxShare.TabStop = false;
+            this.groupBoxShare.Text = "Shares Tracker";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ExpensesTracker.Properties.Resources.Shares;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(268, 287);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnShareTracker
+            // 
+            this.btnShareTracker.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnShareTracker.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnShareTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShareTracker.Location = new System.Drawing.Point(3, 314);
+            this.btnShareTracker.Name = "btnShareTracker";
+            this.btnShareTracker.Size = new System.Drawing.Size(274, 104);
+            this.btnShareTracker.TabIndex = 1;
+            this.btnShareTracker.Text = "Shares Tracker";
+            this.btnShareTracker.UseVisualStyleBackColor = false;
+            this.btnShareTracker.Click += new System.EventHandler(this.btnShareTracker_Click);
+            this.btnShareTracker.MouseLeave += new System.EventHandler(this.btnShareTracker_MouseLeave);
+            this.btnShareTracker.MouseHover += new System.EventHandler(this.btnShareTracker_MouseHover);
             // 
             // ExpensesMain
             // 
@@ -182,12 +189,13 @@
             this.Controls.Add(this.lblMainHeading);
             this.Name = "ExpensesMain";
             this.Text = "Expenses Tracker";
+            this.Load += new System.EventHandler(this.ExpensesMain_Load);
             this.groupBoxHusbWife.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).EndInit();
             this.groupBoxExpenses.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxShare.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,9 +209,9 @@
         private System.Windows.Forms.GroupBox groupBoxShare;
         private System.Windows.Forms.PictureBox pictureBoxHusbWife;
         private System.Windows.Forms.Button btnHusbandWife;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExpensesTracker;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnShareTracker;
     }
 }

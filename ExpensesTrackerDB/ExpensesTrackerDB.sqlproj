@@ -58,6 +58,7 @@
     <Folder Include="Properties" />
     <Folder Include="StoreProcedure" />
     <Folder Include="Table" />
+    <Folder Include="Script" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="StoreProcedure\HusbandWifeProcedure.sql" />
@@ -69,5 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ExpensesTrackerDB.sqlproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script\CodeId.PostDeployment1.sql" />
+    <None Include="Script\CodeValue.sql" />
   </ItemGroup>
 </Project>

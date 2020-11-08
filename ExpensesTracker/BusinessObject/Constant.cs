@@ -10,7 +10,8 @@ namespace ExpensesTracker.BusinessObject
     {
         public abstract class Common
         {
-            public const string DATABASE_NAME = "Bharat";
+            public const string DATABASE_NAME = "Expenses_Tracker";
+            public const string DATABASE_NAME_Temp = "Expenses_Tracker";
             public const string ENTITY_NAME = "Entity.xml";
             public const string XML = "\\Xml";
             public const string REGISTRATION_SUCCESSFULY = "RegSuc";
@@ -22,12 +23,19 @@ namespace ExpensesTracker.BusinessObject
                 public const string Male = "Male";
                 public const string Female = "Female";
             }
+
+            public abstract class CodeId
+            {
+                public const string CODE_ID_1 = "1";
+            }
         }
 
-        public abstract class Queryies
+        public abstract class Query
         {
             public const string GET_USER_INFO = "GetUserInfo";
+            public const string GET_USER_INFO_BY_ID = "GetUserInfoById";
             public const string UPDATE_REMEMBER_ME_CODE_VALUE = "UpdateRememberMeCodeValue";
+            public const string GET_UPDATE_REMEMBER_CODE_VALUE = "GetUpdateRememberCodeValue";
         }
 
         public abstract class Error

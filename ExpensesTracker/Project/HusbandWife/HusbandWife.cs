@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpensesTracker.BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,39 +22,65 @@ namespace ExpensesTracker.Project.HusbandWife
         public int iintResult { get; set; }
         public int iintUpdateId { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HusbandWife_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'husband_Tracker_Dataset.HUSBANDWIFEPROCEDURE' table. You can move, or remove it, as needed.
-            this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_Tracker_Dataset.HUSBANDWIFEPROCEDURE);
-
+            LoadForm();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void LoadForm()
         {
-            //this.husband_WifeTableAdapter.Fill(this.bharatDataSet.Husband_Wife);
+            this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataSet.HUSBANDWIFEPROCEDURE);
+            lblHusbandWifeUser.Text = GlobalFunction.GetFullNameById(Login.UserId);
+            
             LoadCategory();
             Sum();
             Result();
-
         }
 
+        #region Private Methods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="astrType"></param>
+        /// <param name="astrAmt"></param>
+        /// <param name="adttime"></param>
+        /// <param name="aintCategoryId"></param>
         private void AddAmount(string astrType, string astrAmt, string adttime, string aintCategoryId)
         {
-            DBFunction ldBFunction = new DBFunction();
             Dictionary<string, string> ldict = new Dictionary<string, string>();
-            ldict.Add("Husband_Wife_Type", astrType);
-            ldict.Add("Husband_Wife_Amt", astrAmt);
-            ldict.Add("Husband_Wife_Date", adttime);
-            ldict.Add("EXPENSES_CATEGORY_ID", aintCategoryId);
-            ldict.Add("HUSBAND_WIFE_TYPE_ID", "1");
-            ///ldBFunction.InsertIntoTable("Bharat", "Husband_Wife", ldict);
+            ldict.Add(TableEnum.enmHusband_Wife.HUSBAND_WIFE_TYPE_VALUE.ToString(), astrType);
+            ldict.Add(TableEnum.enmHusband_Wife.HUSBAND_WIFE_AMT.ToString(), astrAmt);
+            ldict.Add(TableEnum.enmHusband_Wife.HUSBAND_WIFE_DATE.ToString(), adttime);
+            ldict.Add(TableEnum.enmHusband_Wife.EXPENSES_CATEGORY_ID.ToString(), aintCategoryId);
+            ldict.Add(TableEnum.enmHusband_Wife.HUSBAND_WIFE_TYPE_ID.ToString(), Constant.Common.CodeId.CODE_ID_1);
+            DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.HUSBAND_WIFE.ToString(), ldict);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aintId"></param>
+        /// <param name="astrAmt"></param>
+        /// <param name="adttime"></param>
+        /// <param name="ExpenseCtgryId"></param>
         private void UpdateAmount(int aintId, string astrAmt, string adttime, int? ExpenseCtgryId)
         {
-            DBFunction ldBFunction = new DBFunction();
             string lstrQuery = "Update Husband_Wife Set Husband_Wife_Amt = " + Convert.ToInt32(astrAmt) + " , Husband_Wife_Date = '" + adttime + "' , EXPENSES_CATEGORY_ID = " + ExpenseCtgryId + " Where Husband_Wife_Id = " + aintId;
-            //ldBFunction.UpdateTable("Bharat", lstrQuery);
+            DBFunction.UpdateTable("Bharat", lstrQuery);
         }
+
+        #endregion
+
+        #region Events Methods
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -102,11 +129,11 @@ namespace ExpensesTracker.Project.HusbandWife
             }
             Sum();
         }
-
+        #endregion
         private void LoadCategory()
         {
             DBFunction lDBFunction = new DBFunction();
-            string lstrQuery = "Select Expenses_Category_Name from Expenses_Category where Expenses_Category_Table_Value = 'HUWF'";
+            ///string lstrQuery = "Select Expenses_Category_Name from Expenses_Category where Expenses_Category_Table_Value = 'HUWF'";
             //DataTable ldtbTable = lDBFunction.FetchDataFromDatabase("Bharat", lstrQuery);
             //foreach (DataRow dr in ldtbTable.Rows)
                 //cmbcategory.Items.Add(Convert.ToString(dr["Expenses_Category_Name"]));

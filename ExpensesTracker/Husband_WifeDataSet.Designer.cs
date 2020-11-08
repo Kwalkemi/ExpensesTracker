@@ -20,9 +20,9 @@ namespace ExpensesTracker {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Husband_Tracker_Dataset")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Husband_WifeDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Husband_Tracker_Dataset : global::System.Data.DataSet {
+    public partial class Husband_WifeDataSet : global::System.Data.DataSet {
         
         private HUSBANDWIFEPROCEDUREDataTable tableHUSBANDWIFEPROCEDURE;
         
@@ -30,7 +30,7 @@ namespace ExpensesTracker {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public Husband_Tracker_Dataset() {
+        public Husband_WifeDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ExpensesTracker {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected Husband_Tracker_Dataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Husband_WifeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace ExpensesTracker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Husband_Tracker_Dataset cln = ((Husband_Tracker_Dataset)(base.Clone()));
+            Husband_WifeDataSet cln = ((Husband_WifeDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace ExpensesTracker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Husband_Tracker_Dataset";
+            this.DataSetName = "Husband_WifeDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Husband_Tracker_Dataset.xsd";
+            this.Namespace = "http://tempuri.org/Husband_WifeDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHUSBANDWIFEPROCEDURE = new HUSBANDWIFEPROCEDUREDataTable();
@@ -225,7 +225,7 @@ namespace ExpensesTracker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Husband_Tracker_Dataset ds = new Husband_Tracker_Dataset();
+            Husband_WifeDataSet ds = new Husband_WifeDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,13 +281,11 @@ namespace ExpensesTracker {
             
             private global::System.Data.DataColumn columnHUSBAND_WIFE_ID;
             
-            private global::System.Data.DataColumn columnHUSBAND_WIFE_TYPE;
+            private global::System.Data.DataColumn columnHUSBAND_WIFE_TYPE_VALUE;
             
             private global::System.Data.DataColumn columnHUSBAND_WIFE_AMT;
             
             private global::System.Data.DataColumn columnHUSBAND_WIFE_DATE;
-            
-            private global::System.Data.DataColumn columnHUSBAND_WIFE_TYPE_ID;
             
             private global::System.Data.DataColumn columnEXPENSES_CATEGORY_ID;
             
@@ -336,9 +334,9 @@ namespace ExpensesTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn HUSBAND_WIFE_TYPEColumn {
+            public global::System.Data.DataColumn HUSBAND_WIFE_TYPE_VALUEColumn {
                 get {
-                    return this.columnHUSBAND_WIFE_TYPE;
+                    return this.columnHUSBAND_WIFE_TYPE_VALUE;
                 }
             }
             
@@ -355,14 +353,6 @@ namespace ExpensesTracker {
             public global::System.Data.DataColumn HUSBAND_WIFE_DATEColumn {
                 get {
                     return this.columnHUSBAND_WIFE_DATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn HUSBAND_WIFE_TYPE_IDColumn {
-                get {
-                    return this.columnHUSBAND_WIFE_TYPE_ID;
                 }
             }
             
@@ -419,14 +409,13 @@ namespace ExpensesTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HUSBANDWIFEPROCEDURERow AddHUSBANDWIFEPROCEDURERow(string HUSBAND_WIFE_TYPE, int HUSBAND_WIFE_AMT, string HUSBAND_WIFE_DATE, int HUSBAND_WIFE_TYPE_ID, int EXPENSES_CATEGORY_ID, string EXPENSES_CATEGORY_NAME) {
+            public HUSBANDWIFEPROCEDURERow AddHUSBANDWIFEPROCEDURERow(string HUSBAND_WIFE_TYPE_VALUE, int HUSBAND_WIFE_AMT, System.DateTime HUSBAND_WIFE_DATE, int EXPENSES_CATEGORY_ID, string EXPENSES_CATEGORY_NAME) {
                 HUSBANDWIFEPROCEDURERow rowHUSBANDWIFEPROCEDURERow = ((HUSBANDWIFEPROCEDURERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        HUSBAND_WIFE_TYPE,
+                        HUSBAND_WIFE_TYPE_VALUE,
                         HUSBAND_WIFE_AMT,
                         HUSBAND_WIFE_DATE,
-                        HUSBAND_WIFE_TYPE_ID,
                         EXPENSES_CATEGORY_ID,
                         EXPENSES_CATEGORY_NAME};
                 rowHUSBANDWIFEPROCEDURERow.ItemArray = columnValuesArray;
@@ -459,10 +448,9 @@ namespace ExpensesTracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnHUSBAND_WIFE_ID = base.Columns["HUSBAND_WIFE_ID"];
-                this.columnHUSBAND_WIFE_TYPE = base.Columns["HUSBAND_WIFE_TYPE"];
+                this.columnHUSBAND_WIFE_TYPE_VALUE = base.Columns["HUSBAND_WIFE_TYPE_VALUE"];
                 this.columnHUSBAND_WIFE_AMT = base.Columns["HUSBAND_WIFE_AMT"];
                 this.columnHUSBAND_WIFE_DATE = base.Columns["HUSBAND_WIFE_DATE"];
-                this.columnHUSBAND_WIFE_TYPE_ID = base.Columns["HUSBAND_WIFE_TYPE_ID"];
                 this.columnEXPENSES_CATEGORY_ID = base.Columns["EXPENSES_CATEGORY_ID"];
                 this.columnEXPENSES_CATEGORY_NAME = base.Columns["EXPENSES_CATEGORY_NAME"];
             }
@@ -472,14 +460,12 @@ namespace ExpensesTracker {
             private void InitClass() {
                 this.columnHUSBAND_WIFE_ID = new global::System.Data.DataColumn("HUSBAND_WIFE_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHUSBAND_WIFE_ID);
-                this.columnHUSBAND_WIFE_TYPE = new global::System.Data.DataColumn("HUSBAND_WIFE_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHUSBAND_WIFE_TYPE);
+                this.columnHUSBAND_WIFE_TYPE_VALUE = new global::System.Data.DataColumn("HUSBAND_WIFE_TYPE_VALUE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHUSBAND_WIFE_TYPE_VALUE);
                 this.columnHUSBAND_WIFE_AMT = new global::System.Data.DataColumn("HUSBAND_WIFE_AMT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHUSBAND_WIFE_AMT);
-                this.columnHUSBAND_WIFE_DATE = new global::System.Data.DataColumn("HUSBAND_WIFE_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnHUSBAND_WIFE_DATE = new global::System.Data.DataColumn("HUSBAND_WIFE_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHUSBAND_WIFE_DATE);
-                this.columnHUSBAND_WIFE_TYPE_ID = new global::System.Data.DataColumn("HUSBAND_WIFE_TYPE_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHUSBAND_WIFE_TYPE_ID);
                 this.columnEXPENSES_CATEGORY_ID = new global::System.Data.DataColumn("EXPENSES_CATEGORY_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEXPENSES_CATEGORY_ID);
                 this.columnEXPENSES_CATEGORY_NAME = new global::System.Data.DataColumn("EXPENSES_CATEGORY_NAME", typeof(string), null, global::System.Data.MappingType.Element);
@@ -490,9 +476,7 @@ namespace ExpensesTracker {
                 this.columnHUSBAND_WIFE_ID.AllowDBNull = false;
                 this.columnHUSBAND_WIFE_ID.ReadOnly = true;
                 this.columnHUSBAND_WIFE_ID.Unique = true;
-                this.columnHUSBAND_WIFE_TYPE.MaxLength = 10;
-                this.columnHUSBAND_WIFE_DATE.MaxLength = 100;
-                this.columnHUSBAND_WIFE_TYPE_ID.AllowDBNull = false;
+                this.columnHUSBAND_WIFE_TYPE_VALUE.MaxLength = 10;
                 this.columnEXPENSES_CATEGORY_ID.ReadOnly = true;
                 this.columnEXPENSES_CATEGORY_NAME.MaxLength = 500;
             }
@@ -562,7 +546,7 @@ namespace ExpensesTracker {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Husband_Tracker_Dataset ds = new Husband_Tracker_Dataset();
+                Husband_WifeDataSet ds = new Husband_WifeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -648,18 +632,18 @@ namespace ExpensesTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string HUSBAND_WIFE_TYPE {
+            public string HUSBAND_WIFE_TYPE_VALUE {
                 get {
                     try {
-                        return ((string)(this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPEColumn]));
+                        return ((string)(this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPE_VALUEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HUSBAND_WIFE_TYPE\' in table \'HUSBANDWIFEPROCEDURE\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HUSBAND_WIFE_TYPE_VALUE\' in table \'HUSBANDWIFEPROCEDURE\' is" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPEColumn] = value;
+                    this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPE_VALUEColumn] = value;
                 }
             }
             
@@ -682,10 +666,10 @@ namespace ExpensesTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string HUSBAND_WIFE_DATE {
+            public System.DateTime HUSBAND_WIFE_DATE {
                 get {
                     try {
-                        return ((string)(this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_DATEColumn]));
+                        return ((global::System.DateTime)(this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_DATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'HUSBAND_WIFE_DATE\' in table \'HUSBANDWIFEPROCEDURE\' is DBNul" +
@@ -694,17 +678,6 @@ namespace ExpensesTracker {
                 }
                 set {
                     this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_DATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int HUSBAND_WIFE_TYPE_ID {
-                get {
-                    return ((int)(this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPE_IDColumn]));
-                }
-                set {
-                    this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPE_IDColumn] = value;
                 }
             }
             
@@ -744,14 +717,14 @@ namespace ExpensesTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsHUSBAND_WIFE_TYPENull() {
-                return this.IsNull(this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPEColumn);
+            public bool IsHUSBAND_WIFE_TYPE_VALUENull() {
+                return this.IsNull(this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPE_VALUEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetHUSBAND_WIFE_TYPENull() {
-                this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPEColumn] = global::System.Convert.DBNull;
+            public void SetHUSBAND_WIFE_TYPE_VALUENull() {
+                this[this.tableHUSBANDWIFEPROCEDURE.HUSBAND_WIFE_TYPE_VALUEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -838,7 +811,7 @@ namespace ExpensesTracker {
         }
     }
 }
-namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
+namespace ExpensesTracker.Husband_WifeDataSetTableAdapters {
     
     
     /// <summary>
@@ -963,10 +936,9 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "HUSBANDWIFEPROCEDURE";
             tableMapping.ColumnMappings.Add("HUSBAND_WIFE_ID", "HUSBAND_WIFE_ID");
-            tableMapping.ColumnMappings.Add("HUSBAND_WIFE_TYPE", "HUSBAND_WIFE_TYPE");
+            tableMapping.ColumnMappings.Add("HUSBAND_WIFE_TYPE_VALUE", "HUSBAND_WIFE_TYPE_VALUE");
             tableMapping.ColumnMappings.Add("HUSBAND_WIFE_AMT", "HUSBAND_WIFE_AMT");
             tableMapping.ColumnMappings.Add("HUSBAND_WIFE_DATE", "HUSBAND_WIFE_DATE");
-            tableMapping.ColumnMappings.Add("HUSBAND_WIFE_TYPE_ID", "HUSBAND_WIFE_TYPE_ID");
             tableMapping.ColumnMappings.Add("EXPENSES_CATEGORY_ID", "EXPENSES_CATEGORY_ID");
             tableMapping.ColumnMappings.Add("EXPENSES_CATEGORY_NAME", "EXPENSES_CATEGORY_NAME");
             this._adapter.TableMappings.Add(tableMapping);
@@ -994,7 +966,7 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Husband_Tracker_Dataset.HUSBANDWIFEPROCEDUREDataTable dataTable) {
+        public virtual int Fill(Husband_WifeDataSet.HUSBANDWIFEPROCEDUREDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1007,9 +979,9 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Husband_Tracker_Dataset.HUSBANDWIFEPROCEDUREDataTable GetData() {
+        public virtual Husband_WifeDataSet.HUSBANDWIFEPROCEDUREDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Husband_Tracker_Dataset.HUSBANDWIFEPROCEDUREDataTable dataTable = new Husband_Tracker_Dataset.HUSBANDWIFEPROCEDUREDataTable();
+            Husband_WifeDataSet.HUSBANDWIFEPROCEDUREDataTable dataTable = new Husband_WifeDataSet.HUSBANDWIFEPROCEDUREDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1083,7 +1055,7 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(Husband_Tracker_Dataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Husband_WifeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1093,7 +1065,7 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(Husband_Tracker_Dataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Husband_WifeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1103,7 +1075,7 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(Husband_Tracker_Dataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Husband_WifeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1137,7 +1109,7 @@ namespace ExpensesTracker.Husband_Tracker_DatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(Husband_Tracker_Dataset dataSet) {
+        public virtual int UpdateAll(Husband_WifeDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

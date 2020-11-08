@@ -55,14 +55,15 @@
             this.btnRmvCtgry = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAnalysis = new System.Windows.Forms.Button();
-            this.husband_Tracker_Dataset = new ExpensesTracker.Husband_Tracker_Dataset();
+            this.lblHusbandWifeUser = new System.Windows.Forms.Label();
+            this.husband_WifeDataSet = new ExpensesTracker.Husband_WifeDataSet();
             this.hUSBANDWIFEPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hUSBANDWIFEPROCEDURETableAdapter = new ExpensesTracker.Husband_Tracker_DatasetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter();
+            this.hUSBANDWIFEPROCEDURETableAdapter = new ExpensesTracker.Husband_WifeDataSetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter();
             this.Sno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -70,7 +71,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.husband_Tracker_Dataset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.husband_WifeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hUSBANDWIFEPROCEDUREBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -284,9 +285,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sno,
             this.dataGridViewTextBoxColumn1,
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.hUSBANDWIFEPROCEDUREBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(421, 113);
@@ -372,15 +373,25 @@
             this.btnAnalysis.UseVisualStyleBackColor = false;
             this.btnAnalysis.Click += new System.EventHandler(this.btnAnalysis_Click);
             // 
-            // husband_Tracker_Dataset
+            // lblHusbandWifeUser
             // 
-            this.husband_Tracker_Dataset.DataSetName = "Husband_Tracker_Dataset";
-            this.husband_Tracker_Dataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.lblHusbandWifeUser.AutoSize = true;
+            this.lblHusbandWifeUser.BackColor = System.Drawing.Color.Goldenrod;
+            this.lblHusbandWifeUser.Location = new System.Drawing.Point(1134, 12);
+            this.lblHusbandWifeUser.Name = "lblHusbandWifeUser";
+            this.lblHusbandWifeUser.Size = new System.Drawing.Size(46, 17);
+            this.lblHusbandWifeUser.TabIndex = 10;
+            this.lblHusbandWifeUser.Text = "label8";
+            // 
+            // husband_WifeDataSet
+            // 
+            this.husband_WifeDataSet.DataSetName = "Husband_WifeDataSet";
+            this.husband_WifeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hUSBANDWIFEPROCEDUREBindingSource
             // 
             this.hUSBANDWIFEPROCEDUREBindingSource.DataMember = "HUSBANDWIFEPROCEDURE";
-            this.hUSBANDWIFEPROCEDUREBindingSource.DataSource = this.husband_Tracker_Dataset;
+            this.hUSBANDWIFEPROCEDUREBindingSource.DataSource = this.husband_WifeDataSet;
             // 
             // hUSBANDWIFEPROCEDURETableAdapter
             // 
@@ -401,27 +412,27 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn
+            // 
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn.DataPropertyName = "HUSBAND_WIFE_TYPE_VALUE";
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn.HeaderText = "HUSBAND_WIFE_TYPE_VALUE";
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn.Name = "hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn";
+            this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn.Visible = false;
+            // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "HUSBAND_WIFE_TYPE";
-            this.dataGridViewTextBoxColumn2.HeaderText = "HUSBAND_WIFE_TYPE";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "HUSBAND_WIFE_AMT";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Amount";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "HUSBAND_WIFE_AMT";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "HUSBAND_WIFE_DATE";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "HUSBAND_WIFE_DATE";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn
             // 
@@ -429,12 +440,15 @@
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.HeaderText = "Category";
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.Name = "eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn";
+            this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // HusbandWife
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 572);
+            this.Controls.Add(this.lblHusbandWifeUser);
             this.Controls.Add(this.btnAnalysis);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnRmvCtgry);
@@ -456,7 +470,7 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.husband_Tracker_Dataset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.husband_WifeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hUSBANDWIFEPROCEDUREBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -496,14 +510,15 @@
         private System.Windows.Forms.Button btnRmvCtgry;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnAnalysis;
-        private Husband_Tracker_Dataset husband_Tracker_Dataset;
+        private System.Windows.Forms.Label lblHusbandWifeUser;
+        private Husband_WifeDataSet husband_WifeDataSet;
         private System.Windows.Forms.BindingSource hUSBANDWIFEPROCEDUREBindingSource;
-        private Husband_Tracker_DatasetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter hUSBANDWIFEPROCEDURETableAdapter;
+        private Husband_WifeDataSetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter hUSBANDWIFEPROCEDURETableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn;
     }
 }

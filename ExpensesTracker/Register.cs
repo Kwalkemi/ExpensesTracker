@@ -15,13 +15,12 @@ namespace ExpensesTracker
 {
     public partial class Register : Form
     {
+        private string istrPath { get; set; }
         public Register()
         {
             istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
             InitializeComponent();
         }
-
-        private string istrPath { get; set; }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -29,7 +28,7 @@ namespace ExpensesTracker
             if (txtUsername.Text == string.Empty)
                 errorProvider1.SetError(txtPassword, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_2));
             else
-                ldict.Add(TableEnum.enmLogin_Info.Username.ToString(), txtUsername.Text); 
+                ldict.Add(TableEnum.enmLogin_Info.USERNAME.ToString(), txtUsername.Text); 
             if (txtPassword.Text == string.Empty)
                 errorProvider1.SetError(txtPassword, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_3));
             if (txtConfirmPassword.Text == string.Empty)
@@ -40,15 +39,15 @@ namespace ExpensesTracker
                 errorProvider1.SetError(txtConfirmPassword, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_5));
             }
             else
-                ldict.Add(TableEnum.enmLogin_Info.Password.ToString(), txtPassword.Text);
+                ldict.Add(TableEnum.enmLogin_Info.PASSWORD.ToString(), txtPassword.Text);
             if (txtFirstname.Text == string.Empty)
                 errorProvider1.SetError(txtPassword, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_6));
             else
-                ldict.Add(TableEnum.enmLogin_Info.First_Name.ToString(), txtFirstname.Text);
+                ldict.Add(TableEnum.enmLogin_Info.FIRST_NAME.ToString(), txtFirstname.Text);
             if (txtlastname.Text == string.Empty)
                 errorProvider1.SetError(txtPassword, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_7));
             else
-                ldict.Add(TableEnum.enmLogin_Info.Last_Name.ToString(), txtlastname.Text);
+                ldict.Add(TableEnum.enmLogin_Info.LAST_NAME.ToString(), txtlastname.Text);
             
             if (!radioMale.Checked && !radioFemale.Checked)
             {
@@ -57,9 +56,9 @@ namespace ExpensesTracker
             else
             {
                 string str = radioMale.Checked ? Constant.Common.Gender.Male : radioFemale.Checked ? Constant.Common.Gender.Female : string.Empty;
-                ldict.Add(TableEnum.enmLogin_Info.Gender.ToString(), str);
+                ldict.Add(TableEnum.enmLogin_Info.GENDER.ToString(), str);
             }
-            int Id = DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.Login_Info.ToString(), ldict);
+            int Id = DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.LOGIN_INFO.ToString(), ldict);
             if (Id > 0)
             {
                 MessageBox.Show(XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Common.REGISTRATION_SUCCESSFULY));

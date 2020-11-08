@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Husband_Tracker_Dataset" targetNamespace="http://tempuri.org/Husband_Tracker_Dataset.xsd" xmlns:mstns="http://tempuri.org/Husband_Tracker_Dataset.xsd" xmlns="http://tempuri.org/Husband_Tracker_Dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="Husband_WifeDataSet" targetNamespace="http://tempuri.org/Husband_WifeDataSet.xsd" xmlns:mstns="http://tempuri.org/Husband_WifeDataSet.xsd" xmlns="http://tempuri.org/Husband_WifeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -22,10 +22,9 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="HUSBAND_WIFE_ID" DataSetColumn="HUSBAND_WIFE_ID" />
-              <Mapping SourceColumn="HUSBAND_WIFE_TYPE" DataSetColumn="HUSBAND_WIFE_TYPE" />
+              <Mapping SourceColumn="HUSBAND_WIFE_TYPE_VALUE" DataSetColumn="HUSBAND_WIFE_TYPE_VALUE" />
               <Mapping SourceColumn="HUSBAND_WIFE_AMT" DataSetColumn="HUSBAND_WIFE_AMT" />
               <Mapping SourceColumn="HUSBAND_WIFE_DATE" DataSetColumn="HUSBAND_WIFE_DATE" />
-              <Mapping SourceColumn="HUSBAND_WIFE_TYPE_ID" DataSetColumn="HUSBAND_WIFE_TYPE_ID" />
               <Mapping SourceColumn="EXPENSES_CATEGORY_ID" DataSetColumn="EXPENSES_CATEGORY_ID" />
               <Mapping SourceColumn="EXPENSES_CATEGORY_NAME" DataSetColumn="EXPENSES_CATEGORY_NAME" />
             </Mappings>
@@ -36,14 +35,14 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Husband_Tracker_Dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Husband_Tracker_Dataset" msprop:Generator_UserDSName="Husband_Tracker_Dataset">
+  <xs:element name="Husband_WifeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Husband_WifeDataSet" msprop:Generator_UserDSName="Husband_WifeDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="HUSBANDWIFEPROCEDURE" msprop:Generator_TableClassName="HUSBANDWIFEPROCEDUREDataTable" msprop:Generator_TableVarName="tableHUSBANDWIFEPROCEDURE" msprop:Generator_TablePropName="HUSBANDWIFEPROCEDURE" msprop:Generator_RowDeletingName="HUSBANDWIFEPROCEDURERowDeleting" msprop:Generator_RowChangingName="HUSBANDWIFEPROCEDURERowChanging" msprop:Generator_RowEvHandlerName="HUSBANDWIFEPROCEDURERowChangeEventHandler" msprop:Generator_RowDeletedName="HUSBANDWIFEPROCEDURERowDeleted" msprop:Generator_UserTableName="HUSBANDWIFEPROCEDURE" msprop:Generator_RowChangedName="HUSBANDWIFEPROCEDURERowChanged" msprop:Generator_RowEvArgName="HUSBANDWIFEPROCEDURERowChangeEvent" msprop:Generator_RowClassName="HUSBANDWIFEPROCEDURERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HUSBAND_WIFE_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_ID" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_ID" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_IDColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_ID" type="xs:int" />
-              <xs:element name="HUSBAND_WIFE_TYPE" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_TYPE" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_TYPE" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_TYPEColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_TYPE" minOccurs="0">
+              <xs:element name="HUSBAND_WIFE_TYPE_VALUE" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_TYPE_VALUE" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_TYPE_VALUE" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_TYPE_VALUEColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_TYPE_VALUE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -51,14 +50,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="HUSBAND_WIFE_AMT" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_AMT" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_AMT" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_AMTColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_AMT" type="xs:int" minOccurs="0" />
-              <xs:element name="HUSBAND_WIFE_DATE" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_DATE" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_DATE" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_DATEColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_DATE" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="HUSBAND_WIFE_TYPE_ID" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_TYPE_ID" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_TYPE_ID" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_TYPE_IDColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_TYPE_ID" type="xs:int" />
+              <xs:element name="HUSBAND_WIFE_DATE" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_DATE" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_DATE" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_DATEColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_DATE" type="xs:dateTime" minOccurs="0" />
               <xs:element name="EXPENSES_CATEGORY_ID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEXPENSES_CATEGORY_ID" msprop:Generator_ColumnPropNameInRow="EXPENSES_CATEGORY_ID" msprop:Generator_ColumnPropNameInTable="EXPENSES_CATEGORY_IDColumn" msprop:Generator_UserColumnName="EXPENSES_CATEGORY_ID" type="xs:int" minOccurs="0" />
               <xs:element name="EXPENSES_CATEGORY_NAME" msprop:Generator_ColumnVarNameInTable="columnEXPENSES_CATEGORY_NAME" msprop:Generator_ColumnPropNameInRow="EXPENSES_CATEGORY_NAME" msprop:Generator_ColumnPropNameInTable="EXPENSES_CATEGORY_NAMEColumn" msprop:Generator_UserColumnName="EXPENSES_CATEGORY_NAME" minOccurs="0">
                 <xs:simpleType>
