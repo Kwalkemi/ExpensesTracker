@@ -39,7 +39,6 @@ namespace ExpensesTracker.Project.HusbandWife
         /// </summary>
         private void LoadForm()
         {
-            this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataSet.HUSBANDWIFEPROCEDURE);
             lblHusbandWifeUser.Text = GlobalFunction.GetFullNameById(Login.UserId);
 
             LoadCategory();
@@ -134,6 +133,8 @@ namespace ExpensesTracker.Project.HusbandWife
         /// <param name="e"></param>
         private void HusbandWife_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'husband_WifeDataset.HUSBANDWIFEPROCEDURE' table. You can move, or remove it, as needed.
+            this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             LoadForm();
         }
 
@@ -174,7 +175,7 @@ namespace ExpensesTracker.Project.HusbandWife
                 categoryId = string.Format(categoryId, cmbcategory.SelectedItem.ToString());
                 string lstrId = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, categoryId);
                 AddAmount(Constant.Husband_Wife.Record_Type.WIFE, txtwifespend.Text, dateTimePickerwife.Text, lstrId);
-                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataSet.HUSBANDWIFEPROCEDURE);
+                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             }
             Sum();
         }
@@ -193,7 +194,7 @@ namespace ExpensesTracker.Project.HusbandWife
             else if (errorProvider1.GetError(txthusband) == string.Empty)
             {
                 AddAmount(Constant.Husband_Wife.Record_Type.HUSBAND, txthusband.Text, Convert.ToString(dateTimePickerhusb.Value), "24");
-                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataSet.HUSBANDWIFEPROCEDURE);
+                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             }
             Sum();
         }
@@ -252,7 +253,7 @@ namespace ExpensesTracker.Project.HusbandWife
                 lstrQuery = string.Format(lstrQuery, cmbcategory.SelectedItem.ToString());
                 string Id = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
                 UpdateAmount(iintUpdateId, txtwifespend.Text, dateTimePickerwife.Text, Convert.ToInt32(Id));
-                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataSet.HUSBANDWIFEPROCEDURE);
+                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             }
             Sum();
         }
@@ -270,8 +271,8 @@ namespace ExpensesTracker.Project.HusbandWife
             }
             else if (errorProvider1.GetError(txthusband) == string.Empty)
             {
-                UpdateAmount(iintUpdateId, txthusband.Text, Convert.ToString(dateTimePickerhusb.Value), null);
-                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataSet.HUSBANDWIFEPROCEDURE);
+                UpdateAmount(iintUpdateId, txthusband.Text, dateTimePickerhusb.Text, null);
+                this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             }
             Sum();
         }
@@ -357,8 +358,8 @@ namespace ExpensesTracker.Project.HusbandWife
         /// <param name="e"></param>
         private void btnAnalysis_Click(object sender, EventArgs e)
         {
-            //ExpensesAnalysis form = new ExpensesAnalysis();
-            //form.ShowDialog();
+            HusbandWifeAnalysis form = new HusbandWifeAnalysis();
+            form.ShowDialog();
         }
 
         #endregion

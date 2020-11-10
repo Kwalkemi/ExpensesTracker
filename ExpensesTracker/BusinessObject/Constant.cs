@@ -44,6 +44,7 @@ namespace ExpensesTracker.BusinessObject
             public const string LOAD_HUSBAND_WIFE_CATEGORY = "LoadHusbandWifeCategory";
             public const string GET_EXPENSES_CATEGORY_ID_BY_NAME = "GetExpensesCategoryIdByName";
             public const string DELETE_EXPENSES_CATEGORY = "DeleteExpensesCategory";
+            public const string LOAD_HUSBAND_WIFE_CHART = "LoadHusbandWifeChart";
         }
 
         public abstract class Error

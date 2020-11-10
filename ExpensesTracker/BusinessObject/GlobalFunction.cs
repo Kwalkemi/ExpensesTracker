@@ -108,5 +108,86 @@ namespace ExpensesTracker.BusinessObject
 
             return prompt.ShowDialog() == DialogResult.OK ? Convert.ToString(combo.SelectedItem) : string.Empty;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aintYear"></param>
+        /// <param name="aintMonth"></param>
+        /// <returns></returns>
+        public static DateTime GetFirstDateOfMonth(this int aintYear, int aintMonth)
+        {
+            DateTime ldtDate = new DateTime(aintYear, aintMonth, 1);
+            return ldtDate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aintYear"></param>
+        /// <param name="aintMonth"></param>
+        /// <returns></returns>
+        public static DateTime GetLastDateOfMonth(this int aintYear, int aintMonth)
+        {
+            DateTime ldtDate = new DateTime(aintYear, aintMonth, 1);
+            ldtDate = ldtDate.AddMonths(1).AddDays(-1);
+            return ldtDate;
+        }
+
+        /// <summary>
+        /// Get the ceiling number
+        /// </summary>
+        /// <param name="aintnum"></param>
+        /// <param name="withRef">with reference of</param>
+        /// <returns></returns>
+        public static int GetCeilingNumber(this int aintnum, int withRef)
+        {
+            int num = (aintnum / 1000) + 1;
+            num = num * 1000;
+            return num;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aQuarter"></param>
+        /// <returns></returns>
+        public static List<string> GetMonthNameFromQuarter(this int aQuarter)
+        {
+            List<string> lstMonth = new List<string>();
+
+            switch (aQuarter)
+            {
+                case 0:
+                    {
+                        lstMonth.Add("January");
+                        lstMonth.Add("Febuary");
+                        lstMonth.Add("March");
+                        break;
+                    }
+                case 1:
+                    {
+                        lstMonth.Add("April");
+                        lstMonth.Add("May");
+                        lstMonth.Add("June");
+                        break;
+                    }
+                case 2:
+                    {
+                        lstMonth.Add("July");
+                        lstMonth.Add("August");
+                        lstMonth.Add("September");
+                        break;
+                    }
+                case 3:
+                    {
+                        lstMonth.Add("October");
+                        lstMonth.Add("November");
+                        lstMonth.Add("December");
+                        break;
+                    }
+            }
+            return lstMonth;
+        }
     }
 }

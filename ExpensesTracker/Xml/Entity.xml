@@ -9,6 +9,12 @@
     <query Id="LoadHusbandWifeCategory">Select Expenses_Category_Name from Expenses_Category where Expenses_Category_Table_Value = 'HUWF'</query>
     <query Id="GetExpensesCategoryIdByName">Select Expenses_Category_Id from Expenses_Category where Expenses_Category_Table_Value = 'HUWF' and Expenses_Category_Name = '{0}'</query>
     <query Id="DeleteExpensesCategory">Delete Expenses_Category where Expenses_Category_Id = {0}</query>
+    <query Id="LoadHusbandWifeChart">Select A.EXPENSES_CATEGORY_ID,B.Expenses_Category_Name, Sum(Husband_Wife_Amt) Amount, MONTH(dbo.ConvertStringToDate(Husband_Wife_Date)) Months from dbo.Husband_Wife A
+                    Inner Join Expenses_Category B
+                    On A.EXPENSES_CATEGORY_ID = B.Expenses_Category_Id
+                        where Husband_Wife_Type = 'WIFE' and A.EXPENSES_CATEGORY_ID is not null And
+                    dbo.ConvertStringToDate(Husband_Wife_Date) between dbo.ConvertStringToDate('{0}') and dbo.ConvertStringToDate('{1}')
+                        group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(dbo.ConvertStringToDate(Husband_Wife_Date)) order by Months asc, Amount desc</query>
   </queries>
 
   <messages>

@@ -56,9 +56,9 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAnalysis = new System.Windows.Forms.Button();
             this.lblHusbandWifeUser = new System.Windows.Forms.Label();
-            this.husband_WifeDataSet = new ExpensesTracker.Husband_WifeDataSet();
+            this.husband_WifeDataset = new ExpensesTracker.DataSet.Husband_WifeDataset();
             this.hUSBANDWIFEPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hUSBANDWIFEPROCEDURETableAdapter = new ExpensesTracker.Husband_WifeDataSetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter();
+            this.hUSBANDWIFEPROCEDURETableAdapter = new ExpensesTracker.DataSet.Husband_WifeDatasetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter();
             this.Sno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +71,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.husband_WifeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.husband_WifeDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hUSBANDWIFEPROCEDUREBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -383,15 +383,15 @@
             this.lblHusbandWifeUser.TabIndex = 10;
             this.lblHusbandWifeUser.Text = "label8";
             // 
-            // husband_WifeDataSet
+            // husband_WifeDataset
             // 
-            this.husband_WifeDataSet.DataSetName = "Husband_WifeDataSet";
-            this.husband_WifeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.husband_WifeDataset.DataSetName = "Husband_WifeDataset";
+            this.husband_WifeDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hUSBANDWIFEPROCEDUREBindingSource
             // 
             this.hUSBANDWIFEPROCEDUREBindingSource.DataMember = "HUSBANDWIFEPROCEDURE";
-            this.hUSBANDWIFEPROCEDUREBindingSource.DataSource = this.husband_WifeDataSet;
+            this.hUSBANDWIFEPROCEDUREBindingSource.DataSource = this.husband_WifeDataset;
             // 
             // hUSBANDWIFEPROCEDURETableAdapter
             // 
@@ -440,8 +440,6 @@
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.HeaderText = "Category";
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.Name = "eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn";
-            this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.eXPENSESCATEGORYNAMEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // HusbandWife
             // 
@@ -470,7 +468,7 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.husband_WifeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.husband_WifeDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hUSBANDWIFEPROCEDUREBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -511,9 +509,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnAnalysis;
         private System.Windows.Forms.Label lblHusbandWifeUser;
-        private Husband_WifeDataSet husband_WifeDataSet;
+        private DataSet.Husband_WifeDataset husband_WifeDataset;
         private System.Windows.Forms.BindingSource hUSBANDWIFEPROCEDUREBindingSource;
-        private Husband_WifeDataSetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter hUSBANDWIFEPROCEDURETableAdapter;
+        private DataSet.Husband_WifeDatasetTableAdapters.HUSBANDWIFEPROCEDURETableAdapter hUSBANDWIFEPROCEDURETableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hUSBANDWIFETYPEVALUEDataGridViewTextBoxColumn;

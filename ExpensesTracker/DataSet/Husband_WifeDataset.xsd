@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Husband_WifeDataSet" targetNamespace="http://tempuri.org/Husband_WifeDataSet.xsd" xmlns:mstns="http://tempuri.org/Husband_WifeDataSet.xsd" xmlns="http://tempuri.org/Husband_WifeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="Husband_WifeDataset" targetNamespace="http://tempuri.org/Husband_WifeDataset.xsd" xmlns:mstns="http://tempuri.org/Husband_WifeDataset.xsd" xmlns="http://tempuri.org/Husband_WifeDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HUSBANDWIFEPROCEDURETableAdapter" GeneratorDataComponentClassName="HUSBANDWIFEPROCEDURETableAdapter" Name="HUSBANDWIFEPROCEDURE" UserDataComponentName="HUSBANDWIFEPROCEDURETableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Expenses_TrackerConnectionString (Settings)" DbObjectName="Expenses_Tracker.dbo.HUSBANDWIFEPROCEDURE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Expenses_TrackerConnectionString (Settings)" DbObjectName="Expenses_Tracker.dbo.HUSBANDWIFEPROCEDURE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.HUSBANDWIFEPROCEDURE</CommandText>
@@ -35,13 +35,13 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Husband_WifeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Husband_WifeDataSet" msprop:Generator_UserDSName="Husband_WifeDataSet">
+  <xs:element name="Husband_WifeDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Husband_WifeDataset" msprop:Generator_UserDSName="Husband_WifeDataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="HUSBANDWIFEPROCEDURE" msprop:Generator_TableClassName="HUSBANDWIFEPROCEDUREDataTable" msprop:Generator_TableVarName="tableHUSBANDWIFEPROCEDURE" msprop:Generator_TablePropName="HUSBANDWIFEPROCEDURE" msprop:Generator_RowDeletingName="HUSBANDWIFEPROCEDURERowDeleting" msprop:Generator_RowChangingName="HUSBANDWIFEPROCEDURERowChanging" msprop:Generator_RowEvHandlerName="HUSBANDWIFEPROCEDURERowChangeEventHandler" msprop:Generator_RowDeletedName="HUSBANDWIFEPROCEDURERowDeleted" msprop:Generator_UserTableName="HUSBANDWIFEPROCEDURE" msprop:Generator_RowChangedName="HUSBANDWIFEPROCEDURERowChanged" msprop:Generator_RowEvArgName="HUSBANDWIFEPROCEDURERowChangeEvent" msprop:Generator_RowClassName="HUSBANDWIFEPROCEDURERow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="HUSBAND_WIFE_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_ID" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_ID" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_IDColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_ID" type="xs:int" />
+              <xs:element name="HUSBAND_WIFE_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_ID" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_ID" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_IDColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_ID" type="xs:int" />
               <xs:element name="HUSBAND_WIFE_TYPE_VALUE" msprop:Generator_ColumnVarNameInTable="columnHUSBAND_WIFE_TYPE_VALUE" msprop:Generator_ColumnPropNameInRow="HUSBAND_WIFE_TYPE_VALUE" msprop:Generator_ColumnPropNameInTable="HUSBAND_WIFE_TYPE_VALUEColumn" msprop:Generator_UserColumnName="HUSBAND_WIFE_TYPE_VALUE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

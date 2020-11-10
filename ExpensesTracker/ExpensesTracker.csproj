@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,20 +70,15 @@
     <Compile Include="BusinessObject\Constant.cs" />
     <Compile Include="BusinessObject\GlobalFunction.cs" />
     <Compile Include="BusinessObject\TableEnum.cs" />
+    <Compile Include="DataSet\Husband_WifeDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ExpensesEntity.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ExpensesEntity.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Expenses_TrackerDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Expenses_TrackerDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Husband_WifeDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Husband_WifeDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -103,6 +99,12 @@
     <Compile Include="Project\HusbandWife\HusbandWife.Designer.cs">
       <DependentUpon>HusbandWife.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\HusbandWife\HusbandWifeAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\HusbandWife\HusbandWifeAnalysis.Designer.cs">
+      <DependentUpon>HusbandWifeAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -110,6 +112,17 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <None Include="DataSet\Husband_WifeDataset.xsc">
+      <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Husband_WifeDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Husband_WifeDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Husband_WifeDataset.xss">
+      <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
+    </None>
     <None Include="ExpensesEntity.dbml.layout">
       <DependentUpon>ExpensesEntity.dbml</DependentUpon>
     </None>
@@ -121,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\HusbandWife\HusbandWife.resx">
       <DependentUpon>HusbandWife.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\HusbandWife\HusbandWifeAnalysis.resx">
+      <DependentUpon>HusbandWifeAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,28 +155,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>ExpensesEntity.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Expenses_TrackerDataSet.xsc">
-      <DependentUpon>Expenses_TrackerDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Expenses_TrackerDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Expenses_TrackerDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Expenses_TrackerDataSet.xss">
-      <DependentUpon>Expenses_TrackerDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Husband_WifeDataSet.xsc">
-      <DependentUpon>Husband_WifeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Husband_WifeDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Husband_WifeDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Husband_WifeDataSet.xss">
-      <DependentUpon>Husband_WifeDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

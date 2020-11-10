@@ -72,7 +72,7 @@
     <None Include="ExpensesTrackerDB.sqlproj.user" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script\CodeId.PostDeployment1.sql" />
+    <PostDeploy Include="Script\CodeId.sql" />
     <None Include="Script\CodeValue.sql" />
   </ItemGroup>
 </Project>
