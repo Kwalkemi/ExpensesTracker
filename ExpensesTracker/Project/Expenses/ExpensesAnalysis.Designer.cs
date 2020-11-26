@@ -1,6 +1,6 @@
-﻿namespace ExpensesTracker.Project.HusbandWife
+﻿namespace ExpensesTracker.Project.Expenses
 {
-    partial class HusbandWifeAnalysis
+    partial class ExpensesAnalysis
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,9 @@
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.cmbChartType = new System.Windows.Forms.ComboBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblTotalSpend = new System.Windows.Forms.Label();
+            this.lblTotalSpendResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +114,7 @@
             this.cmbChartType.Name = "cmbChartType";
             this.cmbChartType.Size = new System.Drawing.Size(159, 24);
             this.cmbChartType.TabIndex = 5;
-            this.cmbChartType.SelectedIndexChanged += new System.EventHandler(this.cmbChartType_SelectedIndexChanged_1);
+            this.cmbChartType.SelectedIndexChanged += new System.EventHandler(this.cmbChartType_SelectedIndexChanged);
             // 
             // cmbMonth
             // 
@@ -120,14 +123,48 @@
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(159, 24);
             this.cmbMonth.TabIndex = 6;
-            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged_1);
+            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
             // 
-            // HusbandWifeAnalysis
+            // listView1
+            // 
+            this.listView1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(1010, 106);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(213, 404);
+            this.listView1.TabIndex = 7;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
+            // lblTotalSpend
+            // 
+            this.lblTotalSpend.AutoSize = true;
+            this.lblTotalSpend.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalSpend.Location = new System.Drawing.Point(985, 33);
+            this.lblTotalSpend.Name = "lblTotalSpend";
+            this.lblTotalSpend.Size = new System.Drawing.Size(133, 27);
+            this.lblTotalSpend.TabIndex = 8;
+            this.lblTotalSpend.Text = "Total Spend: ";
+            // 
+            // lblTotalSpendResult
+            // 
+            this.lblTotalSpendResult.AutoSize = true;
+            this.lblTotalSpendResult.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalSpendResult.Location = new System.Drawing.Point(1124, 33);
+            this.lblTotalSpendResult.Name = "lblTotalSpendResult";
+            this.lblTotalSpendResult.Size = new System.Drawing.Size(80, 27);
+            this.lblTotalSpendResult.TabIndex = 9;
+            this.lblTotalSpendResult.Text = "Result: ";
+            // 
+            // ExpensesAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(977, 549);
+            this.ClientSize = new System.Drawing.Size(1271, 549);
+            this.Controls.Add(this.lblTotalSpendResult);
+            this.Controls.Add(this.lblTotalSpend);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.cmbChartType);
             this.Controls.Add(this.cmbYear);
@@ -135,9 +172,9 @@
             this.Controls.Add(this.lblChartType);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.chart1);
-            this.Name = "HusbandWifeAnalysis";
-            this.Text = "Husband Wife Analysis";
-            this.Load += new System.EventHandler(this.HusbandWifeAnalysis_Load);
+            this.Name = "ExpensesAnalysis";
+            this.Text = "Expenses Analysis";
+            this.Load += new System.EventHandler(this.ExpensesAnalysis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,5 +190,8 @@
         private System.Windows.Forms.ComboBox cmbYear;
         private System.Windows.Forms.ComboBox cmbChartType;
         private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblTotalSpend;
+        private System.Windows.Forms.Label lblTotalSpendResult;
     }
 }

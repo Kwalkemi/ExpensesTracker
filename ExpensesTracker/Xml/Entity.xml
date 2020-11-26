@@ -6,15 +6,28 @@
     <query Id="GetUserInfoById">Select * from login_info where LOGIN_INFO_ID = {0}</query>
     <query Id="UpdateRememberMeCodeValue">Update CODE_VALUE SET DATA1 = '{0}' WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
     <query Id="GetUpdateRememberCodeValue">SELECT * FROM CODE_VALUE WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
-    <query Id="LoadHusbandWifeCategory">Select Expenses_Category_Name from Expenses_Category where Expenses_Category_Table_Value = 'HUWF'</query>
-    <query Id="GetExpensesCategoryIdByName">Select Expenses_Category_Id from Expenses_Category where Expenses_Category_Table_Value = 'HUWF' and Expenses_Category_Name = '{0}'</query>
+    <query Id="LoadCategory">Select Expenses_Category_Name from Expenses_Category where Expenses_Category_Table_Value = '{0}'</query>
+    <query Id="GetExpensesCategoryIdByName">Select Top 1 Expenses_Category_Id from Expenses_Category where Expenses_Category_Table_Value = '{0}' and Expenses_Category_Name = '{1}'</query>
     <query Id="DeleteExpensesCategory">Delete Expenses_Category where Expenses_Category_Id = {0}</query>
-    <query Id="LoadHusbandWifeChart">Select A.EXPENSES_CATEGORY_ID,B.Expenses_Category_Name, Sum(Husband_Wife_Amt) Amount, MONTH(dbo.ConvertStringToDate(Husband_Wife_Date)) Months from dbo.Husband_Wife A
+    <query Id="LoadHusbandWifeChart">Select A.EXPENSES_CATEGORY_ID,B.Expenses_Category_Name, Sum(Husband_Wife_Amt) Amount, MONTH(Husband_Wife_Date) Months from dbo.Husband_Wife A
                     Inner Join Expenses_Category B
                     On A.EXPENSES_CATEGORY_ID = B.Expenses_Category_Id
-                        where Husband_Wife_Type = 'WIFE' and A.EXPENSES_CATEGORY_ID is not null And
-                    dbo.ConvertStringToDate(Husband_Wife_Date) between dbo.ConvertStringToDate('{0}') and dbo.ConvertStringToDate('{1}')
-                        group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(dbo.ConvertStringToDate(Husband_Wife_Date)) order by Months asc, Amount desc</query>
+                        where HUSBAND_WIFE_TYPE_VALUE = 'WIFE' and A.EXPENSES_CATEGORY_ID is not null And
+                    Husband_Wife_Date between '{0}' and '{1}'
+                        group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(Husband_Wife_Date) order by Months asc, Amount desc</query>
+    <query Id="LogoffQuery">Update CODE_VALUE SET DATA1 = null WHERE CODE_ID = 1 AND CODE_VALUE = 'USER'</query>
+    <query Id="LoadExpensesChart">Select A.EXPENSES_CATEGORY_ID,B.Expenses_Category_Name, Sum(EXPENSES_AMT) Amount, MONTH(EXPENSES_DATE) Months from dbo.EXPENSES_TRACKER A
+                    Inner Join Expenses_Category B
+                    On A.EXPENSES_CATEGORY_ID = B.Expenses_Category_Id
+                        where Expenses_Type_Value = 'OUTG' and A.EXPENSES_CATEGORY_ID is not null And
+                    EXPENSES_DATE between '{0}' and '{1}'
+                        group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(EXPENSES_DATE) order by Months asc, Amount desc</query>
+    <query Id="LoadExpensesChartList">Select A.EXPENSES_CATEGORY_ID,B.Expenses_Category_Name, Sum(EXPENSES_AMT) Amount, MONTH(EXPENSES_DATE) Months from dbo.EXPENSES_TRACKER A
+                    Inner Join Expenses_Category B
+                    On A.EXPENSES_CATEGORY_ID = B.Expenses_Category_Id
+                        where Expenses_Type_Value = 'OUTG' and A.EXPENSES_CATEGORY_ID is not null And
+                    EXPENSES_DATE between '{0}' and '{1}'
+                        group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(EXPENSES_DATE) order by Months asc, Amount desc</query>
   </queries>
 
   <messages>
@@ -28,7 +41,9 @@
     <message Id="Error_8">Enter the gender.</message>
     <message Id="Error_9">User Id must be XXXX@XXX.com</message>
     <message Id="Error_10">Please Enter Number</message>
-    <message Id="Error_11">Please Enter the Amount</message>
+    <message Id="Error_11">Please enter the amount</message>
+    <message Id="Error_12">Please enter the expenses Item</message>
+    <message Id="Error_13">Please enter the expenses type</message>
     <message Id="RegSuc">Registration Successfully</message>
     <message Id="HusbandGive">Husband will give {0} Rs to Wife.</message>
     <message Id="WifeExtra">Wife have {0} extra Rs</message>

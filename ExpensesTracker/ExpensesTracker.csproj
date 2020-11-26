@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Visual Studio Tools\Expenses Tracker\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,6 +47,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4291C297115BA2DE1B4A1BF876F202B206D89CEB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ExpensesTracker_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,6 +83,11 @@
     <Compile Include="BusinessObject\Constant.cs" />
     <Compile Include="BusinessObject\GlobalFunction.cs" />
     <Compile Include="BusinessObject\TableEnum.cs" />
+    <Compile Include="DataSet\Expenses_TrackerDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Expenses_TrackerDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\Husband_WifeDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +111,18 @@
     <Compile Include="Project\ExpensesMain.Designer.cs">
       <DependentUpon>ExpensesMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Expenses\Expenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Expenses\Expenses.Designer.cs">
+      <DependentUpon>Expenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Expenses\ExpensesAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Expenses\ExpensesAnalysis.Designer.cs">
+      <DependentUpon>ExpensesAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project\HusbandWife\HusbandWife.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +142,17 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <None Include="DataSet\Expenses_TrackerDataset.xsc">
+      <DependentUpon>Expenses_TrackerDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Expenses_TrackerDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Expenses_TrackerDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Expenses_TrackerDataset.xss">
+      <DependentUpon>Expenses_TrackerDataset.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\Husband_WifeDataset.xsc">
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
     </None>
@@ -131,6 +172,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\ExpensesMain.resx">
       <DependentUpon>ExpensesMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Expenses\Expenses.resx">
+      <DependentUpon>Expenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Expenses\ExpensesAnalysis.resx">
+      <DependentUpon>ExpensesAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project\HusbandWife\HusbandWife.resx">
       <DependentUpon>HusbandWife.cs</DependentUpon>
@@ -156,6 +203,7 @@
       <LastGenOutput>ExpensesEntity.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="ExpensesTracker_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

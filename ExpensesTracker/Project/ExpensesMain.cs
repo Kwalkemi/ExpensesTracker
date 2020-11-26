@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserLibrary;
 
 namespace ExpensesTracker.Project
 {
@@ -62,12 +63,28 @@ namespace ExpensesTracker.Project
 
         private void btnExpensesTracker_Click(object sender, EventArgs e)
         {
-            Application.Run(new Login());
+            this.Hide();
+            Expenses.Expenses expenses = new Expenses.Expenses();
+            expenses.Show();
         }
 
         private void btnShareTracker_Click(object sender, EventArgs e)
         {
             Application.Run(new Login());
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Login form1 = new Login();
+            form1.Show();
+            string str = GlobalFunction.GetQueryById(Constant.Query.LOG_OFF_QUERY);
+            DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
         }
     }
 }

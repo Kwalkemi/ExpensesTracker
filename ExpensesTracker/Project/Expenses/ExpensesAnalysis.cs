@@ -10,67 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserLibrary;
 
-namespace ExpensesTracker.Project.HusbandWife
+namespace ExpensesTracker.Project.Expenses
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public partial class HusbandWifeAnalysis : Form
+    public partial class ExpensesAnalysis : Form
     {
-        #region Constructor
-        /// <summary>
-        /// 
-        /// </summary>
-        public HusbandWifeAnalysis()
+        public ExpensesAnalysis()
         {
             InitializeComponent();
         }
-        #endregion
 
-        #region Properties
-        string parameter1 { get; set; }
-        string parameter2 { get; set; }
-        #endregion
+        DateTime parameter1 { get; set; }
+        DateTime parameter2 { get; set; }
 
-        #region Events Method
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void HusbandWifeAnalysis_Load(object sender, EventArgs e)
-        {
-            LoadForm();
-        }
+        
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmbMonth_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            int month = Convert.ToInt32(cmbMonth.SelectedItem.GetType().GetProperty("Value").GetValue(cmbMonth.SelectedItem, null));
-            LoadParameter(Convert.ToInt32(cmbYear.SelectedItem), month);
-            LoadChart();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmbChartType_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            LoadCombobox();
-        }
-        #endregion
-
-        #region Private Method
-
-        /// <summary>
-        /// 
-        /// </summary>
         private void LoadForm()
         {
             cmbChartType.SelectedItem = "Monthly";
@@ -78,20 +31,43 @@ namespace ExpensesTracker.Project.HusbandWife
             LoadCombobox();
 
             LoadParameter(DateTime.Today.Year, DateTime.Today.Month);
+            // TODO: This line of code loads data into the 'bharatDataSet1.Husband_Wife' table. You can move, or remove it, as needed.
             LoadChart();
+            LoadList();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private void LoadChart()
+        private void cmbChartType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadCombobox();
+        }
+
+        private void LoadList()
+        {
+            DataTable ldtbTable = new DataTable();
+            listView1.Clear();
+            int Total = 0;
+            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_EXPENSES_CHART_LIST);
+            query = string.Format(query, parameter1, parameter2);
+
+            ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
+            string lstrItem = string.Empty;
+            foreach (DataRow dr in ldtbTable.Rows)
+            {
+                Total = Total + Convert.ToInt32(dr["Amount"]);
+                lstrItem = Convert.ToString(dr["Expenses_Category_Name"]) + " - " + Convert.ToString(dr["Amount"]);
+                listView1.Items.Add(lstrItem);
+            }
+            lblTotalSpendResult.Text = Total > 0 ? Convert.ToString(Total) : "0";
+        }
+
+        public void LoadChart()
         {
             DataTable ldtbTable = new DataTable();
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisY.Minimum = 0;
             chart1.ChartAreas[0].Name = "Expenses";
 
-            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_HUSBAND_WIFE_CHART);
+            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_EXPENSES_CHART);
             query = string.Format(query, parameter1, parameter2);
             ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
 
@@ -174,9 +150,8 @@ namespace ExpensesTracker.Project.HusbandWife
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+
+
         private void LoadCombobox()
         {
             cmbMonth.DisplayMember = "Text";
@@ -192,40 +167,46 @@ namespace ExpensesTracker.Project.HusbandWife
             }
             else if (Convert.ToString(cmbChartType.SelectedItem) == "Monthly")
             {
-                cmbMonth.Items.Add(new { Text = "January", Value = 1 });
-                cmbMonth.Items.Add(new { Text = "Febuary", Value = 2 });
-                cmbMonth.Items.Add(new { Text = "March", Value = 3 });
-                cmbMonth.Items.Add(new { Text = "April", Value = 4 });
-                cmbMonth.Items.Add(new { Text = "May", Value = 5 });
-                cmbMonth.Items.Add(new { Text = "June", Value = 6 });
-                cmbMonth.Items.Add(new { Text = "July", Value = 7 });
-                cmbMonth.Items.Add(new { Text = "August", Value = 8 });
-                cmbMonth.Items.Add(new { Text = "September", Value = 9 });
-                cmbMonth.Items.Add(new { Text = "October", Value = 10 });
-                cmbMonth.Items.Add(new { Text = "November", Value = 11 });
-                cmbMonth.Items.Add(new { Text = "December", Value = 12 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.January.ToString(), Value = 1 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.February.ToString(), Value = 2 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.March.ToString(), Value = 3 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.April.ToString(), Value = 4 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.May.ToString(), Value = 5 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.June.ToString(), Value = 6 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.July.ToString(), Value = 7 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.August.ToString(), Value = 8 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.September.ToString(), Value = 9 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.October.ToString(), Value = 10 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.November.ToString(), Value = 11 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.December.ToString(), Value = 12 });
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aintYear"></param>
-        /// <param name="aintMonth"></param>
-        private void LoadParameter(int aintYear, int aintMonth)
+        public void LoadParameter(int aintYear, int aintMonth)
         {
             if (Convert.ToString(cmbChartType.SelectedItem) == "Monthly")
             {
-                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, aintMonth).ToString("yyyy-MM-dd");
-                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, aintMonth).ToString("yyyy-MM-dd");
+                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, aintMonth);
+                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, aintMonth);
             }
             else if (Convert.ToString(cmbChartType.SelectedItem) == "Quarterly")
             {
-                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, (3 * aintMonth) + 1).ToString("yyyy-MM-dd");
-                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, (3 * aintMonth) + 3).ToString("yyyy-MM-dd");
+                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, (3 * aintMonth) + 1);
+                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, (3 * aintMonth) + 3);
             }
         }
 
-        #endregion
+        private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int month = Convert.ToInt32(cmbMonth.SelectedItem.GetType().GetProperty("Value").GetValue(cmbMonth.SelectedItem, null));
+            LoadParameter(Convert.ToInt32(cmbYear.SelectedItem), month);
+            LoadChart();
+            LoadList();
+        }
+
+        private void ExpensesAnalysis_Load(object sender, EventArgs e)
+        {
+            LoadChart();
+        }
     }
 }

@@ -106,7 +106,8 @@ namespace ExpensesTracker.Project.HusbandWife
         /// </summary>
         private void LoadCategory()
         {
-            string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.LOAD_HUSBAND_WIFE_CATEGORY);
+            string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.LOAD_CATEGORY);
+            lstrQuery = string.Format(lstrQuery, Constant.Table_Category_Value.HUSBAND_WIFE_CATEGORY);
             DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
             foreach (DataRow dr in ldtbTable.Rows)
                 cmbcategory.Items.Add(Convert.ToString(dr[TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_NAME.ToString()]));
@@ -172,7 +173,7 @@ namespace ExpensesTracker.Project.HusbandWife
             else
             {
                 string categoryId = GlobalFunction.GetQueryById(Constant.Query.GET_EXPENSES_CATEGORY_ID_BY_NAME);
-                categoryId = string.Format(categoryId, cmbcategory.SelectedItem.ToString());
+                categoryId = string.Format(categoryId, Constant.Table_Category_Value.HUSBAND_WIFE_CATEGORY, cmbcategory.SelectedItem.ToString());
                 string lstrId = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, categoryId);
                 AddAmount(Constant.Husband_Wife.Record_Type.WIFE, txtwifespend.Text, dateTimePickerwife.Text, lstrId);
                 this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
@@ -250,7 +251,7 @@ namespace ExpensesTracker.Project.HusbandWife
             {
                 DBFunction lDBFunction = new DBFunction();
                 string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_EXPENSES_CATEGORY_ID_BY_NAME);
-                lstrQuery = string.Format(lstrQuery, cmbcategory.SelectedItem.ToString());
+                lstrQuery = string.Format(lstrQuery, Constant.Table_Category_Value.HUSBAND_WIFE_CATEGORY, cmbcategory.SelectedItem.ToString());
                 string Id = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
                 UpdateAmount(iintUpdateId, txtwifespend.Text, dateTimePickerwife.Text, Convert.ToInt32(Id));
                 this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
@@ -309,7 +310,7 @@ namespace ExpensesTracker.Project.HusbandWife
             Dictionary<string, string> ldict = new Dictionary<string, string>();
             ldict.Add(TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_TABLE_ID.ToString(), Constant.Common.CodeId.CODE_ID_3);
             ldict.Add(TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_TABLE_VALUE.ToString(), Constant.Table_Category_Value.HUSBAND_WIFE_CATEGORY);
-            string promptValue = GlobalFunction.ShowAddCategoryDialog("Category Add Box");
+            string promptValue = GlobalFunction.ShowAddCategoryDialog(Constant.Common.CATEGORY_ADD_BOX);
             if (promptValue != string.Empty)
             {
                 ldict.Add(TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_NAME.ToString(), promptValue);
@@ -328,13 +329,14 @@ namespace ExpensesTracker.Project.HusbandWife
             List<string> lstItem = new List<string>();
             foreach (string item in cmbcategory.Items)
                 lstItem.Add(item);
-            string promptValue = GlobalFunction.ShowRemoveCategoryDialog("Category Remove Box", lstItem);
+            string promptValue = GlobalFunction.ShowRemoveCategoryDialog(Constant.Common.CATEGORY_REMOVE_BOX, lstItem);
             if (promptValue != string.Empty)
             {
                 string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_EXPENSES_CATEGORY_ID_BY_NAME);
-                string.Format(lstrQuery, promptValue);
+                string.Format(lstrQuery, Constant.Table_Category_Value.HUSBAND_WIFE_CATEGORY, promptValue);
                 string Id = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
                 lstrQuery = GlobalFunction.GetQueryById(Constant.Query.DELETE_EXPENSES_CATEGORY);
+                lstrQuery = string.Format(lstrQuery, Id);
                 DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, lstrQuery);
             }
         }
@@ -363,5 +365,21 @@ namespace ExpensesTracker.Project.HusbandWife
         }
 
         #endregion
+
+        private void lnkHusWifeBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            ExpensesMain expenses = new ExpensesMain();
+            expenses.Show();
+        }
+
+        private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+            string str = GlobalFunction.GetQueryById(Constant.Query.LOG_OFF_QUERY);
+            DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
+        }
     }
 }

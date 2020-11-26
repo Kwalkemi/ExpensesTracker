@@ -39,6 +39,7 @@
             this.groupBoxShare = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnShareTracker = new System.Windows.Forms.Button();
+            this.lnkLogout = new System.Windows.Forms.LinkLabel();
             this.groupBoxHusbWife.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).BeginInit();
             this.groupBoxExpenses.SuspendLayout();
@@ -176,12 +177,25 @@
             this.btnShareTracker.MouseLeave += new System.EventHandler(this.btnShareTracker_MouseLeave);
             this.btnShareTracker.MouseHover += new System.EventHandler(this.btnShareTracker_MouseHover);
             // 
+            // lnkLogout
+            // 
+            this.lnkLogout.AutoSize = true;
+            this.lnkLogout.LinkColor = System.Drawing.Color.Blue;
+            this.lnkLogout.Location = new System.Drawing.Point(15, 9);
+            this.lnkLogout.Name = "lnkLogout";
+            this.lnkLogout.Size = new System.Drawing.Size(52, 17);
+            this.lnkLogout.TabIndex = 65;
+            this.lnkLogout.TabStop = true;
+            this.lnkLogout.Text = "Logout";
+            this.lnkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout_LinkClicked);
+            // 
             // ExpensesMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(926, 497);
+            this.Controls.Add(this.lnkLogout);
             this.Controls.Add(this.groupBoxShare);
             this.Controls.Add(this.groupBoxExpenses);
             this.Controls.Add(this.groupBoxHusbWife);
@@ -213,5 +227,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnShareTracker;
+        private System.Windows.Forms.LinkLabel lnkLogout;
     }
 }

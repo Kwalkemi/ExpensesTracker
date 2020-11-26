@@ -12,7 +12,9 @@ namespace ExpensesTracker.BusinessObject
         {
             LOGIN_INFO,
             CODE_VALUE,
-            HUSBAND_WIFE
+            HUSBAND_WIFE,
+            EXPENSES_CATEGORY,
+            EXPENSES_TRACKER
         }
 
         public enum enmLogin_Info
@@ -51,6 +53,18 @@ namespace ExpensesTracker.BusinessObject
             EXPENSES_CATEGORY_NAME,
             EXPENSES_CATEGORY_TABLE_ID,
             EXPENSES_CATEGORY_TABLE_VALUE
+        }
+
+        public enum enmExpenses_Tracker
+        {
+            EXPENSES_TRACKER_ID,
+            EXPENSES_ITEM,
+            EXPENSES_DATE,
+            EXPENSES_AMT,
+            EXPENSES_CATEGORY_ID,
+            EXPENSES_TYPE_ID,
+            EXPENSES_TYPE_VALUE,
+            LOGIN_ID
         }
 
         public enum Month
