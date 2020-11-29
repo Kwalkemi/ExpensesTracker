@@ -70,7 +70,9 @@ namespace ExpensesTracker.Project
 
         private void btnShareTracker_Click(object sender, EventArgs e)
         {
-            Application.Run(new Login());
+            this.Hide();
+            Share.Share share = new Share.Share();
+            share.Show();
         }
 
         /// <summary>

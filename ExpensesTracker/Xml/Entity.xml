@@ -28,6 +28,7 @@
                         where Expenses_Type_Value = 'OUTG' and A.EXPENSES_CATEGORY_ID is not null And
                     EXPENSES_DATE between '{0}' and '{1}'
                         group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(EXPENSES_DATE) order by Months asc, Amount desc</query>
+    <query Id="UpdateShareHeader">Update SHARES_TRACKER_HEADER Set SHARES_NAME = '{0}' where SHARES_TRACKER_HEADER_ID = {1}</query>
   </queries>
 
   <messages>
@@ -44,6 +45,7 @@
     <message Id="Error_11">Please enter the amount</message>
     <message Id="Error_12">Please enter the expenses Item</message>
     <message Id="Error_13">Please enter the expenses type</message>
+    <message Id="Error_14">Please select the record</message>
     <message Id="RegSuc">Registration Successfully</message>
     <message Id="HusbandGive">Husband will give {0} Rs to Wife.</message>
     <message Id="WifeExtra">Wife have {0} extra Rs</message>

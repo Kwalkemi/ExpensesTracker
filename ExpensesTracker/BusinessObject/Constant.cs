@@ -30,6 +30,14 @@ namespace ExpensesTracker.BusinessObject
                 public const string CODE_ID_2 = "2";
                 public const string CODE_ID_3 = "3";
                 public const string CODE_ID_4 = "4";
+                public const string CODE_ID_5 = "5";
+                public const string CODE_ID_6 = "6";
+            }
+
+            public abstract class Bit_Value
+            {
+                public const string BIT_0 = "0";
+                public const string BIT_1 = "1";
             }
         }
 
@@ -52,6 +60,7 @@ namespace ExpensesTracker.BusinessObject
             public const string LOG_OFF_QUERY = "LogoffQuery";
             public const string LOAD_EXPENSES_CHART = "LoadExpensesChart";
             public const string LOAD_EXPENSES_CHART_LIST = "LoadExpensesChartList";
+            public const string UPDATE_SHARE_HEADER = "UpdateShareHeader";
         }
 
         public abstract class Error
@@ -69,6 +78,7 @@ namespace ExpensesTracker.BusinessObject
             public const string ERROR_11 = "Error_11";
             public const string ERROR_12 = "Error_12";
             public const string ERROR_13 = "Error_13";
+            public const string ERROR_14 = "Error_14";
         }
 
         public abstract class Message
@@ -100,6 +110,27 @@ namespace ExpensesTracker.BusinessObject
             {
                 public const string INCOMING = "Incoming";
                 public const string OUTGOING = "Outgoing";
+            }
+        }
+
+        public abstract class Shares_Tracker
+        {
+            public abstract class Shares_Type
+            {
+                public const string DELIVERY = "DELV";
+                public const string OPTION = "OPTN";
+            }
+
+            public abstract class Profit_Loss
+            {
+                public const string PROFIT = "PROFIT";
+                public const string LOSS = "LOSS";
+            }
+
+            public abstract class Buy_Sell
+            {
+                public const string BUY = "BUY";
+                public const string SELL = "SELL";
             }
         }
     }

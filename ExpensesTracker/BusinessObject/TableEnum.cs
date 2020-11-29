@@ -14,7 +14,10 @@ namespace ExpensesTracker.BusinessObject
             CODE_VALUE,
             HUSBAND_WIFE,
             EXPENSES_CATEGORY,
-            EXPENSES_TRACKER
+            EXPENSES_TRACKER,
+            SHARES_TRACKER_HEADER,
+            SHARES_TRACKER_BUY,
+            SHARES_TRACKER_SELL
         }
 
         public enum enmLogin_Info
@@ -65,6 +68,36 @@ namespace ExpensesTracker.BusinessObject
             EXPENSES_TYPE_ID,
             EXPENSES_TYPE_VALUE,
             LOGIN_ID
+        }
+
+        public enum enmSharesTrackerHeader
+        {
+            SHARES_TRACKER_HEADER_ID,
+            SHARES_NAME,
+            SHARE_TYPE_CODE_ID,
+            SHARE_TYPE_CODE_VALUE,
+            USER_ID,
+            IS_INTRADAY
+        }
+
+        public enum enmSharesTrackerBuy
+        {
+            SHARES_TRACKER_BUY_ID,
+            SHARES_TRACKER_HEADER_ID,
+            SHARES_PRICE_AMT,
+            SHARES_QUANTITY,
+            SHARES_BUY_DATE,
+            SHARES_CHARGES_AMT
+        }
+
+        public enum enmSharesTrackerSell
+        {
+            SHARES_TRACKER_SELL_ID,
+            SHARES_TRACKER_HEADER_ID,
+            SHARES_PRICE_AMT,
+            SHARES_QUANTITY,
+            SHARES_SELL_DATE,
+            SHARES_CHARGES_AMT
         }
 
         public enum Month

@@ -93,6 +93,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\Shares_TrackerDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shares_TrackerDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ExpensesEntity.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +140,18 @@
     <Compile Include="Project\HusbandWife\HusbandWifeAnalysis.Designer.cs">
       <DependentUpon>HusbandWifeAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Share\Share.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Share\Share.Designer.cs">
+      <DependentUpon>Share.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Share\ShareDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Share\ShareDetail.Designer.cs">
+      <DependentUpon>ShareDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -164,6 +181,17 @@
     <None Include="DataSet\Husband_WifeDataset.xss">
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
     </None>
+    <None Include="DataSet\Shares_TrackerDataset.xsc">
+      <DependentUpon>Shares_TrackerDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Shares_TrackerDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Shares_TrackerDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Shares_TrackerDataset.xss">
+      <DependentUpon>Shares_TrackerDataset.xsd</DependentUpon>
+    </None>
     <None Include="ExpensesEntity.dbml.layout">
       <DependentUpon>ExpensesEntity.dbml</DependentUpon>
     </None>
@@ -184,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\HusbandWife\HusbandWifeAnalysis.resx">
       <DependentUpon>HusbandWifeAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Share\Share.resx">
+      <DependentUpon>Share.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Share\ShareDetail.resx">
+      <DependentUpon>ShareDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

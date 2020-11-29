@@ -249,7 +249,6 @@ namespace ExpensesTracker.Project.HusbandWife
             }
             else
             {
-                DBFunction lDBFunction = new DBFunction();
                 string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_EXPENSES_CATEGORY_ID_BY_NAME);
                 lstrQuery = string.Format(lstrQuery, Constant.Table_Category_Value.HUSBAND_WIFE_CATEGORY, cmbcategory.SelectedItem.ToString());
                 string Id = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
@@ -364,8 +363,11 @@ namespace ExpensesTracker.Project.HusbandWife
             form.ShowDialog();
         }
 
-        #endregion
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lnkHusWifeBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
@@ -373,6 +375,11 @@ namespace ExpensesTracker.Project.HusbandWife
             expenses.Show();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
@@ -381,5 +388,9 @@ namespace ExpensesTracker.Project.HusbandWife
             string str = GlobalFunction.GetQueryById(Constant.Query.LOG_OFF_QUERY);
             DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
         }
+
+        #endregion
+
+
     }
 }
