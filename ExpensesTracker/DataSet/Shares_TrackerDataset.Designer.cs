@@ -36,6 +36,10 @@ namespace ExpensesTracker.DataSet {
         
         private SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING;
         
+        private SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES;
+        
+        private CURRENT_SHARE_PROCEDUREDataTable tableCURRENT_SHARE_PROCEDURE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -81,6 +85,12 @@ namespace ExpensesTracker.DataSet {
                 }
                 if ((ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING"] != null)) {
                     base.Tables.Add(new SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable(ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING"]));
+                }
+                if ((ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES"] != null)) {
+                    base.Tables.Add(new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable(ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES"]));
+                }
+                if ((ds.Tables["CURRENT_SHARE_PROCEDURE"] != null)) {
+                    base.Tables.Add(new CURRENT_SHARE_PROCEDUREDataTable(ds.Tables["CURRENT_SHARE_PROCEDURE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -157,6 +167,26 @@ namespace ExpensesTracker.DataSet {
         public SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING {
             get {
                 return this.tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES {
+            get {
+                return this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CURRENT_SHARE_PROCEDUREDataTable CURRENT_SHARE_PROCEDURE {
+            get {
+                return this.tableCURRENT_SHARE_PROCEDURE;
             }
         }
         
@@ -245,6 +275,12 @@ namespace ExpensesTracker.DataSet {
                 if ((ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING"] != null)) {
                     base.Tables.Add(new SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable(ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING"]));
                 }
+                if ((ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES"] != null)) {
+                    base.Tables.Add(new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable(ds.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES"]));
+                }
+                if ((ds.Tables["CURRENT_SHARE_PROCEDURE"] != null)) {
+                    base.Tables.Add(new CURRENT_SHARE_PROCEDUREDataTable(ds.Tables["CURRENT_SHARE_PROCEDURE"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -314,6 +350,18 @@ namespace ExpensesTracker.DataSet {
                     this.tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING.InitVars();
                 }
             }
+            this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES = ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable)(base.Tables["SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES"]));
+            if ((initTable == true)) {
+                if ((this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES != null)) {
+                    this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.InitVars();
+                }
+            }
+            this.tableCURRENT_SHARE_PROCEDURE = ((CURRENT_SHARE_PROCEDUREDataTable)(base.Tables["CURRENT_SHARE_PROCEDURE"]));
+            if ((initTable == true)) {
+                if ((this.tableCURRENT_SHARE_PROCEDURE != null)) {
+                    this.tableCURRENT_SHARE_PROCEDURE.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +384,10 @@ namespace ExpensesTracker.DataSet {
             base.Tables.Add(this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND);
             this.tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING = new SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable();
             base.Tables.Add(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING);
+            this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES = new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable();
+            base.Tables.Add(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES);
+            this.tableCURRENT_SHARE_PROCEDURE = new CURRENT_SHARE_PROCEDUREDataTable();
+            base.Tables.Add(this.tableCURRENT_SHARE_PROCEDURE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +423,18 @@ namespace ExpensesTracker.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeCURRENT_SHARE_PROCEDURE() {
             return false;
         }
         
@@ -446,6 +510,12 @@ namespace ExpensesTracker.DataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChangeEventHandler(object sender, SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEventHandler(object sender, SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void CURRENT_SHARE_PROCEDURERowChangeEventHandler(object sender, CURRENT_SHARE_PROCEDURERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1736,13 +1806,11 @@ namespace ExpensesTracker.DataSet {
             
             private global::System.Data.DataColumn columnSHARE_DIVIDEND_ID;
             
-            private global::System.Data.DataColumn columnSHARES_TRACKER_HEADER_ID;
-            
             private global::System.Data.DataColumn columnSHARES_PRICE_AMT;
             
             private global::System.Data.DataColumn columnDIVIDEND_DATE;
             
-            private global::System.Data.DataColumn columnSHARES_NAME;
+            private global::System.Data.DataColumn columnSHARE_NAME;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1787,14 +1855,6 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SHARES_TRACKER_HEADER_IDColumn {
-                get {
-                    return this.columnSHARES_TRACKER_HEADER_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SHARES_PRICE_AMTColumn {
                 get {
                     return this.columnSHARES_PRICE_AMT;
@@ -1811,9 +1871,9 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SHARES_NAMEColumn {
+            public global::System.Data.DataColumn SHARE_NAMEColumn {
                 get {
-                    return this.columnSHARES_NAME;
+                    return this.columnSHARE_NAME;
                 }
             }
             
@@ -1854,14 +1914,13 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHARE_TRACKER_PROCEDURE_DIVIDENDRow AddSHARE_TRACKER_PROCEDURE_DIVIDENDRow(int SHARES_TRACKER_HEADER_ID, decimal SHARES_PRICE_AMT, System.DateTime DIVIDEND_DATE, string SHARES_NAME) {
+            public SHARE_TRACKER_PROCEDURE_DIVIDENDRow AddSHARE_TRACKER_PROCEDURE_DIVIDENDRow(decimal SHARES_PRICE_AMT, System.DateTime DIVIDEND_DATE, string SHARE_NAME) {
                 SHARE_TRACKER_PROCEDURE_DIVIDENDRow rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow = ((SHARE_TRACKER_PROCEDURE_DIVIDENDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        SHARES_TRACKER_HEADER_ID,
                         SHARES_PRICE_AMT,
                         DIVIDEND_DATE,
-                        SHARES_NAME};
+                        SHARE_NAME};
                 rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow);
                 return rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow;
@@ -1892,10 +1951,9 @@ namespace ExpensesTracker.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnSHARE_DIVIDEND_ID = base.Columns["SHARE_DIVIDEND_ID"];
-                this.columnSHARES_TRACKER_HEADER_ID = base.Columns["SHARES_TRACKER_HEADER_ID"];
                 this.columnSHARES_PRICE_AMT = base.Columns["SHARES_PRICE_AMT"];
                 this.columnDIVIDEND_DATE = base.Columns["DIVIDEND_DATE"];
-                this.columnSHARES_NAME = base.Columns["SHARES_NAME"];
+                this.columnSHARE_NAME = base.Columns["SHARE_NAME"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1903,14 +1961,12 @@ namespace ExpensesTracker.DataSet {
             private void InitClass() {
                 this.columnSHARE_DIVIDEND_ID = new global::System.Data.DataColumn("SHARE_DIVIDEND_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSHARE_DIVIDEND_ID);
-                this.columnSHARES_TRACKER_HEADER_ID = new global::System.Data.DataColumn("SHARES_TRACKER_HEADER_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSHARES_TRACKER_HEADER_ID);
                 this.columnSHARES_PRICE_AMT = new global::System.Data.DataColumn("SHARES_PRICE_AMT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSHARES_PRICE_AMT);
                 this.columnDIVIDEND_DATE = new global::System.Data.DataColumn("DIVIDEND_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDIVIDEND_DATE);
-                this.columnSHARES_NAME = new global::System.Data.DataColumn("SHARES_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSHARES_NAME);
+                this.columnSHARE_NAME = new global::System.Data.DataColumn("SHARE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARE_NAME);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSHARE_DIVIDEND_ID}, true));
                 this.columnSHARE_DIVIDEND_ID.AutoIncrement = true;
@@ -1919,11 +1975,10 @@ namespace ExpensesTracker.DataSet {
                 this.columnSHARE_DIVIDEND_ID.AllowDBNull = false;
                 this.columnSHARE_DIVIDEND_ID.ReadOnly = true;
                 this.columnSHARE_DIVIDEND_ID.Unique = true;
-                this.columnSHARES_TRACKER_HEADER_ID.AllowDBNull = false;
                 this.columnSHARES_PRICE_AMT.AllowDBNull = false;
                 this.columnDIVIDEND_DATE.AllowDBNull = false;
-                this.columnSHARES_NAME.AllowDBNull = false;
-                this.columnSHARES_NAME.MaxLength = 500;
+                this.columnSHARE_NAME.ReadOnly = true;
+                this.columnSHARE_NAME.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2362,6 +2417,664 @@ namespace ExpensesTracker.DataSet {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable : global::System.Data.TypedTableBase<SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow> {
+            
+            private global::System.Data.DataColumn columnSHARES_EXTRA_CHARGES_DESCRIPTION;
+            
+            private global::System.Data.DataColumn columnSHARES_EXTRA_CHARGES_AMT;
+            
+            private global::System.Data.DataColumn columnSHARES_CHARGES_DATE;
+            
+            private global::System.Data.DataColumn columnSHARES_NAME;
+            
+            private global::System.Data.DataColumn columnSHARES_TRACKER_HEADER_ID;
+            
+            private global::System.Data.DataColumn columnIS_CONSIDER;
+            
+            private global::System.Data.DataColumn columnSHARES_TRACKER_EXTRA_CHARGES_ID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable() {
+                this.TableName = "SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_EXTRA_CHARGES_DESCRIPTIONColumn {
+                get {
+                    return this.columnSHARES_EXTRA_CHARGES_DESCRIPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_EXTRA_CHARGES_AMTColumn {
+                get {
+                    return this.columnSHARES_EXTRA_CHARGES_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_CHARGES_DATEColumn {
+                get {
+                    return this.columnSHARES_CHARGES_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_NAMEColumn {
+                get {
+                    return this.columnSHARES_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_TRACKER_HEADER_IDColumn {
+                get {
+                    return this.columnSHARES_TRACKER_HEADER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IS_CONSIDERColumn {
+                get {
+                    return this.columnIS_CONSIDER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_TRACKER_EXTRA_CHARGES_IDColumn {
+                get {
+                    return this.columnSHARES_TRACKER_EXTRA_CHARGES_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow this[int index] {
+                get {
+                    return ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEventHandler SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEventHandler SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEventHandler SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEventHandler SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow(SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow AddSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow(string SHARES_EXTRA_CHARGES_DESCRIPTION, decimal SHARES_EXTRA_CHARGES_AMT, System.DateTime SHARES_CHARGES_DATE, string SHARES_NAME, int SHARES_TRACKER_HEADER_ID, bool IS_CONSIDER) {
+                SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow rowSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow = ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        SHARES_EXTRA_CHARGES_DESCRIPTION,
+                        SHARES_EXTRA_CHARGES_AMT,
+                        SHARES_CHARGES_DATE,
+                        SHARES_NAME,
+                        SHARES_TRACKER_HEADER_ID,
+                        IS_CONSIDER,
+                        null};
+                rowSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow);
+                return rowSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow FindBySHARES_TRACKER_EXTRA_CHARGES_ID(int SHARES_TRACKER_EXTRA_CHARGES_ID) {
+                return ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(this.Rows.Find(new object[] {
+                            SHARES_TRACKER_EXTRA_CHARGES_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable cln = ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnSHARES_EXTRA_CHARGES_DESCRIPTION = base.Columns["SHARES_EXTRA_CHARGES_DESCRIPTION"];
+                this.columnSHARES_EXTRA_CHARGES_AMT = base.Columns["SHARES_EXTRA_CHARGES_AMT"];
+                this.columnSHARES_CHARGES_DATE = base.Columns["SHARES_CHARGES_DATE"];
+                this.columnSHARES_NAME = base.Columns["SHARES_NAME"];
+                this.columnSHARES_TRACKER_HEADER_ID = base.Columns["SHARES_TRACKER_HEADER_ID"];
+                this.columnIS_CONSIDER = base.Columns["IS_CONSIDER"];
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID = base.Columns["SHARES_TRACKER_EXTRA_CHARGES_ID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnSHARES_EXTRA_CHARGES_DESCRIPTION = new global::System.Data.DataColumn("SHARES_EXTRA_CHARGES_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_EXTRA_CHARGES_DESCRIPTION);
+                this.columnSHARES_EXTRA_CHARGES_AMT = new global::System.Data.DataColumn("SHARES_EXTRA_CHARGES_AMT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_EXTRA_CHARGES_AMT);
+                this.columnSHARES_CHARGES_DATE = new global::System.Data.DataColumn("SHARES_CHARGES_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_CHARGES_DATE);
+                this.columnSHARES_NAME = new global::System.Data.DataColumn("SHARES_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_NAME);
+                this.columnSHARES_TRACKER_HEADER_ID = new global::System.Data.DataColumn("SHARES_TRACKER_HEADER_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_TRACKER_HEADER_ID);
+                this.columnIS_CONSIDER = new global::System.Data.DataColumn("IS_CONSIDER", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIS_CONSIDER);
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID = new global::System.Data.DataColumn("SHARES_TRACKER_EXTRA_CHARGES_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_TRACKER_EXTRA_CHARGES_ID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID}, true));
+                this.columnSHARES_EXTRA_CHARGES_DESCRIPTION.AllowDBNull = false;
+                this.columnSHARES_EXTRA_CHARGES_DESCRIPTION.MaxLength = 500;
+                this.columnSHARES_NAME.MaxLength = 500;
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID.AutoIncrement = true;
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID.AutoIncrementSeed = -1;
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID.AutoIncrementStep = -1;
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID.AllowDBNull = false;
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID.ReadOnly = true;
+                this.columnSHARES_TRACKER_EXTRA_CHARGES_ID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow NewSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow() {
+                return ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanged != null)) {
+                    this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanged(this, new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent(((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanging != null)) {
+                    this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanging(this, new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent(((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleted != null)) {
+                    this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleted(this, new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent(((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleting != null)) {
+                    this.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleting(this, new SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent(((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow(SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Shares_TrackerDataset ds = new Shares_TrackerDataset();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CURRENT_SHARE_PROCEDUREDataTable : global::System.Data.TypedTableBase<CURRENT_SHARE_PROCEDURERow> {
+            
+            private global::System.Data.DataColumn columnSHARES_TRACKER_HEADER_ID;
+            
+            private global::System.Data.DataColumn columnSHARES_NAME;
+            
+            private global::System.Data.DataColumn columnSHARE_AMT;
+            
+            private global::System.Data.DataColumn columnPROFIT_LOSS;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDUREDataTable() {
+                this.TableName = "CURRENT_SHARE_PROCEDURE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CURRENT_SHARE_PROCEDUREDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected CURRENT_SHARE_PROCEDUREDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_TRACKER_HEADER_IDColumn {
+                get {
+                    return this.columnSHARES_TRACKER_HEADER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARES_NAMEColumn {
+                get {
+                    return this.columnSHARES_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SHARE_AMTColumn {
+                get {
+                    return this.columnSHARE_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PROFIT_LOSSColumn {
+                get {
+                    return this.columnPROFIT_LOSS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDURERow this[int index] {
+                get {
+                    return ((CURRENT_SHARE_PROCEDURERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CURRENT_SHARE_PROCEDURERowChangeEventHandler CURRENT_SHARE_PROCEDURERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CURRENT_SHARE_PROCEDURERowChangeEventHandler CURRENT_SHARE_PROCEDURERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CURRENT_SHARE_PROCEDURERowChangeEventHandler CURRENT_SHARE_PROCEDURERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CURRENT_SHARE_PROCEDURERowChangeEventHandler CURRENT_SHARE_PROCEDURERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddCURRENT_SHARE_PROCEDURERow(CURRENT_SHARE_PROCEDURERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDURERow AddCURRENT_SHARE_PROCEDURERow(string SHARES_NAME, decimal SHARE_AMT, string PROFIT_LOSS) {
+                CURRENT_SHARE_PROCEDURERow rowCURRENT_SHARE_PROCEDURERow = ((CURRENT_SHARE_PROCEDURERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        SHARES_NAME,
+                        SHARE_AMT,
+                        PROFIT_LOSS};
+                rowCURRENT_SHARE_PROCEDURERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCURRENT_SHARE_PROCEDURERow);
+                return rowCURRENT_SHARE_PROCEDURERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDURERow FindBySHARES_TRACKER_HEADER_ID(int SHARES_TRACKER_HEADER_ID) {
+                return ((CURRENT_SHARE_PROCEDURERow)(this.Rows.Find(new object[] {
+                            SHARES_TRACKER_HEADER_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CURRENT_SHARE_PROCEDUREDataTable cln = ((CURRENT_SHARE_PROCEDUREDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CURRENT_SHARE_PROCEDUREDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnSHARES_TRACKER_HEADER_ID = base.Columns["SHARES_TRACKER_HEADER_ID"];
+                this.columnSHARES_NAME = base.Columns["SHARES_NAME"];
+                this.columnSHARE_AMT = base.Columns["SHARE_AMT"];
+                this.columnPROFIT_LOSS = base.Columns["PROFIT_LOSS"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnSHARES_TRACKER_HEADER_ID = new global::System.Data.DataColumn("SHARES_TRACKER_HEADER_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_TRACKER_HEADER_ID);
+                this.columnSHARES_NAME = new global::System.Data.DataColumn("SHARES_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARES_NAME);
+                this.columnSHARE_AMT = new global::System.Data.DataColumn("SHARE_AMT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSHARE_AMT);
+                this.columnPROFIT_LOSS = new global::System.Data.DataColumn("PROFIT_LOSS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROFIT_LOSS);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnSHARES_TRACKER_HEADER_ID}, true));
+                this.columnSHARES_TRACKER_HEADER_ID.AutoIncrement = true;
+                this.columnSHARES_TRACKER_HEADER_ID.AutoIncrementSeed = -1;
+                this.columnSHARES_TRACKER_HEADER_ID.AutoIncrementStep = -1;
+                this.columnSHARES_TRACKER_HEADER_ID.AllowDBNull = false;
+                this.columnSHARES_TRACKER_HEADER_ID.ReadOnly = true;
+                this.columnSHARES_TRACKER_HEADER_ID.Unique = true;
+                this.columnSHARES_NAME.AllowDBNull = false;
+                this.columnSHARES_NAME.MaxLength = 500;
+                this.columnSHARE_AMT.ReadOnly = true;
+                this.columnPROFIT_LOSS.ReadOnly = true;
+                this.columnPROFIT_LOSS.MaxLength = 6;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDURERow NewCURRENT_SHARE_PROCEDURERow() {
+                return ((CURRENT_SHARE_PROCEDURERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CURRENT_SHARE_PROCEDURERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CURRENT_SHARE_PROCEDURERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CURRENT_SHARE_PROCEDURERowChanged != null)) {
+                    this.CURRENT_SHARE_PROCEDURERowChanged(this, new CURRENT_SHARE_PROCEDURERowChangeEvent(((CURRENT_SHARE_PROCEDURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CURRENT_SHARE_PROCEDURERowChanging != null)) {
+                    this.CURRENT_SHARE_PROCEDURERowChanging(this, new CURRENT_SHARE_PROCEDURERowChangeEvent(((CURRENT_SHARE_PROCEDURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CURRENT_SHARE_PROCEDURERowDeleted != null)) {
+                    this.CURRENT_SHARE_PROCEDURERowDeleted(this, new CURRENT_SHARE_PROCEDURERowChangeEvent(((CURRENT_SHARE_PROCEDURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CURRENT_SHARE_PROCEDURERowDeleting != null)) {
+                    this.CURRENT_SHARE_PROCEDURERowDeleting(this, new CURRENT_SHARE_PROCEDURERowChangeEvent(((CURRENT_SHARE_PROCEDURERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveCURRENT_SHARE_PROCEDURERow(CURRENT_SHARE_PROCEDURERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Shares_TrackerDataset ds = new Shares_TrackerDataset();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CURRENT_SHARE_PROCEDUREDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2901,17 +3614,6 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SHARES_TRACKER_HEADER_ID {
-                get {
-                    return ((int)(this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARES_TRACKER_HEADER_IDColumn]));
-                }
-                set {
-                    this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARES_TRACKER_HEADER_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal SHARES_PRICE_AMT {
                 get {
                     return ((decimal)(this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARES_PRICE_AMTColumn]));
@@ -2934,13 +3636,31 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SHARES_NAME {
+            public string SHARE_NAME {
                 get {
-                    return ((string)(this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARES_NAMEColumn]));
+                    try {
+                        return ((string)(this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARE_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARE_NAME\' in table \'SHARE_TRACKER_PROCEDURE_DIVIDEND\' is " +
+                                "DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARES_NAMEColumn] = value;
+                    this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARE_NAMEColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARE_NAMENull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARE_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARE_NAMENull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARE_NAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3069,6 +3789,281 @@ namespace ExpensesTracker.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetUSER_IDNull() {
                 this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING.USER_IDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow : global::System.Data.DataRow {
+            
+            private SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES = ((SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SHARES_EXTRA_CHARGES_DESCRIPTION {
+                get {
+                    return ((string)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_EXTRA_CHARGES_DESCRIPTIONColumn]));
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_EXTRA_CHARGES_DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal SHARES_EXTRA_CHARGES_AMT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_EXTRA_CHARGES_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARES_EXTRA_CHARGES_AMT\' in table \'SHARE_TRACKER_PROCEDURE" +
+                                "_EXTRA_CHARGES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_EXTRA_CHARGES_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime SHARES_CHARGES_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_CHARGES_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARES_CHARGES_DATE\' in table \'SHARE_TRACKER_PROCEDURE_EXTR" +
+                                "A_CHARGES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_CHARGES_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SHARES_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARES_NAME\' in table \'SHARE_TRACKER_PROCEDURE_EXTRA_CHARGE" +
+                                "S\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SHARES_TRACKER_HEADER_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_TRACKER_HEADER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARES_TRACKER_HEADER_ID\' in table \'SHARE_TRACKER_PROCEDURE" +
+                                "_EXTRA_CHARGES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_TRACKER_HEADER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IS_CONSIDER {
+                get {
+                    try {
+                        return ((bool)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.IS_CONSIDERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IS_CONSIDER\' in table \'SHARE_TRACKER_PROCEDURE_EXTRA_CHARGE" +
+                                "S\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.IS_CONSIDERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SHARES_TRACKER_EXTRA_CHARGES_ID {
+                get {
+                    return ((int)(this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_TRACKER_EXTRA_CHARGES_IDColumn]));
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_TRACKER_EXTRA_CHARGES_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARES_EXTRA_CHARGES_AMTNull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_EXTRA_CHARGES_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARES_EXTRA_CHARGES_AMTNull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_EXTRA_CHARGES_AMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARES_CHARGES_DATENull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_CHARGES_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARES_CHARGES_DATENull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_CHARGES_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARES_NAMENull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARES_NAMENull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARES_TRACKER_HEADER_IDNull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_TRACKER_HEADER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARES_TRACKER_HEADER_IDNull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.SHARES_TRACKER_HEADER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIS_CONSIDERNull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.IS_CONSIDERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIS_CONSIDERNull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.IS_CONSIDERColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CURRENT_SHARE_PROCEDURERow : global::System.Data.DataRow {
+            
+            private CURRENT_SHARE_PROCEDUREDataTable tableCURRENT_SHARE_PROCEDURE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CURRENT_SHARE_PROCEDURERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCURRENT_SHARE_PROCEDURE = ((CURRENT_SHARE_PROCEDUREDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int SHARES_TRACKER_HEADER_ID {
+                get {
+                    return ((int)(this[this.tableCURRENT_SHARE_PROCEDURE.SHARES_TRACKER_HEADER_IDColumn]));
+                }
+                set {
+                    this[this.tableCURRENT_SHARE_PROCEDURE.SHARES_TRACKER_HEADER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SHARES_NAME {
+                get {
+                    return ((string)(this[this.tableCURRENT_SHARE_PROCEDURE.SHARES_NAMEColumn]));
+                }
+                set {
+                    this[this.tableCURRENT_SHARE_PROCEDURE.SHARES_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal SHARE_AMT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCURRENT_SHARE_PROCEDURE.SHARE_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARE_AMT\' in table \'CURRENT_SHARE_PROCEDURE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCURRENT_SHARE_PROCEDURE.SHARE_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PROFIT_LOSS {
+                get {
+                    try {
+                        return ((string)(this[this.tableCURRENT_SHARE_PROCEDURE.PROFIT_LOSSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROFIT_LOSS\' in table \'CURRENT_SHARE_PROCEDURE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCURRENT_SHARE_PROCEDURE.PROFIT_LOSSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARE_AMTNull() {
+                return this.IsNull(this.tableCURRENT_SHARE_PROCEDURE.SHARE_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARE_AMTNull() {
+                this[this.tableCURRENT_SHARE_PROCEDURE.SHARE_AMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPROFIT_LOSSNull() {
+                return this.IsNull(this.tableCURRENT_SHARE_PROCEDURE.PROFIT_LOSSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPROFIT_LOSSNull() {
+                this[this.tableCURRENT_SHARE_PROCEDURE.PROFIT_LOSSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3262,6 +4257,74 @@ namespace ExpensesTracker.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent : global::System.EventArgs {
+            
+            private SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent(SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class CURRENT_SHARE_PROCEDURERowChangeEvent : global::System.EventArgs {
+            
+            private CURRENT_SHARE_PROCEDURERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDURERowChangeEvent(CURRENT_SHARE_PROCEDURERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CURRENT_SHARE_PROCEDURERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4142,10 +5205,9 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SHARE_TRACKER_PROCEDURE_DIVIDEND";
             tableMapping.ColumnMappings.Add("SHARE_DIVIDEND_ID", "SHARE_DIVIDEND_ID");
-            tableMapping.ColumnMappings.Add("SHARES_TRACKER_HEADER_ID", "SHARES_TRACKER_HEADER_ID");
             tableMapping.ColumnMappings.Add("SHARES_PRICE_AMT", "SHARES_PRICE_AMT");
             tableMapping.ColumnMappings.Add("DIVIDEND_DATE", "DIVIDEND_DATE");
-            tableMapping.ColumnMappings.Add("SHARES_NAME", "SHARES_NAME");
+            tableMapping.ColumnMappings.Add("SHARE_NAME", "SHARE_NAME");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4387,6 +5449,377 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES";
+            tableMapping.ColumnMappings.Add("SHARES_EXTRA_CHARGES_DESCRIPTION", "SHARES_EXTRA_CHARGES_DESCRIPTION");
+            tableMapping.ColumnMappings.Add("SHARES_EXTRA_CHARGES_AMT", "SHARES_EXTRA_CHARGES_AMT");
+            tableMapping.ColumnMappings.Add("SHARES_CHARGES_DATE", "SHARES_CHARGES_DATE");
+            tableMapping.ColumnMappings.Add("SHARES_NAME", "SHARES_NAME");
+            tableMapping.ColumnMappings.Add("SHARES_TRACKER_HEADER_ID", "SHARES_TRACKER_HEADER_ID");
+            tableMapping.ColumnMappings.Add("IS_CONSIDER", "IS_CONSIDER");
+            tableMapping.ColumnMappings.Add("SHARES_TRACKER_EXTRA_CHARGES_ID", "SHARES_TRACKER_EXTRA_CHARGES_ID");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ExpensesTracker.Properties.Settings.Default.Expenses_TrackerConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable dataTable, global::System.Nullable<int> USERID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((USERID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable GetData(global::System.Nullable<int> USERID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((USERID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CURRENT_SHARE_PROCEDURETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public CURRENT_SHARE_PROCEDURETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CURRENT_SHARE_PROCEDURE";
+            tableMapping.ColumnMappings.Add("SHARES_TRACKER_HEADER_ID", "SHARES_TRACKER_HEADER_ID");
+            tableMapping.ColumnMappings.Add("SHARES_NAME", "SHARES_NAME");
+            tableMapping.ColumnMappings.Add("SHARE_AMT", "SHARE_AMT");
+            tableMapping.ColumnMappings.Add("PROFIT_LOSS", "PROFIT_LOSS");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ExpensesTracker.Properties.Settings.Default.Expenses_TrackerConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.CURRENT_SHARE_PROCEDURE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable dataTable, global::System.Nullable<int> USERID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((USERID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable GetData(global::System.Nullable<int> USERID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((USERID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable dataTable = new Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

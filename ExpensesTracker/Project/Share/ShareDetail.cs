@@ -36,7 +36,7 @@ namespace ExpensesTracker.Project.Share
         {
             this.Size = new Size(754, 470);
             string str = "Select SHARES_NAME from [dbo].[SHARES_TRACKER_HEADER] where SHARES_TRACKER_HEADER_ID = " + Share.ShareHeaderId;
-            lblShareName.Text = DBFunction.FetchScalarFromDatabase("Bharat", str);
+            lblShareName.Text = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, str);
 
             txtShareCharges.Visible = false;
             txtShareQty.Visible = false;
@@ -47,6 +47,8 @@ namespace ExpensesTracker.Project.Share
             txtHdrId.Visible = false;
             lblHdr.Visible = false;
             checkHeaderUpdate.Visible = false;
+
+            this.sHARE_DETAIL_PROCEDURETableAdapter.Fill(this.shares_TrackerDataset.SHARE_DETAIL_PROCEDURE, Share.ShareHeaderId);
         }
 
         /// <summary>
@@ -70,33 +72,23 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Rows[e.RowIndex].Cells[7].Selected)
-            {
-                if (MessageBox.Show("Are you sure you want to delete the record", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    dataGridView1.Rows.RemoveAt(e.RowIndex);
-                }
-            }
-            else
-            {
-                this.Size = new Size(754, 547);
-                iintUpdateId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
-                istrTransactionType = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            this.Size = new Size(754, 547);
+            iintUpdateId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+            istrTransactionType = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
 
-                dateShareDate.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-                txtShareAmt.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
-                txtShareQty.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
-                txtShareCharges.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
-                txtHdrId.Text = Share.ShareHeaderId.ToString();
-                txtShareCharges.Visible = true;
-                txtShareQty.Visible = true;
-                txtShareAmt.Visible = true;
-                dateShareDate.Visible = true;
-                btnUpdateShareDetail.Visible = true;
-                checkHeaderUpdate.Visible = true;
-                lblHdr.Visible = true;
-                lblUpdate.Visible = true;
-            }
+            dateShareDate.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            txtShareAmt.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            txtShareQty.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+            txtShareCharges.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+            txtHdrId.Text = Share.ShareHeaderId.ToString();
+            txtShareCharges.Visible = true;
+            txtShareQty.Visible = true;
+            txtShareAmt.Visible = true;
+            dateShareDate.Visible = true;
+            btnUpdateShareDetail.Visible = true;
+            checkHeaderUpdate.Visible = true;
+            lblHdr.Visible = true;
+            lblUpdate.Visible = true;
         }
 
         /// <summary>
@@ -129,7 +121,7 @@ namespace ExpensesTracker.Project.Share
             {
                 Share.ShareHeaderId = Convert.ToInt32(txtHdrId.Text);
             }
-            //this.shareDetailProcedureTableAdapter.Fill(this.bharatDataSet4.ShareDetailProcedure, Share.ShareHeaderId);
+            this.sHARE_DETAIL_PROCEDURETableAdapter.Fill(this.shares_TrackerDataset.SHARE_DETAIL_PROCEDURE, Share.ShareHeaderId);
         }
 
         /// <summary>

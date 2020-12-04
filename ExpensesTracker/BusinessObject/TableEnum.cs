@@ -17,7 +17,11 @@ namespace ExpensesTracker.BusinessObject
             EXPENSES_TRACKER,
             SHARES_TRACKER_HEADER,
             SHARES_TRACKER_BUY,
-            SHARES_TRACKER_SELL
+            SHARES_TRACKER_SELL,
+            SHARES_TRACKER_EXTRA_CHARGES,
+            SHARES_PAYIN_PAYOUT,
+            EXTRA_INCOMING_OUTGOING,
+            SHARE_DIVIDEND
         }
 
         public enum enmLogin_Info
@@ -98,6 +102,48 @@ namespace ExpensesTracker.BusinessObject
             SHARES_QUANTITY,
             SHARES_SELL_DATE,
             SHARES_CHARGES_AMT
+        }
+
+        public enum enmSharesTrackerExtraCharges
+        {
+            SHARES_TRACKER_EXTRA_CHARGES_ID,
+            SHARES_EXTRA_CHARGES_AMT,
+            SHARES_EXTRA_CHARGES_DESCRIPTION,
+            SHARES_CHARGES_DATE,
+            SHARES_TRACKER_HEADER_ID,
+            IS_CONSIDER,
+            USER_ID
+        }
+
+        public enum enmSharesPayInPayOut
+        {
+            SHARES_TRANSACTION_ID,
+            SHARES_TRANSACTION_CODE_ID,
+            SHARES_TRANSACTION_CODE_VALUE,
+            SHARES_TRANSACTION_AMT,
+            SHARES_TRANSACTION_DATE,
+            USER_ID
+        }
+
+        public enum enmExtraIncomingOutgoing
+        {
+            EXTRA_INCOMING_OUTGOING_ID,
+            AMOUNT,
+            INCOMING_OUTGOING_CODE_ID,
+            INCOMING_OUTGOING_CODE_VALUE,
+            INCOMING_OUTGOING_DATE,
+            USER_ID,
+            INCOMING_OUTGOING_DESCRIPTION
+        }
+
+        public enum enmShareDividend
+        {
+            SHARE_DIVIDEND_ID,
+            SHARES_TRACKER_HEADER_ID,
+            SHARES_PRICE_AMT,
+            DIVIDEND_DATE,
+            SHARE_DESCRIPTION,
+            USER_ID
         }
 
         public enum Month

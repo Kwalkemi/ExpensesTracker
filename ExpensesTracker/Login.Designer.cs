@@ -42,6 +42,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBoxRemember = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lnkShowIds = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,12 +168,25 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lnkShowIds
+            // 
+            this.lnkShowIds.AutoSize = true;
+            this.lnkShowIds.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lnkShowIds.Location = new System.Drawing.Point(787, 7);
+            this.lnkShowIds.Name = "lnkShowIds";
+            this.lnkShowIds.Size = new System.Drawing.Size(57, 17);
+            this.lnkShowIds.TabIndex = 17;
+            this.lnkShowIds.TabStop = true;
+            this.lnkShowIds.Text = "Show Id";
+            this.lnkShowIds.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkShowIds_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(858, 389);
+            this.Controls.Add(this.lnkShowIds);
             this.Controls.Add(this.checkBoxRemember);
             this.Controls.Add(this.lblRegistration);
             this.Controls.Add(this.lblNewUser2);
@@ -208,6 +222,7 @@
         private System.Windows.Forms.Label lblRegistration;
         private System.Windows.Forms.CheckBox checkBoxRemember;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.LinkLabel lnkShowIds;
     }
 }
 

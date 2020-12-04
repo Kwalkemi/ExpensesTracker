@@ -17,6 +17,8 @@ namespace ExpensesTracker.BusinessObject
             public const string DOT_COM = ".com";
             public const string CATEGORY_ADD_BOX = "Category Add Box";
             public const string CATEGORY_REMOVE_BOX = "Category Remove Box";
+            public const string SPACE = " ";
+            public const string DATE_FORMAT = "MM/dd/yyyy";
 
             public abstract class Gender
             {
@@ -61,6 +63,7 @@ namespace ExpensesTracker.BusinessObject
             public const string LOAD_EXPENSES_CHART = "LoadExpensesChart";
             public const string LOAD_EXPENSES_CHART_LIST = "LoadExpensesChartList";
             public const string UPDATE_SHARE_HEADER = "UpdateShareHeader";
+            public const string GET_LAST_DATE = "GetLastDate";
         }
 
         public abstract class Error
@@ -131,6 +134,24 @@ namespace ExpensesTracker.BusinessObject
             {
                 public const string BUY = "BUY";
                 public const string SELL = "SELL";
+            }
+
+            public abstract class Code_Value_PayIn_PayOut
+            {
+                public const string PAYIN = "PAYI";
+                public const string PAYOUT = "PAYO";
+            }
+
+            public abstract class PayIn_PayOut
+            {
+                public const string PAYIN = "Pay In";
+                public const string PAYOUT = "Pay Out";
+            }
+
+            public abstract class Incoming_Outgoing
+            {
+                public const string INCOMING = "INCM";
+                public const string OUTGOING = "OUTG";
             }
         }
     }

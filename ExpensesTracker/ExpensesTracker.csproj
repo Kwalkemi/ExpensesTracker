@@ -58,12 +58,14 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,6 +94,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\Registration_TrackerDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration_TrackerDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\Shares_TrackerDataset.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -159,6 +166,15 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowIds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowIds.Designer.cs">
+      <DependentUpon>ShowIds.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ShowIds.resx">
+      <DependentUpon>ShowIds.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet\Expenses_TrackerDataset.xsc">
       <DependentUpon>Expenses_TrackerDataset.xsd</DependentUpon>
     </None>
@@ -180,6 +196,17 @@
     </None>
     <None Include="DataSet\Husband_WifeDataset.xss">
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Registration_TrackerDataset.xsc">
+      <DependentUpon>Registration_TrackerDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Registration_TrackerDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Registration_TrackerDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Registration_TrackerDataset.xss">
+      <DependentUpon>Registration_TrackerDataset.xsd</DependentUpon>
     </None>
     <None Include="DataSet\Shares_TrackerDataset.xsc">
       <DependentUpon>Shares_TrackerDataset.xsd</DependentUpon>

@@ -73,5 +73,11 @@ namespace ExpensesTracker
             Register register = new Register();
             register.Show();
         }
+
+        private void lnkShowIds_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ShowIds showIds = new ShowIds();
+            showIds.Show();
+        }
     }
 }

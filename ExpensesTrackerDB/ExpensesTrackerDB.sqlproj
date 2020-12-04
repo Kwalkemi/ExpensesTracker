@@ -59,6 +59,7 @@
     <Folder Include="StoreProcedure" />
     <Folder Include="Table" />
     <Folder Include="Script" />
+    <Folder Include="Trigger" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="StoreProcedure\HusbandWifeProcedure.sql" />
@@ -82,6 +83,8 @@
     <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_DIVIDEND.sql" />
     <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING.sql" />
     <Build Include="Table\EXTRA_INCOMING_OUTGOING.sql" />
+    <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.sql" />
+    <Build Include="Trigger\TRIGGER_DELIVERY_CHARGE.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ExpensesTrackerDB.sqlproj.user" />

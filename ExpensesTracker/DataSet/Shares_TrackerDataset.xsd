@@ -2,7 +2,7 @@
 <xs:schema id="Shares_TrackerDataset" targetNamespace="http://tempuri.org/Shares_TrackerDataset.xsd" xmlns:mstns="http://tempuri.org/Shares_TrackerDataset.xsd" xmlns="http://tempuri.org/Shares_TrackerDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Expenses_TrackerConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Expenses_TrackerConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ExpensesTracker.Properties.Settings.GlobalReference.Default.Expenses_TrackerConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
@@ -101,7 +101,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter" GeneratorDataComponentClassName="SHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter" Name="SHARE_TRACKER_PROCEDURE_DIVIDEND" UserDataComponentName="SHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Expenses_TrackerConnectionString (Settings)" DbObjectName="Expenses_Tracker.dbo.SHARE_TRACKER_PROCEDURE_DIVIDEND" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Expenses_TrackerConnectionString (Settings)" DbObjectName="Expenses_Tracker.dbo.SHARE_TRACKER_PROCEDURE_DIVIDEND" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SHARE_TRACKER_PROCEDURE_DIVIDEND</CommandText>
@@ -115,10 +115,9 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="SHARE_DIVIDEND_ID" DataSetColumn="SHARE_DIVIDEND_ID" />
-              <Mapping SourceColumn="SHARES_TRACKER_HEADER_ID" DataSetColumn="SHARES_TRACKER_HEADER_ID" />
               <Mapping SourceColumn="SHARES_PRICE_AMT" DataSetColumn="SHARES_PRICE_AMT" />
               <Mapping SourceColumn="DIVIDEND_DATE" DataSetColumn="DIVIDEND_DATE" />
-              <Mapping SourceColumn="SHARES_NAME" DataSetColumn="SHARES_NAME" />
+              <Mapping SourceColumn="SHARE_NAME" DataSetColumn="SHARE_NAME" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -147,6 +146,53 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter" GeneratorDataComponentClassName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter" Name="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" UserDataComponentName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Expenses_TrackerConnectionString (Settings)" DbObjectName="Expenses_Tracker.dbo.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@USERID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHARES_EXTRA_CHARGES_DESCRIPTION" DataSetColumn="SHARES_EXTRA_CHARGES_DESCRIPTION" />
+              <Mapping SourceColumn="SHARES_EXTRA_CHARGES_AMT" DataSetColumn="SHARES_EXTRA_CHARGES_AMT" />
+              <Mapping SourceColumn="SHARES_CHARGES_DATE" DataSetColumn="SHARES_CHARGES_DATE" />
+              <Mapping SourceColumn="SHARES_NAME" DataSetColumn="SHARES_NAME" />
+              <Mapping SourceColumn="SHARES_TRACKER_HEADER_ID" DataSetColumn="SHARES_TRACKER_HEADER_ID" />
+              <Mapping SourceColumn="IS_CONSIDER" DataSetColumn="IS_CONSIDER" />
+              <Mapping SourceColumn="SHARES_TRACKER_EXTRA_CHARGES_ID" DataSetColumn="SHARES_TRACKER_EXTRA_CHARGES_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CURRENT_SHARE_PROCEDURETableAdapter" GeneratorDataComponentClassName="CURRENT_SHARE_PROCEDURETableAdapter" Name="CURRENT_SHARE_PROCEDURE" UserDataComponentName="CURRENT_SHARE_PROCEDURETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Expenses_TrackerConnectionString (Settings)" DbObjectName="Expenses_Tracker.dbo.CURRENT_SHARE_PROCEDURE" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.CURRENT_SHARE_PROCEDURE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@USERID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHARES_TRACKER_HEADER_ID" DataSetColumn="SHARES_TRACKER_HEADER_ID" />
+              <Mapping SourceColumn="SHARES_NAME" DataSetColumn="SHARES_NAME" />
+              <Mapping SourceColumn="SHARE_AMT" DataSetColumn="SHARE_AMT" />
+              <Mapping SourceColumn="PROFIT_LOSS" DataSetColumn="PROFIT_LOSS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -155,7 +201,7 @@
   <xs:element name="Shares_TrackerDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Shares_TrackerDataset" msprop:Generator_UserDSName="Shares_TrackerDataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_DELIVERYDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChanged" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_DELIVERYRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_DELIVERYRowDeleted" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_DELIVERYRow" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChangeEvent">
+        <xs:element name="SHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_DELIVERYDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_DELIVERYRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_DELIVERYRowDeleted" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_DELIVERY" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChanged" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_DELIVERYRowChangeEvent" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_DELIVERYRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHARES_TRACKER_HEADER_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRACKER_HEADER_IDColumn" msprop:Generator_UserColumnName="SHARES_TRACKER_HEADER_ID" type="xs:int" />
@@ -177,7 +223,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_OPTIONDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_OPTIONRowChanged" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_OPTIONRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_OPTIONRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_OPTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_OPTIONRowDeleted" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_OPTIONRow" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_OPTIONRowChangeEvent">
+        <xs:element name="SHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_OPTIONDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_OPTIONRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_OPTIONRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_OPTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_OPTIONRowDeleted" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_OPTION" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_OPTIONRowChanged" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_OPTIONRowChangeEvent" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_OPTIONRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHARES_TRACKER_HEADER_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRACKER_HEADER_IDColumn" msprop:Generator_UserColumnName="SHARES_TRACKER_HEADER_ID" type="xs:int" />
@@ -199,7 +245,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SHARE_DETAIL_PROCEDURE" msprop:Generator_TableClassName="SHARE_DETAIL_PROCEDUREDataTable" msprop:Generator_TableVarName="tableSHARE_DETAIL_PROCEDURE" msprop:Generator_RowChangedName="SHARE_DETAIL_PROCEDURERowChanged" msprop:Generator_TablePropName="SHARE_DETAIL_PROCEDURE" msprop:Generator_RowDeletingName="SHARE_DETAIL_PROCEDURERowDeleting" msprop:Generator_RowChangingName="SHARE_DETAIL_PROCEDURERowChanging" msprop:Generator_RowEvHandlerName="SHARE_DETAIL_PROCEDURERowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_DETAIL_PROCEDURERowDeleted" msprop:Generator_RowClassName="SHARE_DETAIL_PROCEDURERow" msprop:Generator_UserTableName="SHARE_DETAIL_PROCEDURE" msprop:Generator_RowEvArgName="SHARE_DETAIL_PROCEDURERowChangeEvent">
+        <xs:element name="SHARE_DETAIL_PROCEDURE" msprop:Generator_TableClassName="SHARE_DETAIL_PROCEDUREDataTable" msprop:Generator_TableVarName="tableSHARE_DETAIL_PROCEDURE" msprop:Generator_TablePropName="SHARE_DETAIL_PROCEDURE" msprop:Generator_RowDeletingName="SHARE_DETAIL_PROCEDURERowDeleting" msprop:Generator_RowChangingName="SHARE_DETAIL_PROCEDURERowChanging" msprop:Generator_RowEvHandlerName="SHARE_DETAIL_PROCEDURERowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_DETAIL_PROCEDURERowDeleted" msprop:Generator_UserTableName="SHARE_DETAIL_PROCEDURE" msprop:Generator_RowChangedName="SHARE_DETAIL_PROCEDURERowChanged" msprop:Generator_RowEvArgName="SHARE_DETAIL_PROCEDURERowChangeEvent" msprop:Generator_RowClassName="SHARE_DETAIL_PROCEDURERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RECORD_TYPE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRECORD_TYPE" msprop:Generator_ColumnPropNameInRow="RECORD_TYPE" msprop:Generator_ColumnPropNameInTable="RECORD_TYPEColumn" msprop:Generator_UserColumnName="RECORD_TYPE" minOccurs="0">
@@ -218,7 +264,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowDeleted" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChanged" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChangeEvent" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRow">
+        <xs:element name="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChanged" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowDeleted" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRow" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHARES_TRANSACTION_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRANSACTION_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRANSACTION_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRANSACTION_IDColumn" msprop:Generator_UserColumnName="SHARES_TRANSACTION_ID" type="xs:int" />
@@ -235,14 +281,13 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowDeleted" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChanged" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChangeEvent" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_DIVIDENDRow">
+        <xs:element name="SHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChanged" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowDeleted" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_DIVIDENDRow" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_DIVIDEND" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_DIVIDENDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SHARE_DIVIDEND_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSHARE_DIVIDEND_ID" msprop:Generator_ColumnPropNameInRow="SHARE_DIVIDEND_ID" msprop:Generator_ColumnPropNameInTable="SHARE_DIVIDEND_IDColumn" msprop:Generator_UserColumnName="SHARE_DIVIDEND_ID" type="xs:int" />
-              <xs:element name="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRACKER_HEADER_IDColumn" msprop:Generator_UserColumnName="SHARES_TRACKER_HEADER_ID" type="xs:int" />
               <xs:element name="SHARES_PRICE_AMT" msprop:Generator_ColumnVarNameInTable="columnSHARES_PRICE_AMT" msprop:Generator_ColumnPropNameInRow="SHARES_PRICE_AMT" msprop:Generator_ColumnPropNameInTable="SHARES_PRICE_AMTColumn" msprop:Generator_UserColumnName="SHARES_PRICE_AMT" type="xs:decimal" />
               <xs:element name="DIVIDEND_DATE" msprop:Generator_ColumnVarNameInTable="columnDIVIDEND_DATE" msprop:Generator_ColumnPropNameInRow="DIVIDEND_DATE" msprop:Generator_ColumnPropNameInTable="DIVIDEND_DATEColumn" msprop:Generator_UserColumnName="DIVIDEND_DATE" type="xs:dateTime" />
-              <xs:element name="SHARES_NAME" msprop:Generator_ColumnVarNameInTable="columnSHARES_NAME" msprop:Generator_ColumnPropNameInRow="SHARES_NAME" msprop:Generator_ColumnPropNameInTable="SHARES_NAMEColumn" msprop:Generator_UserColumnName="SHARES_NAME">
+              <xs:element name="SHARE_NAME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSHARE_NAME" msprop:Generator_ColumnPropNameInRow="SHARE_NAME" msprop:Generator_ColumnPropNameInTable="SHARE_NAMEColumn" msprop:Generator_UserColumnName="SHARE_NAME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
@@ -252,7 +297,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChanged" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowDeleted" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRow" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChangeEvent">
+        <xs:element name="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowDeleted" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChanged" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRowChangeEvent" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EXTRA_INCOMING_OUTGOING_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEXTRA_INCOMING_OUTGOING_ID" msprop:Generator_ColumnPropNameInRow="EXTRA_INCOMING_OUTGOING_ID" msprop:Generator_ColumnPropNameInTable="EXTRA_INCOMING_OUTGOING_IDColumn" msprop:Generator_UserColumnName="EXTRA_INCOMING_OUTGOING_ID" type="xs:int" />
@@ -277,6 +322,53 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" msprop:Generator_TableClassName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable" msprop:Generator_TableVarName="tableSHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" msprop:Generator_TablePropName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" msprop:Generator_RowDeletingName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleting" msprop:Generator_RowChangingName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanging" msprop:Generator_RowEvHandlerName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEventHandler" msprop:Generator_RowDeletedName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowDeleted" msprop:Generator_UserTableName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" msprop:Generator_RowChangedName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChanged" msprop:Generator_RowEvArgName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRowChangeEvent" msprop:Generator_RowClassName="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHARES_EXTRA_CHARGES_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnSHARES_EXTRA_CHARGES_DESCRIPTION" msprop:Generator_ColumnPropNameInRow="SHARES_EXTRA_CHARGES_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="SHARES_EXTRA_CHARGES_DESCRIPTIONColumn" msprop:Generator_UserColumnName="SHARES_EXTRA_CHARGES_DESCRIPTION">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHARES_EXTRA_CHARGES_AMT" msprop:Generator_ColumnVarNameInTable="columnSHARES_EXTRA_CHARGES_AMT" msprop:Generator_ColumnPropNameInRow="SHARES_EXTRA_CHARGES_AMT" msprop:Generator_ColumnPropNameInTable="SHARES_EXTRA_CHARGES_AMTColumn" msprop:Generator_UserColumnName="SHARES_EXTRA_CHARGES_AMT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SHARES_CHARGES_DATE" msprop:Generator_ColumnVarNameInTable="columnSHARES_CHARGES_DATE" msprop:Generator_ColumnPropNameInRow="SHARES_CHARGES_DATE" msprop:Generator_ColumnPropNameInTable="SHARES_CHARGES_DATEColumn" msprop:Generator_UserColumnName="SHARES_CHARGES_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SHARES_NAME" msprop:Generator_ColumnVarNameInTable="columnSHARES_NAME" msprop:Generator_ColumnPropNameInRow="SHARES_NAME" msprop:Generator_ColumnPropNameInTable="SHARES_NAMEColumn" msprop:Generator_UserColumnName="SHARES_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRACKER_HEADER_IDColumn" msprop:Generator_UserColumnName="SHARES_TRACKER_HEADER_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="IS_CONSIDER" msprop:Generator_ColumnVarNameInTable="columnIS_CONSIDER" msprop:Generator_ColumnPropNameInRow="IS_CONSIDER" msprop:Generator_ColumnPropNameInTable="IS_CONSIDERColumn" msprop:Generator_UserColumnName="IS_CONSIDER" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SHARES_TRACKER_EXTRA_CHARGES_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRACKER_EXTRA_CHARGES_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRACKER_EXTRA_CHARGES_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRACKER_EXTRA_CHARGES_IDColumn" msprop:Generator_UserColumnName="SHARES_TRACKER_EXTRA_CHARGES_ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CURRENT_SHARE_PROCEDURE" msprop:Generator_TableClassName="CURRENT_SHARE_PROCEDUREDataTable" msprop:Generator_TableVarName="tableCURRENT_SHARE_PROCEDURE" msprop:Generator_TablePropName="CURRENT_SHARE_PROCEDURE" msprop:Generator_RowDeletingName="CURRENT_SHARE_PROCEDURERowDeleting" msprop:Generator_RowChangingName="CURRENT_SHARE_PROCEDURERowChanging" msprop:Generator_RowEvHandlerName="CURRENT_SHARE_PROCEDURERowChangeEventHandler" msprop:Generator_RowDeletedName="CURRENT_SHARE_PROCEDURERowDeleted" msprop:Generator_UserTableName="CURRENT_SHARE_PROCEDURE" msprop:Generator_RowChangedName="CURRENT_SHARE_PROCEDURERowChanged" msprop:Generator_RowEvArgName="CURRENT_SHARE_PROCEDURERowChangeEvent" msprop:Generator_RowClassName="CURRENT_SHARE_PROCEDURERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHARES_TRACKER_HEADER_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInRow="SHARES_TRACKER_HEADER_ID" msprop:Generator_ColumnPropNameInTable="SHARES_TRACKER_HEADER_IDColumn" msprop:Generator_UserColumnName="SHARES_TRACKER_HEADER_ID" type="xs:int" />
+              <xs:element name="SHARES_NAME" msprop:Generator_ColumnVarNameInTable="columnSHARES_NAME" msprop:Generator_ColumnPropNameInRow="SHARES_NAME" msprop:Generator_ColumnPropNameInTable="SHARES_NAMEColumn" msprop:Generator_UserColumnName="SHARES_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHARE_AMT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSHARE_AMT" msprop:Generator_ColumnPropNameInRow="SHARE_AMT" msprop:Generator_ColumnPropNameInTable="SHARE_AMTColumn" msprop:Generator_UserColumnName="SHARE_AMT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PROFIT_LOSS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPROFIT_LOSS" msprop:Generator_ColumnPropNameInRow="PROFIT_LOSS" msprop:Generator_ColumnPropNameInTable="PROFIT_LOSSColumn" msprop:Generator_UserColumnName="PROFIT_LOSS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -298,6 +390,14 @@
     <xs:unique name="SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING" />
       <xs:field xpath="mstns:EXTRA_INCOMING_OUTGOING_ID" />
+    </xs:unique>
+    <xs:unique name="SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES" />
+      <xs:field xpath="mstns:SHARES_TRACKER_EXTRA_CHARGES_ID" />
+    </xs:unique>
+    <xs:unique name="CURRENT_SHARE_PROCEDURE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CURRENT_SHARE_PROCEDURE" />
+      <xs:field xpath="mstns:SHARES_TRACKER_HEADER_ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
