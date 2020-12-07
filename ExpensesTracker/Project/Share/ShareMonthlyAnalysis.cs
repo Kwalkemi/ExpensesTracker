@@ -1,0 +1,238 @@
+﻿using ExpensesTracker.BusinessObject;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using UserLibrary;
+
+namespace ExpensesTracker.Project.Share
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public partial class ShareMonthlyAnalysis : Form
+    {
+        #region Constructor
+        /// <summary>
+        /// 
+        /// </summary>
+        public ShareMonthlyAnalysis()
+        {
+            InitializeComponent();
+        }
+        #endregion
+
+        #region Properties
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Year_Parameter { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int User_Parameter { get; set; }
+
+        #endregion
+
+        #region Events Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShareMonthlyAnalysis_Load(object sender, EventArgs e)
+        {
+            cmbChartType.SelectedItem = "Monthly";
+            cmbYear.SelectedItem = Convert.ToString(DateTime.Today.Year);
+            LoadCombobox();
+            LoadUserlist();
+            LoadParameter();
+            LoadChart();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbChartType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadParameter();
+            LoadChart();
+        }
+        #endregion
+
+        #region Private Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        private void LoadCombobox()
+        {
+            
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aintYear"></param>
+        /// <param name="aintMonth"></param>
+        private void LoadParameter()
+        {
+            User_Parameter = Login.UserId;
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.MONTHLY)
+            {
+                Year_Parameter = Convert.ToInt32(cmbYear.SelectedItem);
+            }
+            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.QUARTERLY)
+            {
+                Year_Parameter = Convert.ToInt32(cmbYear.SelectedItem);
+            }
+        }
+
+        private void LoadChart()
+        {
+            listViewMonthlyAnalysis.Clear();
+            DataTable ldtbTableMain = new DataTable();
+            chartMonthlyExpenses.Series.Clear();
+            chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = 0;
+            chartMonthlyExpenses.ChartAreas[0].Name = "MonthlyAnalysisShare";
+
+            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_MONTHLY_CHART_SHARE);
+            //Year_Parameter = 2018;
+            query = string.Format(query, User_Parameter, Year_Parameter);
+            DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
+            
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.MONTHLY)
+                ldtbTableMain = ConvertIntoMonthlyChartTable(ldtbTable);
+            
+            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.QUARTERLY)
+                ldtbTableMain = ConvertIntoQuarterlyChartTable(ldtbTable);
+            
+            string month = string.Empty;
+            chartMonthlyExpenses.Series.Add(Year_Parameter.ToString());
+            if (ldtbTableMain.Rows.Count > 0)
+            {
+                chartMonthlyExpenses.ChartAreas[0].AxisY.Maximum = ldtbTableMain.AsEnumerable().Select(x => x.Field<int>("Earning")).Max().GetCeilingNumber(1000);
+                chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = ldtbTableMain.AsEnumerable().Select(x => x.Field<int>("Earning")).Min().GetCeilingNumber(1000);
+                chartMonthlyExpenses.ChartAreas[0].AxisY.IsStartedFromZero = true;
+                chartMonthlyExpenses.ChartAreas[0].AxisX.Interval = 1;
+                foreach (DataRow dr in ldtbTableMain.Rows)
+                    chartMonthlyExpenses.Series[Year_Parameter.ToString()].Points.AddXY(dr["Month"], dr["Earning"]);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void LoadUserlist()
+        {
+            string query = GlobalFunction.GetQueryById(Constant.Query.GET_USER_LIST);
+            DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
+            foreach (DataRow dr in ldtbTable.Rows)
+            {
+                if (Convert.ToString(dr[TableEnum.enmLogin_Info.USERNAME.ToString()]) == GlobalFunction.GetUserNameById(Login.UserId))
+                    checkedListUsers.Items.Add(dr[TableEnum.enmLogin_Info.USERNAME.ToString()], true);
+                else
+                    checkedListUsers.Items.Add(dr[TableEnum.enmLogin_Info.USERNAME.ToString()]);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="adtbTable"></param>
+        /// <returns></returns>
+        private DataTable ConvertIntoMonthlyChartTable(DataTable adtbTable)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Month");
+            dataTable.Columns.Add("Earning", typeof(Int32));
+            string lstrItem = string.Empty;
+            List<string> lstNum = new List<string>();
+            for (int i = 1; i <= 12; i++)
+            {
+                lstNum.Add(i.ToString());
+                DataRow[] dataRows = adtbTable.Select("SHARE_MONTH = " + i);
+                if (dataRows.Count() > 0)
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString();
+                    dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
+                    dataTable.Rows.Add(dataRow);
+                    lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
+                    listViewMonthlyAnalysis.Items.Add(lstrItem);
+                }
+                else
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["Month"] = ((TableEnum.Month)i).ToString(); ;
+                    dataRow["Earning"] = 0;
+                    dataTable.Rows.Add(dataRow);
+                    lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
+                    listViewMonthlyAnalysis.Items.Add(lstrItem);
+                }
+            }
+            return dataTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="adtbTable"></param>
+        /// <returns></returns>
+        private DataTable ConvertIntoQuarterlyChartTable(DataTable adtbTable)
+        {
+            DataTable dataTable = new DataTable();
+            DataTable dataTableNew = new DataTable();
+            dataTable.Columns.Add("Month", typeof(string));
+            dataTable.Columns.Add("Earning", typeof(Int32));
+            string lstrItem = string.Empty;
+            List<string> lstNum = new List<string>();
+            for (int i = 1; i <= 12; i++)
+            {
+                lstNum.Add(i.ToString());
+                DataRow[] dataRows = adtbTable.Select("SHARE_MONTH = " + i);
+                if (dataRows.Count() > 0)
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString().GetQuarterFromMonthName();
+                    dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
+                    dataTable.Rows.Add(dataRow);
+                }
+                else
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["Month"] = ((TableEnum.Month)i).ToString().GetQuarterFromMonthName();
+                    dataRow["Earning"] = 0;
+                    dataTable.Rows.Add(dataRow);
+                }
+            }
+            
+            var Member  = dataTable.AsEnumerable().GroupBy(x => x.Field<string>("Month"));
+            dataTableNew = dataTable.Clone();
+            foreach (var group in Member)
+            {
+                DataRow dtRow = dataTableNew.NewRow();
+                dtRow["Month"] = group.Key;
+                dtRow["Earning"] = group.Sum(x => x.Field<int>("Earning"));
+                dataTableNew.Rows.Add(dtRow);
+                lstrItem = Convert.ToString(dtRow["Month"]) + " : " + Convert.ToString(dtRow["Earning"]);
+                listViewMonthlyAnalysis.Items.Add(lstrItem);
+            }
+            return dataTableNew;
+        }
+        #endregion
+
+        private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadParameter();
+            LoadChart();
+        }
+    }
+}

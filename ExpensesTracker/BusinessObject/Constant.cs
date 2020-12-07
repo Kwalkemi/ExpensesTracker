@@ -64,6 +64,8 @@ namespace ExpensesTracker.BusinessObject
             public const string LOAD_EXPENSES_CHART_LIST = "LoadExpensesChartList";
             public const string UPDATE_SHARE_HEADER = "UpdateShareHeader";
             public const string GET_LAST_DATE = "GetLastDate";
+            public const string GET_USER_LIST = "GetUserList";
+            public const string LOAD_MONTHLY_CHART_SHARE = "LoadMonthlyChart";
         }
 
         public abstract class Error
@@ -152,6 +154,13 @@ namespace ExpensesTracker.BusinessObject
             {
                 public const string INCOMING = "INCM";
                 public const string OUTGOING = "OUTG";
+            }
+
+            public abstract class ChartType
+            {
+                public const string MONTHLY = "Monthly";
+                public const string QUARTERLY = "Quarterly";
+                public const string YEARLY = "Yearly";
             }
         }
     }

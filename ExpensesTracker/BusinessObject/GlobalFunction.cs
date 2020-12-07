@@ -37,6 +37,25 @@ namespace ExpensesTracker.BusinessObject
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public static string GetUserNameById(int Id)
+        {
+            string lstrFullName = string.Empty;
+            string istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
+            string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.GET_USER_INFO_BY_ID);
+            str = String.Format(str, Id);
+            DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, str);
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                lstrFullName = Convert.ToString(dataTable.Rows[0][TableEnum.enmLogin_Info.USERNAME.ToString()]);
+            }
+            return lstrFullName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="astrMessage"></param>
         /// <returns></returns>
         public static string GetMessageById(string astrMessage)
@@ -142,8 +161,30 @@ namespace ExpensesTracker.BusinessObject
         /// <returns></returns>
         public static int GetCeilingNumber(this int aintnum, int withRef)
         {
-            int num = (aintnum / 1000) + 1;
-            num = num * 1000;
+            int num = 0;
+            if (aintnum == 0)
+                return 0;
+            if ((aintnum < 0 && aintnum > -1000) || (aintnum > 0 && aintnum < 1000))
+            {
+                if (aintnum > 0 && aintnum < 100)
+                {
+                    return 10;
+                }
+                else if(aintnum < 0 && aintnum > -100)
+                {
+                    return -10;
+                }
+                else
+                {
+                    num = (aintnum / 100) + 1;
+                    num = num * 100;
+                }
+            }
+            else
+            {
+                num = (aintnum / 1000) + 1;
+                num = num * 1000;
+            }
             return num;
         }
 
@@ -188,6 +229,39 @@ namespace ExpensesTracker.BusinessObject
                     }
             }
             return lstMonth;
+        }
+
+        public static string GetQuarterFromMonthName(this string astrMonth)
+        {
+            switch (astrMonth)
+            {
+                case "January":
+                case "February":
+                case "March":
+                    {
+                        return "1st-Qtr";
+                    }
+                case "April":
+                case "May":
+                case "June":
+                    {
+                        return "2nd-Qtr";
+                    }
+                case "July":
+                case "August":
+                case "September":
+                    {
+                        return "3rd-Qtr";
+                    }
+                case "October":
+                case "November":
+                case "December":
+                    {
+                        return "4th-Qtr";
+                    }
+                default:
+                    return "No Qtr";
+            }
         }
     }
 }

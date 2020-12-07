@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DeliveryTab = new System.Windows.Forms.TabPage();
             this.btnUpdateDelivery = new System.Windows.Forms.Button();
@@ -144,6 +144,10 @@
             this.dateExtraCharge = new System.Windows.Forms.DateTimePicker();
             this.DividendTab = new System.Windows.Forms.TabPage();
             this.panelDividend = new System.Windows.Forms.Panel();
+            this.lblShareDividendIdValue = new System.Windows.Forms.Label();
+            this.lblShareDividendId = new System.Windows.Forms.Label();
+            this.txtShareDividendDesc = new System.Windows.Forms.TextBox();
+            this.lblShareDividendDesc = new System.Windows.Forms.Label();
             this.txtHeaderIdDividend = new System.Windows.Forms.TextBox();
             this.txtShareAmountDividend = new System.Windows.Forms.TextBox();
             this.lblHdrIdDividend = new System.Windows.Forms.Label();
@@ -155,6 +159,10 @@
             this.lblTotalDividendValue = new System.Windows.Forms.Label();
             this.lblTotalDividend = new System.Windows.Forms.Label();
             this.dataGridViewDividend = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHARENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sHARETRACKERPROCEDUREDIVIDENDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PayInOutTab = new System.Windows.Forms.TabPage();
             this.PanelPayinPayout = new System.Windows.Forms.Panel();
@@ -201,6 +209,17 @@
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryTab = new System.Windows.Forms.TabPage();
+            this.panelSummary = new System.Windows.Forms.Panel();
+            this.lblFinalResultValue = new System.Windows.Forms.Label();
+            this.lblFinalResult = new System.Windows.Forms.Label();
+            this.lblTotalIncomingSummaryValue = new System.Windows.Forms.Label();
+            this.lblTotalIncomingSummary = new System.Windows.Forms.Label();
+            this.lblSummary4Value = new System.Windows.Forms.Label();
+            this.lblSummary2Result = new System.Windows.Forms.Label();
+            this.lblSummary1Value = new System.Windows.Forms.Label();
+            this.lblSummary2 = new System.Windows.Forms.Label();
+            this.lblSummary1 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.lblTillDate = new System.Windows.Forms.Label();
             this.lblTotalCurrentShare = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
@@ -211,6 +230,8 @@
             this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cURRENTSHAREPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Analysis = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnMonthEarningAnalysis = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lnkBack = new System.Windows.Forms.LinkLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -225,25 +246,6 @@
             this.cURRENT_SHARE_PROCEDURETableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.CURRENT_SHARE_PROCEDURETableAdapter();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelSummary = new System.Windows.Forms.Panel();
-            this.lblFinalResultValue = new System.Windows.Forms.Label();
-            this.lblFinalResult = new System.Windows.Forms.Label();
-            this.lblTotalIncomingSummaryValue = new System.Windows.Forms.Label();
-            this.lblTotalIncomingSummary = new System.Windows.Forms.Label();
-            this.lblSummary4Value = new System.Windows.Forms.Label();
-            this.lblSummary2Result = new System.Windows.Forms.Label();
-            this.lblSummary1Value = new System.Windows.Forms.Label();
-            this.lblSummary2 = new System.Windows.Forms.Label();
-            this.lblSummary1 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lblShareDividendDesc = new System.Windows.Forms.Label();
-            this.txtShareDividendDesc = new System.Windows.Forms.TextBox();
-            this.lblShareDividendId = new System.Windows.Forms.Label();
-            this.lblShareDividendIdValue = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.DeliveryTab.SuspendLayout();
             this.panelSell.SuspendLayout();
@@ -273,10 +275,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncmOutg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource)).BeginInit();
             this.SummaryTab.SuspendLayout();
+            this.panelSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).BeginInit();
+            this.Analysis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panelSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -645,14 +648,14 @@
             this.dataGridViewDelivery.AllowUserToDeleteRows = false;
             this.dataGridViewDelivery.AutoGenerateColumns = false;
             this.dataGridViewDelivery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDelivery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDelivery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDelivery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SNo,
@@ -662,25 +665,25 @@
             this.dataGridViewTextBoxColumn14,
             this.Column1});
             this.dataGridViewDelivery.DataSource = this.sHARETRACKERPROCEDUREDELIVERYBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDelivery.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDelivery.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewDelivery.Location = new System.Drawing.Point(597, 81);
             this.dataGridViewDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDelivery.Name = "dataGridViewDelivery";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDelivery.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDelivery.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewDelivery.RowHeadersWidth = 51;
             this.dataGridViewDelivery.Size = new System.Drawing.Size(595, 594);
             this.dataGridViewDelivery.TabIndex = 46;
@@ -690,9 +693,9 @@
             // SNo
             // 
             this.SNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.SNo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.SNo.DefaultCellStyle = dataGridViewCellStyle12;
             this.SNo.HeaderText = "Serial No";
             this.SNo.MinimumWidth = 6;
             this.SNo.Name = "SNo";
@@ -1211,9 +1214,9 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn8.HeaderText = "Serial No";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
@@ -1460,6 +1463,43 @@
             this.panelDividend.Size = new System.Drawing.Size(456, 305);
             this.panelDividend.TabIndex = 72;
             // 
+            // lblShareDividendIdValue
+            // 
+            this.lblShareDividendIdValue.AutoSize = true;
+            this.lblShareDividendIdValue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblShareDividendIdValue.Location = new System.Drawing.Point(211, 25);
+            this.lblShareDividendIdValue.Name = "lblShareDividendIdValue";
+            this.lblShareDividendIdValue.Size = new System.Drawing.Size(180, 27);
+            this.lblShareDividendIdValue.TabIndex = 83;
+            this.lblShareDividendIdValue.Text = "Share Dividend Id";
+            // 
+            // lblShareDividendId
+            // 
+            this.lblShareDividendId.AutoSize = true;
+            this.lblShareDividendId.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblShareDividendId.Location = new System.Drawing.Point(15, 25);
+            this.lblShareDividendId.Name = "lblShareDividendId";
+            this.lblShareDividendId.Size = new System.Drawing.Size(190, 27);
+            this.lblShareDividendId.TabIndex = 82;
+            this.lblShareDividendId.Text = "Share Dividend Id: ";
+            // 
+            // txtShareDividendDesc
+            // 
+            this.txtShareDividendDesc.Location = new System.Drawing.Point(217, 106);
+            this.txtShareDividendDesc.Name = "txtShareDividendDesc";
+            this.txtShareDividendDesc.Size = new System.Drawing.Size(100, 22);
+            this.txtShareDividendDesc.TabIndex = 81;
+            // 
+            // lblShareDividendDesc
+            // 
+            this.lblShareDividendDesc.AutoSize = true;
+            this.lblShareDividendDesc.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblShareDividendDesc.Location = new System.Drawing.Point(16, 101);
+            this.lblShareDividendDesc.Name = "lblShareDividendDesc";
+            this.lblShareDividendDesc.Size = new System.Drawing.Size(195, 27);
+            this.lblShareDividendDesc.TabIndex = 80;
+            this.lblShareDividendDesc.Text = "Shares Description: ";
+            // 
             // txtHeaderIdDividend
             // 
             this.txtHeaderIdDividend.Location = new System.Drawing.Point(219, 190);
@@ -1571,6 +1611,36 @@
             this.dataGridViewDividend.RowTemplate.Height = 24;
             this.dataGridViewDividend.Size = new System.Drawing.Size(704, 545);
             this.dataGridViewDividend.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "SHARE_DIVIDEND_ID";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Share Dividend Id";
+            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            // 
+            // sHARENAMEDataGridViewTextBoxColumn
+            // 
+            this.sHARENAMEDataGridViewTextBoxColumn.DataPropertyName = "SHARE_NAME";
+            this.sHARENAMEDataGridViewTextBoxColumn.HeaderText = "Share Description";
+            this.sHARENAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sHARENAMEDataGridViewTextBoxColumn.Name = "sHARENAMEDataGridViewTextBoxColumn";
+            this.sHARENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "SHARES_PRICE_AMT";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Share Amount";
+            this.dataGridViewTextBoxColumn29.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "DIVIDEND_DATE";
+            this.dataGridViewTextBoxColumn47.HeaderText = "Share Dividend Date";
+            this.dataGridViewTextBoxColumn47.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
             // 
             // sHARETRACKERPROCEDUREDIVIDENDBindingSource
             // 
@@ -2031,220 +2101,6 @@
             this.SummaryTab.TabIndex = 3;
             this.SummaryTab.Text = "Summary";
             // 
-            // lblTillDate
-            // 
-            this.lblTillDate.AutoSize = true;
-            this.lblTillDate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTillDate.Location = new System.Drawing.Point(98, 20);
-            this.lblTillDate.Name = "lblTillDate";
-            this.lblTillDate.Size = new System.Drawing.Size(93, 27);
-            this.lblTillDate.TabIndex = 28;
-            this.lblTillDate.Text = "Till Date";
-            // 
-            // lblTotalCurrentShare
-            // 
-            this.lblTotalCurrentShare.AutoSize = true;
-            this.lblTotalCurrentShare.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCurrentShare.Location = new System.Drawing.Point(1022, 596);
-            this.lblTotalCurrentShare.Name = "lblTotalCurrentShare";
-            this.lblTotalCurrentShare.Size = new System.Drawing.Size(101, 27);
-            this.lblTotalCurrentShare.TabIndex = 23;
-            this.lblTotalCurrentShare.Text = "Summary";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(645, 596);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(318, 27);
-            this.label38.TabIndex = 22;
-            this.label38.Text = "Total Amount For Current Share: ";
-            // 
-            // dataGridViewCurrent
-            // 
-            this.dataGridViewCurrent.AutoGenerateColumns = false;
-            this.dataGridViewCurrent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCurrent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCurrent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SHARES_NAME,
-            this.dataGridViewTextBoxColumn45,
-            this.dataGridViewTextBoxColumn46,
-            this.dataGridViewTextBoxColumn43});
-            this.dataGridViewCurrent.DataSource = this.cURRENTSHAREPROCEDUREBindingSource;
-            this.dataGridViewCurrent.Location = new System.Drawing.Point(665, 114);
-            this.dataGridViewCurrent.Name = "dataGridViewCurrent";
-            this.dataGridViewCurrent.RowHeadersWidth = 51;
-            this.dataGridViewCurrent.RowTemplate.Height = 24;
-            this.dataGridViewCurrent.Size = new System.Drawing.Size(499, 431);
-            this.dataGridViewCurrent.TabIndex = 21;
-            // 
-            // SHARES_NAME
-            // 
-            this.SHARES_NAME.DataPropertyName = "SHARES_NAME";
-            this.SHARES_NAME.HeaderText = "Share Name";
-            this.SHARES_NAME.MinimumWidth = 6;
-            this.SHARES_NAME.Name = "SHARES_NAME";
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.DataPropertyName = "SHARE_AMT";
-            this.dataGridViewTextBoxColumn45.HeaderText = "Share Amount";
-            this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.DataPropertyName = "PROFIT_LOSS";
-            this.dataGridViewTextBoxColumn46.HeaderText = "Profit/Loss";
-            this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.ReadOnly = true;
-            this.dataGridViewTextBoxColumn46.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn43
-            // 
-            this.dataGridViewTextBoxColumn43.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn43.HeaderText = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn43.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            this.dataGridViewTextBoxColumn43.ReadOnly = true;
-            this.dataGridViewTextBoxColumn43.Visible = false;
-            // 
-            // cURRENTSHAREPROCEDUREBindingSource
-            // 
-            this.cURRENTSHAREPROCEDUREBindingSource.DataMember = "CURRENT_SHARE_PROCEDURE";
-            this.cURRENTSHAREPROCEDUREBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // Analysis
-            // 
-            this.Analysis.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.Analysis.Location = new System.Drawing.Point(4, 28);
-            this.Analysis.Name = "Analysis";
-            this.Analysis.Size = new System.Drawing.Size(1202, 688);
-            this.Analysis.TabIndex = 7;
-            this.Analysis.Text = "Analysis";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(1055, 11);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(38, 17);
-            this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "User";
-            // 
-            // lnkBack
-            // 
-            this.lnkBack.AutoSize = true;
-            this.lnkBack.Location = new System.Drawing.Point(10, 6);
-            this.lnkBack.Name = "lnkBack";
-            this.lnkBack.Size = new System.Drawing.Size(39, 17);
-            this.lnkBack.TabIndex = 2;
-            this.lnkBack.TabStop = true;
-            this.lnkBack.Text = "Back";
-            this.lnkBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBack_LinkClicked);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // lnkLogout
-            // 
-            this.lnkLogout.AutoSize = true;
-            this.lnkLogout.Location = new System.Drawing.Point(1158, 7);
-            this.lnkLogout.Name = "lnkLogout";
-            this.lnkLogout.Size = new System.Drawing.Size(52, 17);
-            this.lnkLogout.TabIndex = 3;
-            this.lnkLogout.TabStop = true;
-            this.lnkLogout.Text = "Logout";
-            this.lnkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout_LinkClicked);
-            // 
-            // lnkRefresh
-            // 
-            this.lnkRefresh.AutoSize = true;
-            this.lnkRefresh.Location = new System.Drawing.Point(64, 7);
-            this.lnkRefresh.Name = "lnkRefresh";
-            this.lnkRefresh.Size = new System.Drawing.Size(58, 17);
-            this.lnkRefresh.TabIndex = 4;
-            this.lnkRefresh.TabStop = true;
-            this.lnkRefresh.Text = "Refresh";
-            this.lnkRefresh.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRefresh_LinkClicked);
-            // 
-            // sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter
-            // 
-            this.sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter.ClearBeforeFill = true;
-            // 
-            // sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter
-            // 
-            this.sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter.ClearBeforeFill = true;
-            // 
-            // sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter
-            // 
-            this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter.ClearBeforeFill = true;
-            // 
-            // sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter
-            // 
-            this.sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter.ClearBeforeFill = true;
-            // 
-            // sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter
-            // 
-            this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.ClearBeforeFill = true;
-            // 
-            // sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter
-            // 
-            this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter.ClearBeforeFill = true;
-            // 
-            // cURRENT_SHARE_PROCEDURETableAdapter
-            // 
-            this.cURRENT_SHARE_PROCEDURETableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Serial No";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 217;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "SHARES_PRICE_AMT";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Dividend Amount";
-            this.dataGridViewTextBoxColumn28.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Width = 217;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "SHARE_DIVIDEND_ID";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Share Dividend Id";
-            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            // 
-            // sHARENAMEDataGridViewTextBoxColumn
-            // 
-            this.sHARENAMEDataGridViewTextBoxColumn.DataPropertyName = "SHARE_NAME";
-            this.sHARENAMEDataGridViewTextBoxColumn.HeaderText = "Share Description";
-            this.sHARENAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sHARENAMEDataGridViewTextBoxColumn.Name = "sHARENAMEDataGridViewTextBoxColumn";
-            this.sHARENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "SHARES_PRICE_AMT";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Share Amount";
-            this.dataGridViewTextBoxColumn29.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.DataPropertyName = "DIVIDEND_DATE";
-            this.dataGridViewTextBoxColumn47.HeaderText = "Share Dividend Date";
-            this.dataGridViewTextBoxColumn47.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            // 
             // panelSummary
             // 
             this.panelSummary.BackColor = System.Drawing.Color.DarkSalmon;
@@ -2363,42 +2219,214 @@
             this.label19.TabIndex = 28;
             this.label19.Text = "Summary";
             // 
-            // lblShareDividendDesc
+            // lblTillDate
             // 
-            this.lblShareDividendDesc.AutoSize = true;
-            this.lblShareDividendDesc.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblShareDividendDesc.Location = new System.Drawing.Point(16, 101);
-            this.lblShareDividendDesc.Name = "lblShareDividendDesc";
-            this.lblShareDividendDesc.Size = new System.Drawing.Size(195, 27);
-            this.lblShareDividendDesc.TabIndex = 80;
-            this.lblShareDividendDesc.Text = "Shares Description: ";
+            this.lblTillDate.AutoSize = true;
+            this.lblTillDate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTillDate.Location = new System.Drawing.Point(98, 20);
+            this.lblTillDate.Name = "lblTillDate";
+            this.lblTillDate.Size = new System.Drawing.Size(93, 27);
+            this.lblTillDate.TabIndex = 28;
+            this.lblTillDate.Text = "Till Date";
             // 
-            // txtShareDividendDesc
+            // lblTotalCurrentShare
             // 
-            this.txtShareDividendDesc.Location = new System.Drawing.Point(217, 106);
-            this.txtShareDividendDesc.Name = "txtShareDividendDesc";
-            this.txtShareDividendDesc.Size = new System.Drawing.Size(100, 22);
-            this.txtShareDividendDesc.TabIndex = 81;
+            this.lblTotalCurrentShare.AutoSize = true;
+            this.lblTotalCurrentShare.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCurrentShare.Location = new System.Drawing.Point(1022, 596);
+            this.lblTotalCurrentShare.Name = "lblTotalCurrentShare";
+            this.lblTotalCurrentShare.Size = new System.Drawing.Size(101, 27);
+            this.lblTotalCurrentShare.TabIndex = 23;
+            this.lblTotalCurrentShare.Text = "Summary";
             // 
-            // lblShareDividendId
+            // label38
             // 
-            this.lblShareDividendId.AutoSize = true;
-            this.lblShareDividendId.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblShareDividendId.Location = new System.Drawing.Point(15, 25);
-            this.lblShareDividendId.Name = "lblShareDividendId";
-            this.lblShareDividendId.Size = new System.Drawing.Size(190, 27);
-            this.lblShareDividendId.TabIndex = 82;
-            this.lblShareDividendId.Text = "Share Dividend Id: ";
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(645, 596);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(318, 27);
+            this.label38.TabIndex = 22;
+            this.label38.Text = "Total Amount For Current Share: ";
             // 
-            // lblShareDividendIdValue
+            // dataGridViewCurrent
             // 
-            this.lblShareDividendIdValue.AutoSize = true;
-            this.lblShareDividendIdValue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblShareDividendIdValue.Location = new System.Drawing.Point(211, 25);
-            this.lblShareDividendIdValue.Name = "lblShareDividendIdValue";
-            this.lblShareDividendIdValue.Size = new System.Drawing.Size(180, 27);
-            this.lblShareDividendIdValue.TabIndex = 83;
-            this.lblShareDividendIdValue.Text = "Share Dividend Id";
+            this.dataGridViewCurrent.AutoGenerateColumns = false;
+            this.dataGridViewCurrent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCurrent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCurrent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SHARES_NAME,
+            this.dataGridViewTextBoxColumn45,
+            this.dataGridViewTextBoxColumn46,
+            this.dataGridViewTextBoxColumn43});
+            this.dataGridViewCurrent.DataSource = this.cURRENTSHAREPROCEDUREBindingSource;
+            this.dataGridViewCurrent.Location = new System.Drawing.Point(665, 114);
+            this.dataGridViewCurrent.Name = "dataGridViewCurrent";
+            this.dataGridViewCurrent.RowHeadersWidth = 51;
+            this.dataGridViewCurrent.RowTemplate.Height = 24;
+            this.dataGridViewCurrent.Size = new System.Drawing.Size(499, 431);
+            this.dataGridViewCurrent.TabIndex = 21;
+            // 
+            // SHARES_NAME
+            // 
+            this.SHARES_NAME.DataPropertyName = "SHARES_NAME";
+            this.SHARES_NAME.HeaderText = "Share Name";
+            this.SHARES_NAME.MinimumWidth = 6;
+            this.SHARES_NAME.Name = "SHARES_NAME";
+            // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "SHARE_AMT";
+            this.dataGridViewTextBoxColumn45.HeaderText = "Share Amount";
+            this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "PROFIT_LOSS";
+            this.dataGridViewTextBoxColumn46.HeaderText = "Profit/Loss";
+            this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.ReadOnly = true;
+            this.dataGridViewTextBoxColumn46.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn43.HeaderText = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn43.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
+            this.dataGridViewTextBoxColumn43.Visible = false;
+            // 
+            // cURRENTSHAREPROCEDUREBindingSource
+            // 
+            this.cURRENTSHAREPROCEDUREBindingSource.DataMember = "CURRENT_SHARE_PROCEDURE";
+            this.cURRENTSHAREPROCEDUREBindingSource.DataSource = this.shares_TrackerDataset;
+            // 
+            // Analysis
+            // 
+            this.Analysis.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.Analysis.Controls.Add(this.button5);
+            this.Analysis.Controls.Add(this.btnMonthEarningAnalysis);
+            this.Analysis.Location = new System.Drawing.Point(4, 28);
+            this.Analysis.Name = "Analysis";
+            this.Analysis.Size = new System.Drawing.Size(1202, 688);
+            this.Analysis.TabIndex = 7;
+            this.Analysis.Text = "Analysis";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkOrange;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.button5.Location = new System.Drawing.Point(369, 209);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(474, 68);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Sharewise Analysis";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // btnMonthEarningAnalysis
+            // 
+            this.btnMonthEarningAnalysis.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnMonthEarningAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnMonthEarningAnalysis.Location = new System.Drawing.Point(369, 92);
+            this.btnMonthEarningAnalysis.Name = "btnMonthEarningAnalysis";
+            this.btnMonthEarningAnalysis.Size = new System.Drawing.Size(474, 68);
+            this.btnMonthEarningAnalysis.TabIndex = 0;
+            this.btnMonthEarningAnalysis.Text = "Monthy Earning";
+            this.btnMonthEarningAnalysis.UseVisualStyleBackColor = false;
+            this.btnMonthEarningAnalysis.Click += new System.EventHandler(this.btnMonthEarningAnalysis_Click);
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(1055, 11);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(38, 17);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "User";
+            // 
+            // lnkBack
+            // 
+            this.lnkBack.AutoSize = true;
+            this.lnkBack.Location = new System.Drawing.Point(10, 6);
+            this.lnkBack.Name = "lnkBack";
+            this.lnkBack.Size = new System.Drawing.Size(39, 17);
+            this.lnkBack.TabIndex = 2;
+            this.lnkBack.TabStop = true;
+            this.lnkBack.Text = "Back";
+            this.lnkBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBack_LinkClicked);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // lnkLogout
+            // 
+            this.lnkLogout.AutoSize = true;
+            this.lnkLogout.Location = new System.Drawing.Point(1158, 7);
+            this.lnkLogout.Name = "lnkLogout";
+            this.lnkLogout.Size = new System.Drawing.Size(52, 17);
+            this.lnkLogout.TabIndex = 3;
+            this.lnkLogout.TabStop = true;
+            this.lnkLogout.Text = "Logout";
+            this.lnkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout_LinkClicked);
+            // 
+            // lnkRefresh
+            // 
+            this.lnkRefresh.AutoSize = true;
+            this.lnkRefresh.Location = new System.Drawing.Point(64, 7);
+            this.lnkRefresh.Name = "lnkRefresh";
+            this.lnkRefresh.Size = new System.Drawing.Size(58, 17);
+            this.lnkRefresh.TabIndex = 4;
+            this.lnkRefresh.TabStop = true;
+            this.lnkRefresh.Text = "Refresh";
+            this.lnkRefresh.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRefresh_LinkClicked);
+            // 
+            // sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter
+            // 
+            this.sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter.ClearBeforeFill = true;
+            // 
+            // sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter
+            // 
+            this.sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter
+            // 
+            this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter.ClearBeforeFill = true;
+            // 
+            // sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter
+            // 
+            this.sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter.ClearBeforeFill = true;
+            // 
+            // sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter
+            // 
+            this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.ClearBeforeFill = true;
+            // 
+            // sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter
+            // 
+            this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter.ClearBeforeFill = true;
+            // 
+            // cURRENT_SHARE_PROCEDURETableAdapter
+            // 
+            this.cURRENT_SHARE_PROCEDURETableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Serial No";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 217;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "SHARES_PRICE_AMT";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Dividend Amount";
+            this.dataGridViewTextBoxColumn28.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.Width = 217;
             // 
             // Share
             // 
@@ -2458,11 +2486,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource)).EndInit();
             this.SummaryTab.ResumeLayout(false);
             this.SummaryTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panelSummary.ResumeLayout(false);
             this.panelSummary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).EndInit();
+            this.Analysis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2723,5 +2752,7 @@
         private System.Windows.Forms.Label lblShareDividendDesc;
         private System.Windows.Forms.Label lblShareDividendId;
         private System.Windows.Forms.Label lblShareDividendIdValue;
+        private System.Windows.Forms.Button btnMonthEarningAnalysis;
+        private System.Windows.Forms.Button button5;
     }
 }

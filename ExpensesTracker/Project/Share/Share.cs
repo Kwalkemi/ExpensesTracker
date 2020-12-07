@@ -503,6 +503,17 @@ namespace ExpensesTracker.Project.Share
             LoadForm();
             Sum();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMonthEarningAnalysis_Click(object sender, EventArgs e)
+        {
+            ShareMonthlyAnalysis shareMonthlyAnalysis = new ShareMonthlyAnalysis();
+            shareMonthlyAnalysis.Show();
+        }
         #endregion
 
         #region Private Method
@@ -569,6 +580,5 @@ namespace ExpensesTracker.Project.Share
             paddedBounds.Offset(1, yOffset);
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
-
     }
 }
