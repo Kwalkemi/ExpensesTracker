@@ -34,6 +34,7 @@ namespace ExpensesTracker.BusinessObject
                 public const string CODE_ID_4 = "4";
                 public const string CODE_ID_5 = "5";
                 public const string CODE_ID_6 = "6";
+                public const string CODE_ID_7 = "7";
             }
 
             public abstract class Bit_Value
@@ -66,6 +67,7 @@ namespace ExpensesTracker.BusinessObject
             public const string GET_LAST_DATE = "GetLastDate";
             public const string GET_USER_LIST = "GetUserList";
             public const string LOAD_MONTHLY_CHART_SHARE = "LoadMonthlyChart";
+            public const string GET_SERVICE_NAMES = "GetServiceNames";
         }
 
         public abstract class Error

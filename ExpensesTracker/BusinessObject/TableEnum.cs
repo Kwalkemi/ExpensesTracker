@@ -81,7 +81,9 @@ namespace ExpensesTracker.BusinessObject
             SHARE_TYPE_CODE_ID,
             SHARE_TYPE_CODE_VALUE,
             USER_ID,
-            IS_INTRADAY
+            IS_INTRADAY,
+            SERVICE_CODE_ID,
+            SERVICE_CODE_VALUE
         }
 
         public enum enmSharesTrackerBuy

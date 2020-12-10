@@ -75,6 +75,8 @@ namespace ExpensesTracker.Project.Share
                 ldict.Add(TableEnum.enmSharesTrackerHeader.IS_INTRADAY.ToString(), Constant.Common.Bit_Value.BIT_0);
             }
             ldict.Add(TableEnum.enmSharesTrackerHeader.USER_ID.ToString(), Convert.ToString(Login.UserId));
+            ldict.Add(TableEnum.enmSharesTrackerHeader.SERVICE_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_7);
+            ldict.Add(TableEnum.enmSharesTrackerHeader.SERVICE_CODE_VALUE.ToString(), ((KeyValuePair<string,string>)cmbSeviceDelivery.SelectedItem).Key);
 
             int id = DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_TRACKER_HEADER.ToString(), ldict);
             if (id != 0)
@@ -101,7 +103,7 @@ namespace ExpensesTracker.Project.Share
         private void btnUpdateHeader_Click(object sender, EventArgs e)
         {
             string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.UPDATE_SHARE_HEADER);
-            lstrQuery = string.Format(lstrQuery, txtShareNameDelivery.Text, iintUpdateId);
+            lstrQuery = string.Format(lstrQuery, txtShareNameDelivery.Text, ((KeyValuePair<string, string>)cmbSeviceDelivery.SelectedItem).Key, iintUpdateId);
             DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, lstrQuery);
             LoadForm();
         }
@@ -514,9 +516,11 @@ namespace ExpensesTracker.Project.Share
             ShareMonthlyAnalysis shareMonthlyAnalysis = new ShareMonthlyAnalysis();
             shareMonthlyAnalysis.Show();
         }
+        
         #endregion
 
         #region Private Method
+        
         /// <summary>
         /// 
         /// </summary>
@@ -533,11 +537,20 @@ namespace ExpensesTracker.Project.Share
             string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_LAST_DATE);
             lstrQuery = string.Format(lstrQuery, Login.UserId);
             string Tilldate = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+
+            Dictionary<string, string> servicesCombo = new Dictionary<string, string>();
+            lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_SERVICE_NAMES);
+            DataTable ldtbService = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+            foreach (DataRow dr in ldtbService.Rows)
+                servicesCombo.Add(dr[TableEnum.enmCode_Value.CODE_VALUE.ToString()].ToString(), dr[TableEnum.enmCode_Value.CODE_VALUE_DESCRIPTION.ToString()].ToString());
+
+            cmbSeviceDelivery.DataSource = new BindingSource(servicesCombo, null);
+            cmbSeviceDelivery.DisplayMember = "Value";
+            cmbSeviceDelivery.ValueMember = "Key";
+
             DateTime dateTime;
             if (DateTime.TryParse(Tilldate, out dateTime))
-            {
                 lblTillDate.Text = "Your profile is updated till " + dateTime.ToShortDateString() + " date";
-            }
         }
 
         /// <summary>
@@ -567,6 +580,7 @@ namespace ExpensesTracker.Project.Share
                 lblSummary4Value.Text = "You should have " + Rst + " in your Demat Account";
             }
         }
+        
         #endregion
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)

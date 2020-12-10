@@ -28,7 +28,7 @@
                         where Expenses_Type_Value = 'OUTG' and A.EXPENSES_CATEGORY_ID is not null And
                     EXPENSES_DATE between '{0}' and '{1}'
                         group by A.EXPENSES_CATEGORY_ID , B.Expenses_Category_Name, MONTH(EXPENSES_DATE) order by Months asc, Amount desc</query>
-    <query Id="UpdateShareHeader">Update SHARES_TRACKER_HEADER Set SHARES_NAME = '{0}' where SHARES_TRACKER_HEADER_ID = {1}</query>
+    <query Id="UpdateShareHeader">Update SHARES_TRACKER_HEADER Set SHARES_NAME = '{0}', SERVICE_CODE_VALUE = '{1}' where SHARES_TRACKER_HEADER_ID = {2}</query>
     <query Id="GetLastDate">Select MAX(Last_Date) from 
                                   (
                                   Select MAX(SHARES_BUY_DATE) As Last_Date from SHARES_TRACKER_BUY BUY Inner Join  SHARES_TRACKER_HEADER SH
@@ -44,6 +44,7 @@
                                   Select MAX(DIVIDEND_DATE) As Last_Date from [dbo].[SHARE_DIVIDEND] DIV where DIV.User_Id = {0}
                                   ) As LastDateQuery</query>
   <query Id="GetUserList">SELECT USERNAME FROM LOGIN_INFO</query>
+  <query Id="GetServiceNames">SELECT CODE_VALUE, CODE_VALUE_DESCRIPTION FROM CODE_VALUE WHERE CODE_ID = 7</query>
   <query Id="LoadMonthlyChart">WITH SHARETRACKERBUY(SHARES_ID, AMOUNT)
 AS
 (
