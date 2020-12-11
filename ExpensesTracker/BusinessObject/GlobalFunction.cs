@@ -189,6 +189,41 @@ namespace ExpensesTracker.BusinessObject
         }
 
         /// <summary>
+        /// Get the ceiling number
+        /// </summary>
+        /// <param name="aintnum"></param>
+        /// <param name="withRef">with reference of</param>
+        /// <returns></returns>
+        public static int GetCeilingNumber(this decimal aintnum, int withRef)
+        {
+            decimal num = 0;
+            if (aintnum == 0)
+                return 0;
+            if ((aintnum < 0 && aintnum > -1000) || (aintnum > 0 && aintnum < 1000))
+            {
+                if (aintnum > 0 && aintnum < 100)
+                {
+                    return 10;
+                }
+                else if (aintnum < 0 && aintnum > -100)
+                {
+                    return -10;
+                }
+                else
+                {
+                    num = (aintnum / 100) + 1;
+                    num = num * 100;
+                }
+            }
+            else
+            {
+                num = (aintnum / 1000) + 1;
+                num = num * 1000;
+            }
+            return Convert.ToInt32(num);
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="aQuarter"></param>

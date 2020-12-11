@@ -84,11 +84,12 @@ namespace ExpensesTracker.Project.Expenses
                 string lstrId = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, categoryId);
                 Dictionary<string, string> ldict = new Dictionary<string, string>();
                 ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_ITEM.ToString(), txtItem.Text);
-                ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_DATE.ToString(), Convert.ToString(dateTimePickerExpense.Value));
-                ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_DATE.ToString(), txtAmount.Text);
+                ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_DATE.ToString(), dateTimePickerExpense.Text);
+                ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_AMT.ToString(), txtAmount.Text);
                 ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_CATEGORY_ID.ToString(), lstrId);
                 ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_TYPE_ID.ToString(), Constant.Common.CodeId.CODE_ID_4);
                 ldict.Add(TableEnum.enmExpenses_Tracker.EXPENSES_TYPE_VALUE.ToString(), Expensestype);
+                ldict.Add(TableEnum.enmExpenses_Tracker.LOGIN_ID.ToString(), Login.UserId.ToString());
                 DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.EXPENSES_TRACKER.ToString(), ldict);
                 LoadForm();
             }

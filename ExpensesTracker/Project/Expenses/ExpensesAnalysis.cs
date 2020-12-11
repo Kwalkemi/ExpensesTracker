@@ -12,18 +12,70 @@ using UserLibrary;
 
 namespace ExpensesTracker.Project.Expenses
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class ExpensesAnalysis : Form
     {
+        #region Constructor
         public ExpensesAnalysis()
         {
             InitializeComponent();
         }
+        #endregion
 
-        DateTime parameter1 { get; set; }
-        DateTime parameter2 { get; set; }
+        #region Parameter
 
+        /// <summary>
+        /// 
+        /// </summary>
+        string parameter1 { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        string parameter2 { get; set; }
+
+        #endregion
+
+        #region Events Methods
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExpensesAnalysis_Load(object sender, EventArgs e)
+        {
+            LoadForm();
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbChartType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadCombobox();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int month = Convert.ToInt32(cmbMonth.SelectedItem.GetType().GetProperty("Value").GetValue(cmbMonth.SelectedItem, null));
+            LoadParameter(Convert.ToInt32(cmbYear.SelectedItem), month);
+            LoadChart();
+            LoadList();
+        }
+
+        #endregion
+
+        #region Private Methods
         private void LoadForm()
         {
             cmbChartType.SelectedItem = "Monthly";
@@ -36,25 +88,20 @@ namespace ExpensesTracker.Project.Expenses
             LoadList();
         }
 
-        private void cmbChartType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadCombobox();
-        }
-
         private void LoadList()
         {
             DataTable ldtbTable = new DataTable();
             listView1.Clear();
             int Total = 0;
-            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_EXPENSES_CHART_LIST);
+            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_EXPENSES_CHART);
             query = string.Format(query, parameter1, parameter2);
 
             ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
             string lstrItem = string.Empty;
             foreach (DataRow dr in ldtbTable.Rows)
             {
-                Total = Total + Convert.ToInt32(dr["Amount"]);
-                lstrItem = Convert.ToString(dr["Expenses_Category_Name"]) + " - " + Convert.ToString(dr["Amount"]);
+                Total = Total + Convert.ToInt32(dr[Constant.Common.Alias.AMOUNT]);
+                lstrItem = Convert.ToString(dr[TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_NAME.ToString()]) + " - " + Convert.ToString(dr[Constant.Common.Alias.AMOUNT]);
                 listView1.Items.Add(lstrItem);
             }
             lblTotalSpendResult.Text = Total > 0 ? Convert.ToString(Total) : "0";
@@ -81,10 +128,10 @@ namespace ExpensesTracker.Project.Expenses
                 chart1.Series.Add(month);
                 if (ldtbTable.Rows.Count > 0)
                 {
-                    chart1.ChartAreas[0].AxisY.Maximum = ldtbTable.AsEnumerable().Select(x => x.Field<int>("Amount")).Max().GetCeilingNumber(1000);
+                    chart1.ChartAreas[0].AxisY.Maximum = ldtbTable.AsEnumerable().Select(x => x.Field<int>(Constant.Common.Alias.AMOUNT)).Max().GetCeilingNumber(1000);
                     foreach (DataRow dr in ldtbTable.Rows)
                     {
-                        chart1.Series[month].Points.AddXY(dr["Expenses_Category_Name"], dr["Amount"]);
+                        chart1.Series[month].Points.AddXY(dr["Expenses_Category_Name"], dr[Constant.Common.Alias.AMOUNT]);
                     }
                 }
                 else
@@ -150,8 +197,6 @@ namespace ExpensesTracker.Project.Expenses
             }
         }
 
-
-
         private void LoadCombobox()
         {
             cmbMonth.DisplayMember = "Text";
@@ -186,27 +231,18 @@ namespace ExpensesTracker.Project.Expenses
         {
             if (Convert.ToString(cmbChartType.SelectedItem) == "Monthly")
             {
-                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, aintMonth);
-                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, aintMonth);
+                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, aintMonth).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
+                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, aintMonth).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
             }
             else if (Convert.ToString(cmbChartType.SelectedItem) == "Quarterly")
             {
-                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, (3 * aintMonth) + 1);
-                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, (3 * aintMonth) + 3);
+                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, (3 * aintMonth) + 1).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
+                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, (3 * aintMonth) + 3).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
             }
         }
 
-        private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int month = Convert.ToInt32(cmbMonth.SelectedItem.GetType().GetProperty("Value").GetValue(cmbMonth.SelectedItem, null));
-            LoadParameter(Convert.ToInt32(cmbYear.SelectedItem), month);
-            LoadChart();
-            LoadList();
-        }
+        #endregion
 
-        private void ExpensesAnalysis_Load(object sender, EventArgs e)
-        {
-            LoadChart();
-        }
+
     }
 }

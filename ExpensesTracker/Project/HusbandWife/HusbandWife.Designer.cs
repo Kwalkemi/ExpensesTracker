@@ -254,7 +254,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(26, 74);
+            this.label5.Location = new System.Drawing.Point(24, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 27);
             this.label5.TabIndex = 4;

@@ -19,6 +19,7 @@ namespace ExpensesTracker.BusinessObject
             public const string CATEGORY_REMOVE_BOX = "Category Remove Box";
             public const string SPACE = " ";
             public const string DATE_FORMAT = "MM/dd/yyyy";
+            public const string DATE_FORMAT_yyyy_MM_dd = "yyyy-MM-dd";
 
             public abstract class Gender
             {
@@ -42,6 +43,20 @@ namespace ExpensesTracker.BusinessObject
                 public const string BIT_0 = "0";
                 public const string BIT_1 = "1";
             }
+
+            public abstract class Alias
+            {
+                public const string AMOUNT = "Amount";
+                public const string PROFIT_LOSS = "PROFIT_LOSS";
+                public const string SERVICES = "SERVICES";
+            }
+
+            public abstract class ChartType
+            {
+                public const string MONTHLY = "Monthly";
+                public const string QUARTERLY = "Quarterly";
+                public const string YEARLY = "Yearly";
+            }
         }
 
         public abstract class Table_Category_Value
@@ -62,12 +77,12 @@ namespace ExpensesTracker.BusinessObject
             public const string LOAD_HUSBAND_WIFE_CHART = "LoadHusbandWifeChart";
             public const string LOG_OFF_QUERY = "LogoffQuery";
             public const string LOAD_EXPENSES_CHART = "LoadExpensesChart";
-            public const string LOAD_EXPENSES_CHART_LIST = "LoadExpensesChartList";
             public const string UPDATE_SHARE_HEADER = "UpdateShareHeader";
             public const string GET_LAST_DATE = "GetLastDate";
             public const string GET_USER_LIST = "GetUserList";
             public const string LOAD_MONTHLY_CHART_SHARE = "LoadMonthlyChart";
             public const string GET_SERVICE_NAMES = "GetServiceNames";
+            public const string LOAD_MONTHLY_CHART_SERVICE = "LoadMonthlyChartService";
         }
 
         public abstract class Error
@@ -156,13 +171,6 @@ namespace ExpensesTracker.BusinessObject
             {
                 public const string INCOMING = "INCM";
                 public const string OUTGOING = "OUTG";
-            }
-
-            public abstract class ChartType
-            {
-                public const string MONTHLY = "Monthly";
-                public const string QUARTERLY = "Quarterly";
-                public const string YEARLY = "Yearly";
             }
         }
     }

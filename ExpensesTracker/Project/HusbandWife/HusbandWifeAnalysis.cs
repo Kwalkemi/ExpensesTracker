@@ -13,7 +13,7 @@ using UserLibrary;
 namespace ExpensesTracker.Project.HusbandWife
 {
     /// <summary>
-    /// 
+    /// Husband Wife Analysis Class
     /// </summary>
     public partial class HusbandWifeAnalysis : Form
     {
@@ -53,6 +53,7 @@ namespace ExpensesTracker.Project.HusbandWife
             int month = Convert.ToInt32(cmbMonth.SelectedItem.GetType().GetProperty("Value").GetValue(cmbMonth.SelectedItem, null));
             LoadParameter(Convert.ToInt32(cmbYear.SelectedItem), month);
             LoadChart();
+            LoadList();
         }
 
         /// <summary>
@@ -73,12 +74,13 @@ namespace ExpensesTracker.Project.HusbandWife
         /// </summary>
         private void LoadForm()
         {
-            cmbChartType.SelectedItem = "Monthly";
+            cmbChartType.SelectedItem = Constant.Common.ChartType.MONTHLY;
             cmbYear.SelectedItem = Convert.ToString(DateTime.Today.Year);
             LoadCombobox();
 
             LoadParameter(DateTime.Today.Year, DateTime.Today.Month);
             LoadChart();
+            LoadList();
         }
 
         /// <summary>
@@ -89,13 +91,13 @@ namespace ExpensesTracker.Project.HusbandWife
             DataTable ldtbTable = new DataTable();
             chart1.Series.Clear();
             chart1.ChartAreas[0].AxisY.Minimum = 0;
-            chart1.ChartAreas[0].Name = "Expenses";
+            chart1.ChartAreas[0].Name = "ExpensesChartAnalysis";
 
             string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_HUSBAND_WIFE_CHART);
             query = string.Format(query, parameter1, parameter2);
             ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
 
-            if (Convert.ToString(cmbChartType.SelectedItem) == "Monthly")
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
             {
                 string month = string.Empty;
                 if (cmbMonth.SelectedItem != null)
@@ -183,27 +185,27 @@ namespace ExpensesTracker.Project.HusbandWife
             cmbMonth.ValueMember = "Value";
             cmbMonth.SelectedItem = " ";
             cmbMonth.Items.Clear();
-            if (Convert.ToString(cmbChartType.SelectedItem) == "Quarterly")
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.QUARTERLY)
             {
                 cmbMonth.Items.Add(new { Text = "1st Quarter", Value = 0 });
                 cmbMonth.Items.Add(new { Text = "2nd Quarter", Value = 1 });
                 cmbMonth.Items.Add(new { Text = "3rd Quarter", Value = 2 });
                 cmbMonth.Items.Add(new { Text = "4th Quarter", Value = 3 });
             }
-            else if (Convert.ToString(cmbChartType.SelectedItem) == "Monthly")
+            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
             {
-                cmbMonth.Items.Add(new { Text = "January", Value = 1 });
-                cmbMonth.Items.Add(new { Text = "Febuary", Value = 2 });
-                cmbMonth.Items.Add(new { Text = "March", Value = 3 });
-                cmbMonth.Items.Add(new { Text = "April", Value = 4 });
-                cmbMonth.Items.Add(new { Text = "May", Value = 5 });
-                cmbMonth.Items.Add(new { Text = "June", Value = 6 });
-                cmbMonth.Items.Add(new { Text = "July", Value = 7 });
-                cmbMonth.Items.Add(new { Text = "August", Value = 8 });
-                cmbMonth.Items.Add(new { Text = "September", Value = 9 });
-                cmbMonth.Items.Add(new { Text = "October", Value = 10 });
-                cmbMonth.Items.Add(new { Text = "November", Value = 11 });
-                cmbMonth.Items.Add(new { Text = "December", Value = 12 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.January.ToString(), Value = 1 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.February.ToString(), Value = 2 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.March.ToString(), Value = 3 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.April.ToString(), Value = 4 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.May.ToString(), Value = 5 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.June.ToString(), Value = 6 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.July.ToString(), Value = 7 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.August.ToString(), Value = 8 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.September.ToString(), Value = 9 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.October.ToString(), Value = 10 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.November.ToString(), Value = 11 });
+                cmbMonth.Items.Add(new { Text = TableEnum.Month.December.ToString(), Value = 12 });
             }
         }
 
@@ -214,16 +216,38 @@ namespace ExpensesTracker.Project.HusbandWife
         /// <param name="aintMonth"></param>
         private void LoadParameter(int aintYear, int aintMonth)
         {
-            if (Convert.ToString(cmbChartType.SelectedItem) == "Monthly")
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
             {
-                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, aintMonth).ToString("yyyy-MM-dd");
-                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, aintMonth).ToString("yyyy-MM-dd");
+                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, aintMonth).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
+                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, aintMonth).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
             }
-            else if (Convert.ToString(cmbChartType.SelectedItem) == "Quarterly")
+            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.QUARTERLY)
             {
-                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, (3 * aintMonth) + 1).ToString("yyyy-MM-dd");
-                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, (3 * aintMonth) + 3).ToString("yyyy-MM-dd");
+                parameter1 = GlobalFunction.GetFirstDateOfMonth(aintYear, (3 * aintMonth) + 1).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
+                parameter2 = GlobalFunction.GetLastDateOfMonth(aintYear, (3 * aintMonth) + 3).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void LoadList()
+        {
+            DataTable ldtbTable = new DataTable();
+            listViewHusbandWifeAnalysis.Clear();
+            int Total = 0;
+            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_HUSBAND_WIFE_CHART);
+            query = string.Format(query, parameter1, parameter2);
+
+            ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
+            string lstrItem = string.Empty;
+            foreach (DataRow dr in ldtbTable.Rows)
+            {
+                Total = Total + Convert.ToInt32(dr[Constant.Common.Alias.AMOUNT]);
+                lstrItem = Convert.ToString(dr[TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_NAME.ToString()]) + " - " + Convert.ToString(dr[Constant.Common.Alias.AMOUNT]);
+                listViewHusbandWifeAnalysis.Items.Add(lstrItem);
+            }
+            lblTotalSpendResult.Text = Total > 0 ? Convert.ToString(Total) : "0";
         }
 
         #endregion

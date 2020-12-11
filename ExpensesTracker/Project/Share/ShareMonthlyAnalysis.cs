@@ -85,11 +85,11 @@ namespace ExpensesTracker.Project.Share
         private void LoadParameter()
         {
             User_Parameter = Login.UserId;
-            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.MONTHLY)
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
             {
                 Year_Parameter = Convert.ToInt32(cmbYear.SelectedItem);
             }
-            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.QUARTERLY)
+            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.QUARTERLY)
             {
                 Year_Parameter = Convert.ToInt32(cmbYear.SelectedItem);
             }
@@ -108,10 +108,10 @@ namespace ExpensesTracker.Project.Share
             query = string.Format(query, User_Parameter, Year_Parameter);
             DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
             
-            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.MONTHLY)
+            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
                 ldtbTableMain = ConvertIntoMonthlyChartTable(ldtbTable);
             
-            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Shares_Tracker.ChartType.QUARTERLY)
+            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.QUARTERLY)
                 ldtbTableMain = ConvertIntoQuarterlyChartTable(ldtbTable);
             
             string month = string.Empty;

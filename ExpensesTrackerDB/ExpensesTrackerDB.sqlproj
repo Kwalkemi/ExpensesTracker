@@ -85,6 +85,7 @@
     <Build Include="Table\EXTRA_INCOMING_OUTGOING.sql" />
     <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.sql" />
     <Build Include="Trigger\TRIGGER_DELIVERY_CHARGE.sql" />
+    <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_SERVICE.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ExpensesTrackerDB.sqlproj.user" />

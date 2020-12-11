@@ -38,6 +38,9 @@
             this.cmbYear = new System.Windows.Forms.ComboBox();
             this.cmbChartType = new System.Windows.Forms.ComboBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.listViewHusbandWifeAnalysis = new System.Windows.Forms.ListView();
+            this.lblTotalSpendResult = new System.Windows.Forms.Label();
+            this.lblTotalSpend = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,12 +125,46 @@
             this.cmbMonth.TabIndex = 6;
             this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged_1);
             // 
+            // listViewHusbandWifeAnalysis
+            // 
+            this.listViewHusbandWifeAnalysis.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewHusbandWifeAnalysis.HideSelection = false;
+            this.listViewHusbandWifeAnalysis.Location = new System.Drawing.Point(1020, 122);
+            this.listViewHusbandWifeAnalysis.Name = "listViewHusbandWifeAnalysis";
+            this.listViewHusbandWifeAnalysis.Size = new System.Drawing.Size(227, 404);
+            this.listViewHusbandWifeAnalysis.TabIndex = 8;
+            this.listViewHusbandWifeAnalysis.UseCompatibleStateImageBehavior = false;
+            this.listViewHusbandWifeAnalysis.View = System.Windows.Forms.View.List;
+            // 
+            // lblTotalSpendResult
+            // 
+            this.lblTotalSpendResult.AutoSize = true;
+            this.lblTotalSpendResult.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalSpendResult.Location = new System.Drawing.Point(1125, 33);
+            this.lblTotalSpendResult.Name = "lblTotalSpendResult";
+            this.lblTotalSpendResult.Size = new System.Drawing.Size(80, 27);
+            this.lblTotalSpendResult.TabIndex = 11;
+            this.lblTotalSpendResult.Text = "Result: ";
+            // 
+            // lblTotalSpend
+            // 
+            this.lblTotalSpend.AutoSize = true;
+            this.lblTotalSpend.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalSpend.Location = new System.Drawing.Point(986, 33);
+            this.lblTotalSpend.Name = "lblTotalSpend";
+            this.lblTotalSpend.Size = new System.Drawing.Size(133, 27);
+            this.lblTotalSpend.TabIndex = 10;
+            this.lblTotalSpend.Text = "Total Spend: ";
+            // 
             // HusbandWifeAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(977, 549);
+            this.ClientSize = new System.Drawing.Size(1271, 549);
+            this.Controls.Add(this.lblTotalSpendResult);
+            this.Controls.Add(this.lblTotalSpend);
+            this.Controls.Add(this.listViewHusbandWifeAnalysis);
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.cmbChartType);
             this.Controls.Add(this.cmbYear);
@@ -153,5 +190,8 @@
         private System.Windows.Forms.ComboBox cmbYear;
         private System.Windows.Forms.ComboBox cmbChartType;
         private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.ListView listViewHusbandWifeAnalysis;
+        private System.Windows.Forms.Label lblTotalSpendResult;
+        private System.Windows.Forms.Label lblTotalSpend;
     }
 }

@@ -208,9 +208,9 @@ namespace ExpensesTracker.Project.Share
         {
             dataGridViewDelivery.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
 
-            if (Convert.ToString(dataGridViewDelivery.Rows[e.RowIndex].Cells[3].Value) == Constant.Shares_Tracker.Profit_Loss.LOSS)
+            if (Convert.ToString(dataGridViewDelivery.Rows[e.RowIndex].Cells[4].Value) == Constant.Shares_Tracker.Profit_Loss.LOSS)
                 dataGridViewDelivery.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 128, 128);
-            else if (Convert.ToString(dataGridViewDelivery.Rows[e.RowIndex].Cells[3].Value) == Constant.Shares_Tracker.Profit_Loss.PROFIT)
+            else if (Convert.ToString(dataGridViewDelivery.Rows[e.RowIndex].Cells[4].Value) == Constant.Shares_Tracker.Profit_Loss.PROFIT)
                 dataGridViewDelivery.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LimeGreen;
 
             if (dataGridViewDelivery.Rows.Count == (e.RowIndex + 1) || e.RowIndex == 13)
@@ -224,14 +224,15 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void dataGridViewDelivery_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewDelivery.Rows[e.RowIndex].Cells[5].Selected)
+            if (dataGridViewDelivery.Rows[e.RowIndex].Cells[6].Selected)
             {
-                ShareHeaderId = Convert.ToInt32(dataGridViewDelivery.Rows[e.RowIndex].Cells[4].Value);
+                ShareHeaderId = Convert.ToInt32(dataGridViewDelivery.Rows[e.RowIndex].Cells[5].Value);
                 ShareDetail shareDetail = new ShareDetail();
                 shareDetail.Show();
             }
-            iintUpdateId = Convert.ToInt32(dataGridViewDelivery.Rows[e.RowIndex].Cells[4].Value);
+            iintUpdateId = Convert.ToInt32(dataGridViewDelivery.Rows[e.RowIndex].Cells[5].Value);
             txtShareNameDelivery.Text = Convert.ToString(dataGridViewDelivery.Rows[e.RowIndex].Cells[1].Value);
+            //cmbSeviceDelivery.SelectedItem = 
             lblBuyId.Text = iintUpdateId.ToString();
             lblSellId.Text = iintUpdateId.ToString();
         }
@@ -516,11 +517,22 @@ namespace ExpensesTracker.Project.Share
             ShareMonthlyAnalysis shareMonthlyAnalysis = new ShareMonthlyAnalysis();
             shareMonthlyAnalysis.Show();
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnServiceAnalysis_Click(object sender, EventArgs e)
+        {
+            ShareServiceAnalysis shareServiceAnalysis = new ShareServiceAnalysis();
+            shareServiceAnalysis.Show();
+        }
+
         #endregion
 
         #region Private Method
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -594,5 +606,7 @@ namespace ExpensesTracker.Project.Share
             paddedBounds.Offset(1, yOffset);
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
+
+        
     }
 }

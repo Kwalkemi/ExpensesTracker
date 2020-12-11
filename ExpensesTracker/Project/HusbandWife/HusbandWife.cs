@@ -194,7 +194,7 @@ namespace ExpensesTracker.Project.HusbandWife
             }
             else if (errorProvider1.GetError(txthusband) == string.Empty)
             {
-                AddAmount(Constant.Husband_Wife.Record_Type.HUSBAND, txthusband.Text, Convert.ToString(dateTimePickerhusb.Value), "24");
+                AddAmount(Constant.Husband_Wife.Record_Type.HUSBAND, txthusband.Text, dateTimePickerhusb.Text, "24");
                 this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             }
             Sum();
