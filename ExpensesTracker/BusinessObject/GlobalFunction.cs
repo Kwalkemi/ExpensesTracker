@@ -23,7 +23,7 @@ namespace ExpensesTracker.BusinessObject
         public static string GetFullNameById(int Id)
         {
             string lstrFullName = string.Empty;
-            string istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
+            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
             string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.GET_USER_INFO_BY_ID);
             str = String.Format(str, Id);
             DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, str);
@@ -42,7 +42,7 @@ namespace ExpensesTracker.BusinessObject
         public static string GetUserNameById(int Id)
         {
             string lstrFullName = string.Empty;
-            string istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
+            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
             string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.GET_USER_INFO_BY_ID);
             str = String.Format(str, Id);
             DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, str);
@@ -60,7 +60,7 @@ namespace ExpensesTracker.BusinessObject
         /// <returns></returns>
         public static string GetMessageById(string astrMessage)
         {
-            string istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
+            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
             return XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, astrMessage);
         }
 
@@ -71,7 +71,7 @@ namespace ExpensesTracker.BusinessObject
         /// <returns></returns>
         public static string GetQueryById(string astrMessage)
         {
-            string istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
+            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
             return XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, astrMessage);
         }
 

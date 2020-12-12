@@ -12,7 +12,7 @@ namespace ExpensesTracker.BusinessObject
         {
             public const string DATABASE_NAME = "Expenses_Tracker";
             public const string ENTITY_NAME = "Entity.xml";
-            public const string XML = "\\Xml";
+            public const string XML = "Xml\\";
             public const string SPECIAL_CHARACTER_AT_THE_RATE = "@";
             public const string DOT_COM = ".com";
             public const string CATEGORY_ADD_BOX = "Category Add Box";

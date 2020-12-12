@@ -19,7 +19,7 @@ namespace ExpensesTracker
     {
         public Login()
         {
-            istrPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + Constant.Common.XML;
+            istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
             InitializeComponent();
         }
 
@@ -27,14 +27,12 @@ namespace ExpensesTracker
         private string istrPath { get; set; }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text == string.Empty)
-            {
+            if (txtUser.Text == string.Empty)
                 errorProvider1.SetError(txtUser, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_2));
-            }
-            if(txtpassword.Text == string.Empty)
-            {
+
+            if (txtpassword.Text == string.Empty)
                 errorProvider1.SetError(txtpassword, XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Error.ERROR_3));
-            }
+
             if (txtUser.Text != string.Empty && txtpassword.Text != string.Empty)
             {
                 errorProvider1.Clear();

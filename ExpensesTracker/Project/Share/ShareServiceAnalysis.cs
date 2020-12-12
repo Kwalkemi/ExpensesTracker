@@ -12,26 +12,35 @@ using UserLibrary;
 
 namespace ExpensesTracker.Project.Share
 {
+    /// <summary>
+    /// Share Service Analysis
+    /// </summary>
     public partial class ShareServiceAnalysis : Form
     {
+        #region Constructor
+        /// <summary>
+        /// Constructor of Share Service Analysis
+        /// </summary>
         public ShareServiceAnalysis()
         {
             InitializeComponent();
         }
+        #endregion
 
         #region Properties
+
         /// <summary>
-        /// 
+        /// Year Parameter
         /// </summary>
         public int Year_Parameter { get; set; }
 
         /// <summary>
-        /// 
+        /// User Parameter
         /// </summary>
         public int User_Parameter { get; set; }
 
         /// <summary>
-        /// 
+        /// Month Parameter
         /// </summary>
         public int Month_Parameter { get; set; }
 
