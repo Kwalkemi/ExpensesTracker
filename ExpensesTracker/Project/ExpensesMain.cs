@@ -88,5 +88,12 @@ namespace ExpensesTracker.Project
             string str = GlobalFunction.GetQueryById(Constant.Query.LOG_OFF_QUERY);
             DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
         }
+
+        private void btnAssetsTracker_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Assets.Assets assets = new Assets.Assets();
+            assets.Show();
+        }
     }
 }

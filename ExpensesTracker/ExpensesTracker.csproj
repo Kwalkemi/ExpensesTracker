@@ -87,6 +87,11 @@
     <Compile Include="BusinessObject\Constant.cs" />
     <Compile Include="BusinessObject\GlobalFunction.cs" />
     <Compile Include="BusinessObject\TableEnum.cs" />
+    <Compile Include="DataSet\Assets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assets.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\Expenses_TrackerDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +130,12 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Project\Assets\Assets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Assets\Assets.Designer.cs">
+      <DependentUpon>Assets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project\ExpensesMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +206,9 @@
     <EmbeddedResource Include="Error.resx">
       <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Project\Assets\Assets.resx">
+      <DependentUpon>Assets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\ShareMonthlyAnalysis.resx">
       <DependentUpon>ShareMonthlyAnalysis.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +218,17 @@
     <EmbeddedResource Include="ShowIds.resx">
       <DependentUpon>ShowIds.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet\Assets.xsc">
+      <DependentUpon>Assets.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Assets.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Assets.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Assets.xss">
+      <DependentUpon>Assets.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\Expenses_TrackerDataset.xsc">
       <DependentUpon>Expenses_TrackerDataset.xsd</DependentUpon>
     </None>
@@ -346,5 +371,6 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

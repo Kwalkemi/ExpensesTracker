@@ -40,12 +40,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnShareTracker = new System.Windows.Forms.Button();
             this.lnkLogout = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnAssetsTracker = new System.Windows.Forms.Button();
             this.groupBoxHusbWife.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).BeginInit();
             this.groupBoxExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxShare.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMainHeading
@@ -189,12 +194,47 @@
             this.lnkLogout.Text = "Logout";
             this.lnkLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogout_LinkClicked);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.btnAssetsTracker);
+            this.groupBox1.Location = new System.Drawing.Point(935, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(280, 421);
+            this.groupBox1.TabIndex = 66;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Assets";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::ExpensesTracker.Properties.Resources.Shares;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(268, 287);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnAssetsTracker
+            // 
+            this.btnAssetsTracker.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnAssetsTracker.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAssetsTracker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssetsTracker.Location = new System.Drawing.Point(3, 314);
+            this.btnAssetsTracker.Name = "btnAssetsTracker";
+            this.btnAssetsTracker.Size = new System.Drawing.Size(274, 104);
+            this.btnAssetsTracker.TabIndex = 1;
+            this.btnAssetsTracker.Text = "Assets Tracker";
+            this.btnAssetsTracker.UseVisualStyleBackColor = false;
+            this.btnAssetsTracker.Click += new System.EventHandler(this.btnAssetsTracker_Click);
+            // 
             // ExpensesMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ClientSize = new System.Drawing.Size(926, 497);
+            this.ClientSize = new System.Drawing.Size(1240, 497);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lnkLogout);
             this.Controls.Add(this.groupBoxShare);
             this.Controls.Add(this.groupBoxExpenses);
@@ -210,6 +250,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxShare.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +270,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnShareTracker;
         private System.Windows.Forms.LinkLabel lnkLogout;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnAssetsTracker;
     }
 }

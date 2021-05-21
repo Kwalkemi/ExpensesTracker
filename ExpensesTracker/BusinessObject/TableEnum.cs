@@ -21,7 +21,10 @@ namespace ExpensesTracker.BusinessObject
             SHARES_TRACKER_EXTRA_CHARGES,
             SHARES_PAYIN_PAYOUT,
             EXTRA_INCOMING_OUTGOING,
-            SHARE_DIVIDEND
+            SHARE_DIVIDEND,
+            ASSET_HEADER,
+            ASSET_DETAIL,
+            ASSET_HEADER_HISTORY
         }
 
         public enum enmLogin_Info
@@ -163,6 +166,21 @@ namespace ExpensesTracker.BusinessObject
             October = 10,
             November = 11,
             December = 12
+        }
+
+        public enum enmAssetHeader
+        {
+            ASSET_HEADER_ID,
+            ASSET_TOTAL_AMOUNT,
+            USER_LOGIN_ID
+        }
+
+        public enum enmAssetDetail
+        {
+            ASSET_DETAIL_ID,
+            ASSET_HEADER_ID,
+            ASSET_DESCIPTION,
+            ASSET_AMOUNT,
         }
     }
 }

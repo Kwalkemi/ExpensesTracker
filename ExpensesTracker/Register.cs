@@ -61,6 +61,7 @@ namespace ExpensesTracker
             int Id = DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.LOGIN_INFO.ToString(), ldict);
             if (Id > 0)
             {
+                InsertIntoAssetHeader(Id);
                 MessageBox.Show(XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, Constant.Message.REGISTRATION_SUCCESSFULY));
             }
         }
@@ -70,6 +71,12 @@ namespace ExpensesTracker
             this.Close();
         }
 
+        private void InsertIntoAssetHeader(int UserId)
+        {
+            Dictionary<string, string> ldict = new Dictionary<string, string>();
+            ldict.Add(TableEnum.enmAssetHeader.ASSET_HEADER_ID.ToString(), UserId.ToString());
+            DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.ASSET_HEADER.ToString(), ldict);
+        }
 
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

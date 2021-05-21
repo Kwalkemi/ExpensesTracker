@@ -101,6 +101,8 @@ namespace ExpensesTracker.BusinessObject
             public const string ERROR_12 = "Error_12";
             public const string ERROR_13 = "Error_13";
             public const string ERROR_14 = "Error_14";
+            public const string ERROR_15 = "Error_15";
+            public const string ERROR_16 = "Error_16";
         }
 
         public abstract class Message

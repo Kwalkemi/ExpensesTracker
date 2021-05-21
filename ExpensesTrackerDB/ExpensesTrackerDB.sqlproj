@@ -86,6 +86,12 @@
     <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES.sql" />
     <Build Include="Trigger\TRIGGER_DELIVERY_CHARGE.sql" />
     <Build Include="StoreProcedure\SHARE_TRACKER_PROCEDURE_SERVICE.sql" />
+    <Build Include="Table\ASSET_HEADER.sql" />
+    <Build Include="Table\ASSET_DETAIL.sql" />
+    <Build Include="Table\ASSET_HEADER_HISTORY.sql" />
+    <Build Include="Trigger\TR_ASSET_HEADER.sql" />
+    <Build Include="Trigger\TR_ASSET_HEADER_INSERT.sql" />
+    <Build Include="StoreProcedure\ASSET_PROCEDURE.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ExpensesTrackerDB.sqlproj.user" />

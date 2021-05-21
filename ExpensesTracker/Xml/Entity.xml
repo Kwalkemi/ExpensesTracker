@@ -120,6 +120,8 @@ ORDER BY SHARE_YEAR desc, SHARE_MONTH DESC</query>
     <message Id="Error_12">Please enter the expenses Item</message>
     <message Id="Error_13">Please enter the expenses type</message>
     <message Id="Error_14">Please select the record</message>
+    <message Id="Error_15">Please enter the asset description.</message>
+    <message Id="Error_16">Please enter the asset amount.</message>
     <message Id="RegSuc">Registration Successfully</message>
     <message Id="HusbandGive">Husband will give {0} Rs to Wife.</message>
     <message Id="WifeExtra">Wife have {0} extra Rs</message>
