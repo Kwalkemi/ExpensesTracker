@@ -45,7 +45,7 @@ namespace ExpensesTracker
             }
             catch(Exception ex)
             {
-                Error.Exception_Msg = ex.Message
+                Error.Exception_Msg = ex.Message;
                 Error.Source = ex.Source;
                 Error.Stack_Trace = ex.StackTrace;
                 Application.Run(new Error());

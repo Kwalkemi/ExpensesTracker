@@ -37,7 +37,7 @@
             this.cmbChartType = new System.Windows.Forms.ComboBox();
             this.lblChartType = new System.Windows.Forms.Label();
             this.chartMonthlyExpenses = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.checkedListUsers = new System.Windows.Forms.CheckedListBox();
+            this.checkedListUsersService = new System.Windows.Forms.CheckedListBox();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
             this.lblUserList = new System.Windows.Forms.Label();
@@ -117,13 +117,14 @@
             this.chartMonthlyExpenses.TabIndex = 10;
             this.chartMonthlyExpenses.Text = "chart1";
             // 
-            // checkedListUsers
+            // checkedListUsersService
             // 
-            this.checkedListUsers.FormattingEnabled = true;
-            this.checkedListUsers.Location = new System.Drawing.Point(1139, 27);
-            this.checkedListUsers.Name = "checkedListUsers";
-            this.checkedListUsers.Size = new System.Drawing.Size(120, 72);
-            this.checkedListUsers.TabIndex = 20;
+            this.checkedListUsersService.FormattingEnabled = true;
+            this.checkedListUsersService.Location = new System.Drawing.Point(1139, 27);
+            this.checkedListUsersService.Name = "checkedListUsersService";
+            this.checkedListUsersService.Size = new System.Drawing.Size(120, 72);
+            this.checkedListUsersService.TabIndex = 20;
+            this.checkedListUsersService.SelectedIndexChanged += new System.EventHandler(this.checkedListUsersService_SelectedIndexChanged);
             // 
             // cmbMonth
             // 
@@ -160,7 +161,8 @@
             this.cmbYear.Items.AddRange(new object[] {
             "2018",
             "2019",
-            "2020"});
+            "2020",
+            "2021"});
             this.cmbYear.Location = new System.Drawing.Point(386, 28);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(159, 24);
@@ -187,7 +189,7 @@
             this.Controls.Add(this.lblUserList);
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.lblMonth);
-            this.Controls.Add(this.checkedListUsers);
+            this.Controls.Add(this.checkedListUsersService);
             this.Controls.Add(this.lblTotalSpendResult);
             this.Controls.Add(this.lblTotalSpend);
             this.Controls.Add(this.listViewServiceAnalysis);
@@ -209,7 +211,7 @@
         private System.Windows.Forms.ComboBox cmbChartType;
         private System.Windows.Forms.Label lblChartType;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMonthlyExpenses;
-        private System.Windows.Forms.CheckedListBox checkedListUsers;
+        private System.Windows.Forms.CheckedListBox checkedListUsersService;
         private System.Windows.Forms.ComboBox cmbMonth;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label lblUserList;

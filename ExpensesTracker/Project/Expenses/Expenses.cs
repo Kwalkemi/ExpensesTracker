@@ -59,9 +59,8 @@ namespace ExpensesTracker.Project.Expenses
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtItem.Text == string.Empty)
-            {
                 errorProvider1.SetError(txtItem, GlobalFunction.GetMessageById(Constant.Error.ERROR_12));
-            }
+
             else if (txtAmount.Text == string.Empty)
             {
                 errorProvider1.SetError(txtAmount, GlobalFunction.GetMessageById(Constant.Error.ERROR_11));
@@ -123,7 +122,7 @@ namespace ExpensesTracker.Project.Expenses
                 lstrQuery = string.Format(lstrQuery, Constant.Table_Category_Value.EXPENSES_TRACKER_CATEGORY, cmbcategory.SelectedItem.ToString());
                 string Id = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
                 lstrQuery = @"Update EXPENSES_TRACKER Set EXPENSES_ITEM = '" + txtItem.Text + "' , EXPENSES_AMT = " + txtAmount.Text +
-                    " , EXPENSES_DATE = '" + dateTimePickerExpense.Value + "', EXPENSES_CATEGORY_ID = " + Id + ", EXPENSES_TYPE_VALUE = '" + Expensestype + "' Where EXPENSES_TRACKER_ID = " + iintUpdateId;
+                    " , EXPENSES_DATE = '" + dateTimePickerExpense.Text + "', EXPENSES_CATEGORY_ID = " + Id + ", EXPENSES_TYPE_VALUE = '" + Expensestype + "' Where EXPENSES_TRACKER_ID = " + iintUpdateId;
                 DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, lstrQuery);
                 LoadForm();
             }
@@ -194,18 +193,6 @@ namespace ExpensesTracker.Project.Expenses
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            this.Controls.Clear();
-            this.InitializeComponent();
-            LoadForm();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnAnalysis_Click(object sender, EventArgs e)
         {
             ExpensesAnalysis form = new ExpensesAnalysis();
@@ -249,16 +236,73 @@ namespace ExpensesTracker.Project.Expenses
                 errorProvider1.SetError(txtAmount, GlobalFunction.GetMessageById(Constant.Error.ERROR_11));
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lnkExpensesBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            ExpensesMain expenses = new ExpensesMain();
+            expenses.Show();
+        }
+
+      /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+            string str = GlobalFunction.GetQueryById(Constant.Query.LOG_OFF_QUERY);
+            DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lnkRefresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Controls.Clear();
+            this.InitializeComponent();
+            LoadForm();
+        }
+
         #endregion
 
         #region Private Method
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void LoadForm()
         {
             lblExpensesUser.Text = GlobalFunction.GetFullNameById(Login.UserId);
             LoadCategory();
             Sum();
             this.eXPENSES_TRACKER_PROCEDURETableAdapter.Fill(this.expenses_TrackerDataset.EXPENSES_TRACKER_PROCEDURE, Login.UserId);
+
+            CmbColumn.Items.Clear();
+            cmbOperator.Items.Clear();
+           for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                if (dataGridView1.Columns[i].Visible)
+                    CmbColumn.Items.Add(dataGridView1.Columns[i].HeaderText);
+            }
+
+            if (cmbOperator.Items.Count == 0)
+            {
+                cmbOperator.Items.Add("=");
+                cmbOperator.Items.Add("in");
+                cmbOperator.Items.Add("Like");
+            }
         }
 
         /// <summary>
@@ -266,12 +310,14 @@ namespace ExpensesTracker.Project.Expenses
         /// </summary>
         private void LoadCategory()
         {
-
+            object SelectedItem = cmbcategory.SelectedItem;
+            cmbcategory.Items.Clear();
             string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.LOAD_CATEGORY);
             lstrQuery = string.Format(lstrQuery, Constant.Table_Category_Value.EXPENSES_TRACKER_CATEGORY);
             DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
             foreach (DataRow dr in ldtbTable.Rows)
                 cmbcategory.Items.Add(Convert.ToString(dr[TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_NAME.ToString()]));
+            cmbcategory.SelectedItem = SelectedItem;
         }
 
         /// <summary>
@@ -283,22 +329,65 @@ namespace ExpensesTracker.Project.Expenses
             lblValue_Amt.Text = Convert.ToString(dataGridView1.Rows.Cast<DataGridViewRow>().Where(t => Convert.ToString(t.Cells[5].Value) == Constant.Expenses_Tracker.Transaaction_Type_Desc.INCOMING).Sum(x => Convert.ToInt32(x.Cells[2].Value)));
             lblValue_Remaining.Text = Convert.ToString(Convert.ToInt32(lblValue_Amt.Text) - Convert.ToInt32(lblValue_Exp.Text));
         }
+
         #endregion
 
-        private void lnkExpensesBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearchFilter_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ExpensesMain expenses = new ExpensesMain();
-            expenses.Show();
-        }
+            string lstrColumnName = string.Empty;
+            DataTable ldtbFilterDataTable = ((ExpensesTracker.DataSet.Expenses_TrackerDataset)((System.Windows.Forms.BindingSource)dataGridView1.DataSource).DataSource).EXPENSES_TRACKER_PROCEDURE;
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                if(dataGridView1.Columns[i].HeaderText == CmbColumn.SelectedItem.ToString())
+                {
+                    lstrColumnName = dataGridView1.Columns[i].DataPropertyName;
+                    break;
+                }
+            }
+            switch (Convert.ToString(cmbOperator.SelectedItem))
+            {
+                case "=":
+                    {
+                        if (ldtbFilterDataTable.AsEnumerable().Any(row => row.Field<String>(Convert.ToString(CmbColumn.SelectedItem)) == txtSearchbox.Text))
+                        {
+                            ldtbFilterDataTable = ldtbFilterDataTable.AsEnumerable().Where(row => row.Field<String>(Convert.ToString(CmbColumn.SelectedItem)) == txtSearchbox.Text)
+                                                    .OrderByDescending(row => row.Field<String>(Convert.ToString(CmbColumn.SelectedItem))).CopyToDataTable();
+                            dataGridView1.DataSource = ldtbFilterDataTable;
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = null;
+                        }
+                        break;
+                    }
+                case "in":
+                    {
+                        break;
+                    }
+                case "Like":
+                    {
+                        if (CmbColumn != null)
+                        {
+                            DataTable ldtbTempTable = new DataTable();
+                            DataRow[] ldtbDataRow = ldtbFilterDataTable.Select(lstrColumnName + " Like '%" + txtSearchbox.Text + "%'");
 
-        private void lnkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
-            string str = GlobalFunction.GetQueryById(Constant.Query.LOG_OFF_QUERY);
-            DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
+                            if (ldtbDataRow.Length > 0)
+                                ldtbTempTable = ldtbDataRow.CopyToDataTable();
+                            else
+                                ldtbTempTable = ldtbFilterDataTable.Clone();
+
+                            dataGridView1.DataSource = ldtbTempTable;
+                        }
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblTotalSpendResult = new System.Windows.Forms.Label();
             this.lblTotalSpend = new System.Windows.Forms.Label();
             this.listViewMonthlyAnalysis = new System.Windows.Forms.ListView();
@@ -100,18 +100,18 @@
             // 
             // chartMonthlyExpenses
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartMonthlyExpenses.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartMonthlyExpenses.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartMonthlyExpenses.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartMonthlyExpenses.Legends.Add(legend2);
             this.chartMonthlyExpenses.Location = new System.Drawing.Point(30, 73);
             this.chartMonthlyExpenses.Name = "chartMonthlyExpenses";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XValueMember = "Expenses_Category_Name";
-            series1.YValueMembers = "Amount";
-            this.chartMonthlyExpenses.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.XValueMember = "Expenses_Category_Name";
+            series2.YValueMembers = "Amount";
+            this.chartMonthlyExpenses.Series.Add(series2);
             this.chartMonthlyExpenses.Size = new System.Drawing.Size(953, 449);
             this.chartMonthlyExpenses.TabIndex = 10;
             this.chartMonthlyExpenses.Text = "chart1";
@@ -123,6 +123,7 @@
             this.checkedListUsers.Name = "checkedListUsers";
             this.checkedListUsers.Size = new System.Drawing.Size(120, 72);
             this.checkedListUsers.TabIndex = 20;
+            this.checkedListUsers.SelectedIndexChanged += new System.EventHandler(this.checkedListUsers_SelectedIndexChanged);
             // 
             // cmbYear
             // 
@@ -130,7 +131,8 @@
             this.cmbYear.Items.AddRange(new object[] {
             "2018",
             "2019",
-            "2020"});
+            "2020",
+            "2021"});
             this.cmbYear.Location = new System.Drawing.Point(448, 28);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(159, 24);

@@ -36,7 +36,7 @@ namespace ExpensesTracker.Project.Share
         /// <summary>
         /// 
         /// </summary>
-        public int User_Parameter { get; set; }
+        public string User_Parameter { get; set; }
 
         #endregion
 
@@ -74,7 +74,7 @@ namespace ExpensesTracker.Project.Share
         /// </summary>
         private void LoadCombobox()
         {
-            
+
         }
 
         /// <summary>
@@ -84,7 +84,19 @@ namespace ExpensesTracker.Project.Share
         /// <param name="aintMonth"></param>
         private void LoadParameter()
         {
-            User_Parameter = Login.UserId;
+            if (checkedListUsers.CheckedIndices.Count == 2)
+                User_Parameter = "1,2";
+            else if (checkedListUsers.CheckedIndices.Count == 1)
+            {
+                int index = checkedListUsers.CheckedIndices[0];
+                if (index == 0)
+                    User_Parameter = "1";
+                else if (index == 1)
+                    User_Parameter = "2";
+            }
+            else
+                User_Parameter = string.Empty;
+
             if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
             {
                 Year_Parameter = Convert.ToInt32(cmbYear.SelectedItem);
@@ -97,33 +109,40 @@ namespace ExpensesTracker.Project.Share
 
         private void LoadChart()
         {
-            listViewMonthlyAnalysis.Clear();
-            DataTable ldtbTableMain = new DataTable();
-            chartMonthlyExpenses.Series.Clear();
-            chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = 0;
-            chartMonthlyExpenses.ChartAreas[0].Name = "MonthlyAnalysisShare";
-
-            string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_MONTHLY_CHART_SHARE);
-            //Year_Parameter = 2018;
-            query = string.Format(query, User_Parameter, Year_Parameter);
-            DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
-            
-            if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
-                ldtbTableMain = ConvertIntoMonthlyChartTable(ldtbTable);
-            
-            else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.QUARTERLY)
-                ldtbTableMain = ConvertIntoQuarterlyChartTable(ldtbTable);
-            
-            string month = string.Empty;
-            chartMonthlyExpenses.Series.Add(Year_Parameter.ToString());
-            if (ldtbTableMain.Rows.Count > 0)
+            if (User_Parameter != string.Empty)
             {
-                chartMonthlyExpenses.ChartAreas[0].AxisY.Maximum = ldtbTableMain.AsEnumerable().Select(x => x.Field<int>("Earning")).Max().GetCeilingNumber(1000);
-                chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = ldtbTableMain.AsEnumerable().Select(x => x.Field<int>("Earning")).Min().GetCeilingNumber(1000);
-                chartMonthlyExpenses.ChartAreas[0].AxisY.IsStartedFromZero = true;
-                chartMonthlyExpenses.ChartAreas[0].AxisX.Interval = 1;
-                foreach (DataRow dr in ldtbTableMain.Rows)
-                    chartMonthlyExpenses.Series[Year_Parameter.ToString()].Points.AddXY(dr["Month"], dr["Earning"]);
+                listViewMonthlyAnalysis.Clear();
+                DataTable ldtbTableMain = new DataTable();
+                chartMonthlyExpenses.Series.Clear();
+                chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = 0;
+                chartMonthlyExpenses.ChartAreas[0].Name = "MonthlyAnalysisShare";
+
+                string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_MONTHLY_CHART_SHARE);
+                //Year_Parameter = 2018;
+                query = string.Format(query, User_Parameter, Year_Parameter);
+                DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
+
+                if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
+                    ldtbTableMain = ConvertIntoMonthlyChartTable(ldtbTable);
+
+                else if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.QUARTERLY)
+                    ldtbTableMain = ConvertIntoQuarterlyChartTable(ldtbTable);
+
+                string month = string.Empty;
+                chartMonthlyExpenses.Series.Add(Year_Parameter.ToString());
+                if (ldtbTableMain.Rows.Count > 0)
+                {
+                    chartMonthlyExpenses.ChartAreas[0].AxisY.Maximum = ldtbTableMain.AsEnumerable().Select(x => x.Field<int>("Earning")).Max().GetCeilingNumber(1000);
+                    chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = ldtbTableMain.AsEnumerable().Select(x => x.Field<int>("Earning")).Min().GetCeilingNumber(1000);
+                    if (chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum > 0)
+                        chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = 0;
+                    else if (chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum == 0 && chartMonthlyExpenses.ChartAreas[0].AxisY.Maximum == 0)
+                        chartMonthlyExpenses.ChartAreas[0].AxisY.Maximum = 100;
+                    chartMonthlyExpenses.ChartAreas[0].AxisY.IsStartedFromZero = true;
+                    chartMonthlyExpenses.ChartAreas[0].AxisX.Interval = 1;
+                    foreach (DataRow dr in ldtbTableMain.Rows)
+                        chartMonthlyExpenses.Series[Year_Parameter.ToString()].Points.AddXY(dr["Month"], dr["Earning"]);
+                }
             }
         }
 
@@ -150,6 +169,7 @@ namespace ExpensesTracker.Project.Share
         /// <returns></returns>
         private DataTable ConvertIntoMonthlyChartTable(DataTable adtbTable)
         {
+            int lintTotal = 0;
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("Month");
             dataTable.Columns.Add("Earning", typeof(Int32));
@@ -164,6 +184,7 @@ namespace ExpensesTracker.Project.Share
                     DataRow dataRow = dataTable.NewRow();
                     dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString();
                     dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
+                    lintTotal = lintTotal + Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
                     dataTable.Rows.Add(dataRow);
                     lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
                     listViewMonthlyAnalysis.Items.Add(lstrItem);
@@ -178,6 +199,7 @@ namespace ExpensesTracker.Project.Share
                     listViewMonthlyAnalysis.Items.Add(lstrItem);
                 }
             }
+            lblTotalSpendResult.Text = lintTotal.ToString();
             return dataTable;
         }
 
@@ -213,8 +235,8 @@ namespace ExpensesTracker.Project.Share
                     dataTable.Rows.Add(dataRow);
                 }
             }
-            
-            var Member  = dataTable.AsEnumerable().GroupBy(x => x.Field<string>("Month"));
+
+            var Member = dataTable.AsEnumerable().GroupBy(x => x.Field<string>("Month"));
             dataTableNew = dataTable.Clone();
             foreach (var group in Member)
             {
@@ -230,6 +252,12 @@ namespace ExpensesTracker.Project.Share
         #endregion
 
         private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadParameter();
+            LoadChart();
+        }
+
+        private void checkedListUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadParameter();
             LoadChart();

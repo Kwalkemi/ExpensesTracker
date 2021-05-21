@@ -37,7 +37,7 @@ namespace ExpensesTracker.Project.Share
         /// <summary>
         /// User Parameter
         /// </summary>
-        public int User_Parameter { get; set; }
+        public string User_Parameter { get; set; }
 
         /// <summary>
         /// Month Parameter
@@ -109,9 +109,28 @@ namespace ExpensesTracker.Project.Share
         /// </summary>
         /// <param name="aintYear"></param>
         /// <param name="aintMonth"></param>
-        private void LoadParameter()
+        private void LoadParameter(bool IsCalFromUser = false)
         {
-            User_Parameter = Login.UserId;
+            if (IsCalFromUser)
+            {
+                CheckedListBox.CheckedItemCollection checkedItemCollection = checkedListUsersService.CheckedItems;
+                if (checkedListUsersService.CheckedIndices.Count == 2)
+                    User_Parameter = "1,2";
+                else if (checkedListUsersService.CheckedIndices.Count == 1)
+                {
+                    int index = checkedListUsersService.CheckedIndices[0];
+                    if (index == 0)
+                        User_Parameter = "1";
+                    else if (index == 1)
+                        User_Parameter = "2";
+                }
+                else
+                    User_Parameter = string.Empty;
+            }
+            else
+            {
+                User_Parameter = Convert.ToString(Login.UserId);
+            }
             if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
             {
                 if (cmbMonth.SelectedItem != null)
@@ -146,6 +165,8 @@ namespace ExpensesTracker.Project.Share
                 chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = ldtbTable.AsEnumerable().Select(x => x.Field<decimal>(Constant.Common.Alias.PROFIT_LOSS)).Min().GetCeilingNumber(1000);
                 if (chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum > 0)
                     chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = 0;
+                else if (chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum == 0 && chartMonthlyExpenses.ChartAreas[0].AxisY.Maximum == 0)
+                    chartMonthlyExpenses.ChartAreas[0].AxisY.Minimum = 100;
                 chartMonthlyExpenses.ChartAreas[0].AxisY.IsStartedFromZero = true;
                 chartMonthlyExpenses.ChartAreas[0].AxisX.Interval = 1;
                 foreach (DataRow dr in ldtbTable.Rows)
@@ -163,9 +184,9 @@ namespace ExpensesTracker.Project.Share
             foreach (DataRow dr in ldtbTable.Rows)
             {
                 if (Convert.ToString(dr[TableEnum.enmLogin_Info.USERNAME.ToString()]) == GlobalFunction.GetUserNameById(Login.UserId))
-                    checkedListUsers.Items.Add(dr[TableEnum.enmLogin_Info.USERNAME.ToString()], true);
+                    checkedListUsersService.Items.Add(dr[TableEnum.enmLogin_Info.USERNAME.ToString()], true);
                 else
-                    checkedListUsers.Items.Add(dr[TableEnum.enmLogin_Info.USERNAME.ToString()]);
+                    checkedListUsersService.Items.Add(dr[TableEnum.enmLogin_Info.USERNAME.ToString()]);
             }
         }
 
@@ -190,8 +211,14 @@ namespace ExpensesTracker.Project.Share
             }
             lblTotalSpendResult.Text = Total > 0 ? Convert.ToString(Total) : "0";
         }
+
         #endregion
 
-
+        private void checkedListUsersService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadParameter(true);
+            LoadChart();
+            LoadList();
+        }
     }
 }

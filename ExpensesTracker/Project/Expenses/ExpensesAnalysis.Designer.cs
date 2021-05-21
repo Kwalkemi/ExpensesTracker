@@ -98,7 +98,8 @@
             this.cmbYear.Items.AddRange(new object[] {
             "2018",
             "2019",
-            "2020"});
+            "2020",
+            "2021"});
             this.cmbYear.Location = new System.Drawing.Point(85, 31);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(159, 24);
