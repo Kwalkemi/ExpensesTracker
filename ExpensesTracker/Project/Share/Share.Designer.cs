@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DeliveryTab = new System.Windows.Forms.TabPage();
             this.cmbSeviceDelivery = new System.Windows.Forms.ComboBox();
@@ -70,6 +70,15 @@
             this.dateBuy = new System.Windows.Forms.DateTimePicker();
             this.btnShareAdd = new System.Windows.Forms.Button();
             this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
+            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SERVICES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sHARETRACKERPROCEDUREDELIVERYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shares_TrackerDataset = new ExpensesTracker.DataSet.Shares_TrackerDataset();
             this.OptionTab = new System.Windows.Forms.TabPage();
             this.btnUpdateOption = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -103,12 +112,25 @@
             this.lblOptionTotal = new System.Windows.Forms.Label();
             this.dataGridViewOption = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OptionDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sHARETRACKERPROCEDUREOPTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaintainenceTab = new System.Windows.Forms.TabPage();
             this.lblResultValueMaint = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.dataGridViewMaintainence = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSCONSIDERDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelMaintainence = new System.Windows.Forms.Panel();
             this.lblShareHeaderIdValue = new System.Windows.Forms.Label();
             this.lblShareHeaderId = new System.Windows.Forms.Label();
@@ -140,6 +162,11 @@
             this.lblTotalDividendValue = new System.Windows.Forms.Label();
             this.lblTotalDividend = new System.Windows.Forms.Label();
             this.dataGridViewDividend = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHARENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHARETRACKERPROCEDUREDIVIDENDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PayInOutTab = new System.Windows.Forms.TabPage();
             this.PanelPayinPayout = new System.Windows.Forms.Panel();
             this.lblPayInPayOutValue = new System.Windows.Forms.Label();
@@ -156,6 +183,11 @@
             this.lblResultPay = new System.Windows.Forms.Label();
             this.dataGridViewPayInPayOut = new System.Windows.Forms.DataGridView();
             this.SerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ExtraIncmOutgoingTab = new System.Windows.Forms.TabPage();
             this.panelExtraIncmOutg = new System.Windows.Forms.Panel();
             this.rdoOutgoing = new System.Windows.Forms.RadioButton();
@@ -171,6 +203,14 @@
             this.lblTotalValueExtraIncmValue = new System.Windows.Forms.Label();
             this.lblTotalValueExtraIncm = new System.Windows.Forms.Label();
             this.dataGridViewIncmOutg = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryTab = new System.Windows.Forms.TabPage();
             this.panelSummary = new System.Windows.Forms.Panel();
             this.lblFinalResultValue = new System.Windows.Forms.Label();
@@ -188,7 +228,12 @@
             this.label38 = new System.Windows.Forms.Label();
             this.dataGridViewCurrent = new System.Windows.Forms.DataGridView();
             this.SHARES_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cURRENTSHAREPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Analysis = new System.Windows.Forms.TabPage();
+            this.btnServiceAnalysis = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnMonthEarningAnalysis = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -198,43 +243,6 @@
             this.lnkRefresh = new System.Windows.Forms.LinkLabel();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARETRACKERPROCEDUREDELIVERYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shares_TrackerDataset = new ExpensesTracker.DataSet.Shares_TrackerDataset();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARETRACKERPROCEDUREOPTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSCONSIDERDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARETRACKERPROCEDUREDIVIDENDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cURRENTSHAREPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter();
             this.sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_TRACKER_PROCEDURE_OPTIONTableAdapter();
             this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter();
@@ -242,48 +250,41 @@
             this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter();
             this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter();
             this.cURRENT_SHARE_PROCEDURETableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.CURRENT_SHARE_PROCEDURETableAdapter();
-            this.SNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SERVICES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnServiceAnalysis = new System.Windows.Forms.Button();
+            this.chkIsBankAccount = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.DeliveryTab.SuspendLayout();
             this.panelSell.SuspendLayout();
             this.panelbuy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDELIVERYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).BeginInit();
             this.OptionTab.SuspendLayout();
             this.panelSellOptn.SuspendLayout();
             this.panelbuyOptn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOption)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREOPTIONBindingSource)).BeginInit();
             this.MaintainenceTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaintainence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource)).BeginInit();
             this.panelMaintainence.SuspendLayout();
             this.DividendTab.SuspendLayout();
             this.panelDividend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDividend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDIVIDENDBindingSource)).BeginInit();
             this.PayInOutTab.SuspendLayout();
             this.PanelPayinPayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayInPayOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource)).BeginInit();
             this.ExtraIncmOutgoingTab.SuspendLayout();
             this.panelExtraIncmOutg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncmOutg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource)).BeginInit();
             this.SummaryTab.SuspendLayout();
             this.panelSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).BeginInit();
             this.Analysis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDELIVERYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREOPTIONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDIVIDENDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -672,14 +673,14 @@
             this.dataGridViewDelivery.AllowUserToDeleteRows = false;
             this.dataGridViewDelivery.AutoGenerateColumns = false;
             this.dataGridViewDelivery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDelivery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDelivery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDelivery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SNo,
@@ -690,30 +691,101 @@
             this.dataGridViewTextBoxColumn14,
             this.Column1});
             this.dataGridViewDelivery.DataSource = this.sHARETRACKERPROCEDUREDELIVERYBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDelivery.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDelivery.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewDelivery.Location = new System.Drawing.Point(597, 81);
             this.dataGridViewDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewDelivery.Name = "dataGridViewDelivery";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDelivery.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDelivery.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewDelivery.RowHeadersWidth = 51;
             this.dataGridViewDelivery.Size = new System.Drawing.Size(639, 594);
             this.dataGridViewDelivery.TabIndex = 46;
             this.dataGridViewDelivery.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelivery_CellClick);
             this.dataGridViewDelivery.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewDelivery_RowPostPaint);
+            // 
+            // SNo
+            // 
+            this.SNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.SNo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SNo.HeaderText = "Serial No";
+            this.SNo.MinimumWidth = 6;
+            this.SNo.Name = "SNo";
+            this.SNo.ToolTipText = "Serial No";
+            this.SNo.Width = 95;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "SHARES_NAME";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Shares Name";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "SHARE_AMT";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Shares Amt";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // SERVICES
+            // 
+            this.SERVICES.DataPropertyName = "SERVICES";
+            this.SERVICES.HeaderText = "Service";
+            this.SERVICES.MinimumWidth = 6;
+            this.SERVICES.Name = "SERVICES";
+            this.SERVICES.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "PROFIT_LOSS";
+            this.dataGridViewTextBoxColumn17.HeaderText = "PROFIT_LOSS";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Share Id";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Detail";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Text = "View Detail";
+            this.Column1.ToolTipText = "View Detail";
+            this.Column1.UseColumnTextForButtonValue = true;
+            // 
+            // sHARETRACKERPROCEDUREDELIVERYBindingSource
+            // 
+            this.sHARETRACKERPROCEDUREDELIVERYBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_DELIVERY";
+            this.sHARETRACKERPROCEDUREDELIVERYBindingSource.DataSource = this.shares_TrackerDataset;
+            // 
+            // shares_TrackerDataset
+            // 
+            this.shares_TrackerDataset.DataSetName = "Shares_TrackerDataset";
+            this.shares_TrackerDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // OptionTab
             // 
@@ -1067,6 +1139,38 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "SHARES_NAME";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Shares Name";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "SHARE_AMT";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Shares Amt";
+            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "PROFIT_LOSS";
+            this.dataGridViewTextBoxColumn21.HeaderText = "PROFIT_LOSS";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Share Id";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
             // OptionDetail
             // 
             this.OptionDetail.HeaderText = "Detail";
@@ -1075,6 +1179,11 @@
             this.OptionDetail.Text = "View Detail";
             this.OptionDetail.ToolTipText = "View Detail";
             this.OptionDetail.UseColumnTextForButtonValue = true;
+            // 
+            // sHARETRACKERPROCEDUREOPTIONBindingSource
+            // 
+            this.sHARETRACKERPROCEDUREOPTIONBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_OPTION";
+            this.sHARETRACKERPROCEDUREOPTIONBindingSource.DataSource = this.shares_TrackerDataset;
             // 
             // MaintainenceTab
             // 
@@ -1139,14 +1248,71 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn8.HeaderText = "Serial No";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ToolTipText = "Serial No";
-            this.dataGridViewTextBoxColumn8.Width = 95;
+            this.dataGridViewTextBoxColumn8.Width = 88;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "SHARES_EXTRA_CHARGES_DESCRIPTION";
+            this.dataGridViewTextBoxColumn37.HeaderText = "Charges Name";
+            this.dataGridViewTextBoxColumn37.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "SHARES_EXTRA_CHARGES_AMT";
+            this.dataGridViewTextBoxColumn38.HeaderText = "Charges Amt";
+            this.dataGridViewTextBoxColumn38.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "SHARES_CHARGES_DATE";
+            this.dataGridViewTextBoxColumn39.HeaderText = "Charges Date";
+            this.dataGridViewTextBoxColumn39.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            // 
+            // dataGridViewTextBoxColumn40
+            // 
+            this.dataGridViewTextBoxColumn40.DataPropertyName = "SHARES_NAME";
+            this.dataGridViewTextBoxColumn40.HeaderText = "Shares Name";
+            this.dataGridViewTextBoxColumn40.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            // 
+            // dataGridViewTextBoxColumn41
+            // 
+            this.dataGridViewTextBoxColumn41.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn41.HeaderText = "Share Id";
+            this.dataGridViewTextBoxColumn41.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            // 
+            // iSCONSIDERDataGridViewCheckBoxColumn
+            // 
+            this.iSCONSIDERDataGridViewCheckBoxColumn.DataPropertyName = "IS_CONSIDER";
+            this.iSCONSIDERDataGridViewCheckBoxColumn.HeaderText = "IS_CONSIDER";
+            this.iSCONSIDERDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.iSCONSIDERDataGridViewCheckBoxColumn.Name = "iSCONSIDERDataGridViewCheckBoxColumn";
+            this.iSCONSIDERDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn42
+            // 
+            this.dataGridViewTextBoxColumn42.DataPropertyName = "SHARES_TRACKER_EXTRA_CHARGES_ID";
+            this.dataGridViewTextBoxColumn42.HeaderText = "SHARES_TRACKER_EXTRA_CHARGES_ID";
+            this.dataGridViewTextBoxColumn42.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.ReadOnly = true;
+            this.dataGridViewTextBoxColumn42.Visible = false;
+            // 
+            // sHARETRACKERPROCEDUREEXTRACHARGESBindingSource
+            // 
+            this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES";
+            this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource.DataSource = this.shares_TrackerDataset;
             // 
             // panelMaintainence
             // 
@@ -1314,6 +1480,7 @@
             // panelDividend
             // 
             this.panelDividend.BackColor = System.Drawing.Color.DarkSalmon;
+            this.panelDividend.Controls.Add(this.chkIsBankAccount);
             this.panelDividend.Controls.Add(this.lblShareDividendIdValue);
             this.panelDividend.Controls.Add(this.lblShareDividendId);
             this.panelDividend.Controls.Add(this.txtShareDividendDesc);
@@ -1328,7 +1495,7 @@
             this.panelDividend.Controls.Add(this.lblShareAmtDividend);
             this.panelDividend.Location = new System.Drawing.Point(18, 162);
             this.panelDividend.Name = "panelDividend";
-            this.panelDividend.Size = new System.Drawing.Size(456, 305);
+            this.panelDividend.Size = new System.Drawing.Size(456, 361);
             this.panelDividend.TabIndex = 72;
             // 
             // lblShareDividendIdValue
@@ -1396,7 +1563,7 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(237, 237);
+            this.button4.Location = new System.Drawing.Point(237, 276);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(127, 40);
             this.button4.TabIndex = 76;
@@ -1407,7 +1574,7 @@
             // 
             this.btnAddDividend.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnAddDividend.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAddDividend.Location = new System.Drawing.Point(84, 238);
+            this.btnAddDividend.Location = new System.Drawing.Point(84, 277);
             this.btnAddDividend.Name = "btnAddDividend";
             this.btnAddDividend.Size = new System.Drawing.Size(127, 40);
             this.btnAddDividend.TabIndex = 73;
@@ -1479,6 +1646,41 @@
             this.dataGridViewDividend.RowTemplate.Height = 24;
             this.dataGridViewDividend.Size = new System.Drawing.Size(704, 545);
             this.dataGridViewDividend.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "SHARE_DIVIDEND_ID";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Share Dividend Id";
+            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            // 
+            // sHARENAMEDataGridViewTextBoxColumn
+            // 
+            this.sHARENAMEDataGridViewTextBoxColumn.DataPropertyName = "SHARE_NAME";
+            this.sHARENAMEDataGridViewTextBoxColumn.HeaderText = "Share Description";
+            this.sHARENAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sHARENAMEDataGridViewTextBoxColumn.Name = "sHARENAMEDataGridViewTextBoxColumn";
+            this.sHARENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "SHARES_PRICE_AMT";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Share Amount";
+            this.dataGridViewTextBoxColumn29.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "DIVIDEND_DATE";
+            this.dataGridViewTextBoxColumn47.HeaderText = "Share Dividend Date";
+            this.dataGridViewTextBoxColumn47.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            // 
+            // sHARETRACKERPROCEDUREDIVIDENDBindingSource
+            // 
+            this.sHARETRACKERPROCEDUREDIVIDENDBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_DIVIDEND";
+            this.sHARETRACKERPROCEDUREDIVIDENDBindingSource.DataSource = this.shares_TrackerDataset;
             // 
             // PayInOutTab
             // 
@@ -1658,6 +1860,41 @@
             this.SerialNo.MinimumWidth = 6;
             this.SerialNo.Name = "SerialNo";
             // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "SHARES_TRANSACTION_CODE_VALUE";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Code Value";
+            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "SHARES_TRANSACTION_AMT";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "SHARES_TRANSACTION_DATE";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "SHARES_TRANSACTION_ID";
+            this.dataGridViewTextBoxColumn22.HeaderText = "SHARES_TRANSACTION_ID";
+            this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Visible = false;
+            // 
+            // sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource
+            // 
+            this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT";
+            this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource.DataSource = this.shares_TrackerDataset;
+            // 
             // ExtraIncmOutgoingTab
             // 
             this.ExtraIncmOutgoingTab.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -1825,6 +2062,65 @@
             this.dataGridViewIncmOutg.RowTemplate.Height = 24;
             this.dataGridViewIncmOutg.Size = new System.Drawing.Size(657, 545);
             this.dataGridViewIncmOutg.TabIndex = 79;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "EXTRA_INCOMING_OUTGOING_ID";
+            this.dataGridViewTextBoxColumn31.HeaderText = "EXTRA_INCOMING_OUTGOING_ID";
+            this.dataGridViewTextBoxColumn31.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.Visible = false;
+            // 
+            // iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn
+            // 
+            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "INCOMING_OUTGOING_DESCRIPTION";
+            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.Name = "iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "AMOUNT";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn32.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "INCOMING_OUTGOING_CODE_ID";
+            this.dataGridViewTextBoxColumn33.HeaderText = "INCOMING_OUTGOING_CODE_ID";
+            this.dataGridViewTextBoxColumn33.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "INCOMING_OUTGOING_CODE_VALUE";
+            this.dataGridViewTextBoxColumn34.HeaderText = "INCOMING_OUTGOING_CODE_VALUE";
+            this.dataGridViewTextBoxColumn34.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "INCOMING_OUTGOING_DATE";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn35.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "USER_ID";
+            this.dataGridViewTextBoxColumn36.HeaderText = "USER_ID";
+            this.dataGridViewTextBoxColumn36.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.Visible = false;
+            // 
+            // sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource
+            // 
+            this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING";
+            this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource.DataSource = this.shares_TrackerDataset;
             // 
             // SummaryTab
             // 
@@ -2013,6 +2309,37 @@
             this.SHARES_NAME.MinimumWidth = 6;
             this.SHARES_NAME.Name = "SHARES_NAME";
             // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "SHARE_AMT";
+            this.dataGridViewTextBoxColumn45.HeaderText = "Share Amount";
+            this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "PROFIT_LOSS";
+            this.dataGridViewTextBoxColumn46.HeaderText = "Profit/Loss";
+            this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.ReadOnly = true;
+            this.dataGridViewTextBoxColumn46.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn43.HeaderText = "SHARES_TRACKER_HEADER_ID";
+            this.dataGridViewTextBoxColumn43.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
+            this.dataGridViewTextBoxColumn43.Visible = false;
+            // 
+            // cURRENTSHAREPROCEDUREBindingSource
+            // 
+            this.cURRENTSHAREPROCEDUREBindingSource.DataMember = "CURRENT_SHARE_PROCEDURE";
+            this.cURRENTSHAREPROCEDUREBindingSource.DataSource = this.shares_TrackerDataset;
+            // 
             // Analysis
             // 
             this.Analysis.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -2024,6 +2351,18 @@
             this.Analysis.Size = new System.Drawing.Size(1256, 688);
             this.Analysis.TabIndex = 7;
             this.Analysis.Text = "Analysis";
+            // 
+            // btnServiceAnalysis
+            // 
+            this.btnServiceAnalysis.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnServiceAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnServiceAnalysis.Location = new System.Drawing.Point(363, 324);
+            this.btnServiceAnalysis.Name = "btnServiceAnalysis";
+            this.btnServiceAnalysis.Size = new System.Drawing.Size(474, 68);
+            this.btnServiceAnalysis.TabIndex = 2;
+            this.btnServiceAnalysis.Text = "Service wise Analysis";
+            this.btnServiceAnalysis.UseVisualStyleBackColor = false;
+            this.btnServiceAnalysis.Click += new System.EventHandler(this.btnServiceAnalysis_Click);
             // 
             // button5
             // 
@@ -2109,270 +2448,6 @@
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.Width = 217;
             // 
-            // sHARETRACKERPROCEDUREDELIVERYBindingSource
-            // 
-            this.sHARETRACKERPROCEDUREDELIVERYBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_DELIVERY";
-            this.sHARETRACKERPROCEDUREDELIVERYBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // shares_TrackerDataset
-            // 
-            this.shares_TrackerDataset.DataSetName = "Shares_TrackerDataset";
-            this.shares_TrackerDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "SHARES_NAME";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Shares Name";
-            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "SHARE_AMT";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Shares Amt";
-            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "PROFIT_LOSS";
-            this.dataGridViewTextBoxColumn21.HeaderText = "PROFIT_LOSS";
-            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Share Id";
-            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // sHARETRACKERPROCEDUREOPTIONBindingSource
-            // 
-            this.sHARETRACKERPROCEDUREOPTIONBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_OPTION";
-            this.sHARETRACKERPROCEDUREOPTIONBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "SHARES_EXTRA_CHARGES_DESCRIPTION";
-            this.dataGridViewTextBoxColumn37.HeaderText = "Charges Name";
-            this.dataGridViewTextBoxColumn37.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "SHARES_EXTRA_CHARGES_AMT";
-            this.dataGridViewTextBoxColumn38.HeaderText = "Charges Amt";
-            this.dataGridViewTextBoxColumn38.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.DataPropertyName = "SHARES_CHARGES_DATE";
-            this.dataGridViewTextBoxColumn39.HeaderText = "Charges Date";
-            this.dataGridViewTextBoxColumn39.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            // 
-            // dataGridViewTextBoxColumn40
-            // 
-            this.dataGridViewTextBoxColumn40.DataPropertyName = "SHARES_NAME";
-            this.dataGridViewTextBoxColumn40.HeaderText = "Shares Name";
-            this.dataGridViewTextBoxColumn40.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            // 
-            // dataGridViewTextBoxColumn41
-            // 
-            this.dataGridViewTextBoxColumn41.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn41.HeaderText = "Share Id";
-            this.dataGridViewTextBoxColumn41.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-            // 
-            // iSCONSIDERDataGridViewCheckBoxColumn
-            // 
-            this.iSCONSIDERDataGridViewCheckBoxColumn.DataPropertyName = "IS_CONSIDER";
-            this.iSCONSIDERDataGridViewCheckBoxColumn.HeaderText = "IS_CONSIDER";
-            this.iSCONSIDERDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.iSCONSIDERDataGridViewCheckBoxColumn.Name = "iSCONSIDERDataGridViewCheckBoxColumn";
-            this.iSCONSIDERDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn42
-            // 
-            this.dataGridViewTextBoxColumn42.DataPropertyName = "SHARES_TRACKER_EXTRA_CHARGES_ID";
-            this.dataGridViewTextBoxColumn42.HeaderText = "SHARES_TRACKER_EXTRA_CHARGES_ID";
-            this.dataGridViewTextBoxColumn42.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-            this.dataGridViewTextBoxColumn42.ReadOnly = true;
-            this.dataGridViewTextBoxColumn42.Visible = false;
-            // 
-            // sHARETRACKERPROCEDUREEXTRACHARGESBindingSource
-            // 
-            this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES";
-            this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "SHARE_DIVIDEND_ID";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Share Dividend Id";
-            this.dataGridViewTextBoxColumn26.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            // 
-            // sHARENAMEDataGridViewTextBoxColumn
-            // 
-            this.sHARENAMEDataGridViewTextBoxColumn.DataPropertyName = "SHARE_NAME";
-            this.sHARENAMEDataGridViewTextBoxColumn.HeaderText = "Share Description";
-            this.sHARENAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sHARENAMEDataGridViewTextBoxColumn.Name = "sHARENAMEDataGridViewTextBoxColumn";
-            this.sHARENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "SHARES_PRICE_AMT";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Share Amount";
-            this.dataGridViewTextBoxColumn29.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.DataPropertyName = "DIVIDEND_DATE";
-            this.dataGridViewTextBoxColumn47.HeaderText = "Share Dividend Date";
-            this.dataGridViewTextBoxColumn47.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            // 
-            // sHARETRACKERPROCEDUREDIVIDENDBindingSource
-            // 
-            this.sHARETRACKERPROCEDUREDIVIDENDBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_DIVIDEND";
-            this.sHARETRACKERPROCEDUREDIVIDENDBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "SHARES_TRANSACTION_CODE_VALUE";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Code Value";
-            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "SHARES_TRANSACTION_AMT";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "SHARES_TRANSACTION_DATE";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "SHARES_TRANSACTION_ID";
-            this.dataGridViewTextBoxColumn22.HeaderText = "SHARES_TRANSACTION_ID";
-            this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Visible = false;
-            // 
-            // sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource
-            // 
-            this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT";
-            this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "EXTRA_INCOMING_OUTGOING_ID";
-            this.dataGridViewTextBoxColumn31.HeaderText = "EXTRA_INCOMING_OUTGOING_ID";
-            this.dataGridViewTextBoxColumn31.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.ReadOnly = true;
-            this.dataGridViewTextBoxColumn31.Visible = false;
-            // 
-            // iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn
-            // 
-            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "INCOMING_OUTGOING_DESCRIPTION";
-            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn.Name = "iNCOMINGOUTGOINGDESCRIPTIONDataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "AMOUNT";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn32.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "INCOMING_OUTGOING_CODE_ID";
-            this.dataGridViewTextBoxColumn33.HeaderText = "INCOMING_OUTGOING_CODE_ID";
-            this.dataGridViewTextBoxColumn33.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "INCOMING_OUTGOING_CODE_VALUE";
-            this.dataGridViewTextBoxColumn34.HeaderText = "INCOMING_OUTGOING_CODE_VALUE";
-            this.dataGridViewTextBoxColumn34.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "INCOMING_OUTGOING_DATE";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn35.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "USER_ID";
-            this.dataGridViewTextBoxColumn36.HeaderText = "USER_ID";
-            this.dataGridViewTextBoxColumn36.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.Visible = false;
-            // 
-            // sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource
-            // 
-            this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource.DataMember = "SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING";
-            this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.DataPropertyName = "SHARE_AMT";
-            this.dataGridViewTextBoxColumn45.HeaderText = "Share Amount";
-            this.dataGridViewTextBoxColumn45.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.DataPropertyName = "PROFIT_LOSS";
-            this.dataGridViewTextBoxColumn46.HeaderText = "Profit/Loss";
-            this.dataGridViewTextBoxColumn46.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.ReadOnly = true;
-            this.dataGridViewTextBoxColumn46.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn43
-            // 
-            this.dataGridViewTextBoxColumn43.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn43.HeaderText = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn43.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            this.dataGridViewTextBoxColumn43.ReadOnly = true;
-            this.dataGridViewTextBoxColumn43.Visible = false;
-            // 
-            // cURRENTSHAREPROCEDUREBindingSource
-            // 
-            this.cURRENTSHAREPROCEDUREBindingSource.DataMember = "CURRENT_SHARE_PROCEDURE";
-            this.cURRENTSHAREPROCEDUREBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
             // sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter
             // 
             this.sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter.ClearBeforeFill = true;
@@ -2401,78 +2476,17 @@
             // 
             this.cURRENT_SHARE_PROCEDURETableAdapter.ClearBeforeFill = true;
             // 
-            // SNo
+            // chkIsBankAccount
             // 
-            this.SNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.SNo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.SNo.HeaderText = "Serial No";
-            this.SNo.MinimumWidth = 6;
-            this.SNo.Name = "SNo";
-            this.SNo.ToolTipText = "Serial No";
-            this.SNo.Width = 95;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "SHARES_NAME";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Shares Name";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "SHARE_AMT";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Shares Amt";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // SERVICES
-            // 
-            this.SERVICES.DataPropertyName = "SERVICES";
-            this.SERVICES.HeaderText = "Service";
-            this.SERVICES.MinimumWidth = 6;
-            this.SERVICES.Name = "SERVICES";
-            this.SERVICES.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "PROFIT_LOSS";
-            this.dataGridViewTextBoxColumn17.HeaderText = "PROFIT_LOSS";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "SHARES_TRACKER_HEADER_ID";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Share Id";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Detail";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Text = "View Detail";
-            this.Column1.ToolTipText = "View Detail";
-            this.Column1.UseColumnTextForButtonValue = true;
-            // 
-            // btnServiceAnalysis
-            // 
-            this.btnServiceAnalysis.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnServiceAnalysis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnServiceAnalysis.Location = new System.Drawing.Point(363, 324);
-            this.btnServiceAnalysis.Name = "btnServiceAnalysis";
-            this.btnServiceAnalysis.Size = new System.Drawing.Size(474, 68);
-            this.btnServiceAnalysis.TabIndex = 2;
-            this.btnServiceAnalysis.Text = "Service wise Analysis";
-            this.btnServiceAnalysis.UseVisualStyleBackColor = false;
-            this.btnServiceAnalysis.Click += new System.EventHandler(this.btnServiceAnalysis_Click);
+            this.chkIsBankAccount.AutoSize = true;
+            this.chkIsBankAccount.Checked = true;
+            this.chkIsBankAccount.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIsBankAccount.Location = new System.Drawing.Point(170, 231);
+            this.chkIsBankAccount.Name = "chkIsBankAccount";
+            this.chkIsBankAccount.Size = new System.Drawing.Size(131, 21);
+            this.chkIsBankAccount.TabIndex = 84;
+            this.chkIsBankAccount.Text = "Is Bank Account";
+            this.chkIsBankAccount.UseVisualStyleBackColor = true;
             // 
             // Share
             // 
@@ -2496,6 +2510,8 @@
             this.panelbuy.ResumeLayout(false);
             this.panelbuy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDELIVERYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).EndInit();
             this.OptionTab.ResumeLayout(false);
             this.OptionTab.PerformLayout();
             this.panelSellOptn.ResumeLayout(false);
@@ -2503,9 +2519,11 @@
             this.panelbuyOptn.ResumeLayout(false);
             this.panelbuyOptn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOption)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREOPTIONBindingSource)).EndInit();
             this.MaintainenceTab.ResumeLayout(false);
             this.MaintainenceTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaintainence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource)).EndInit();
             this.panelMaintainence.ResumeLayout(false);
             this.panelMaintainence.PerformLayout();
             this.DividendTab.ResumeLayout(false);
@@ -2513,31 +2531,27 @@
             this.panelDividend.ResumeLayout(false);
             this.panelDividend.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDividend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDIVIDENDBindingSource)).EndInit();
             this.PayInOutTab.ResumeLayout(false);
             this.PayInOutTab.PerformLayout();
             this.PanelPayinPayout.ResumeLayout(false);
             this.PanelPayinPayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayInPayOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource)).EndInit();
             this.ExtraIncmOutgoingTab.ResumeLayout(false);
             this.ExtraIncmOutgoingTab.PerformLayout();
             this.panelExtraIncmOutg.ResumeLayout(false);
             this.panelExtraIncmOutg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncmOutg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource)).EndInit();
             this.SummaryTab.ResumeLayout(false);
             this.SummaryTab.PerformLayout();
             this.panelSummary.ResumeLayout(false);
             this.panelSummary.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCurrent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).EndInit();
             this.Analysis.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDELIVERYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREOPTIONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRACHARGESBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREDIVIDENDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREPAYINPAYOUTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sHARETRACKERPROCEDUREEXTRAINCOMINGOUTGOINGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cURRENTSHAREPROCEDUREBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2804,5 +2818,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.Button btnServiceAnalysis;
+        private System.Windows.Forms.CheckBox chkIsBankAccount;
     }
 }

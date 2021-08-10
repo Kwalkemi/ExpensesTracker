@@ -26,6 +26,8 @@ namespace ExpensesTracker.Project.Assets
         {
             string lstrQuery = "SELECT ASSET_HEADER_ID FROM ASSET_HEADER WHERE USER_LOGIN_ID = " + Login.UserId;
             lblFinalAssetValue.Text = string.Empty;
+            lblChangeAmtPercValue.Text = string.Empty;
+            lblChangeAmtValue.Text = string.Empty;
             iintAssetHdrId = Convert.ToInt32(DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery));
             GetTotalAssetAmt();
             this.aSSET_PROCEDURETableAdapter1.Fill(this.assets1.ASSET_PROCEDURE, Login.UserId);
@@ -35,6 +37,31 @@ namespace ExpensesTracker.Project.Assets
         {
             string lstrQuery = "SELECT ASSET_TOTAL_AMOUNT FROM ASSET_HEADER WHERE USER_LOGIN_ID = " + Login.UserId;
             lblFinalAssetValue.Text = Convert.ToString(DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery));
+
+            lstrQuery = "SELECT TOP 2 ASSET_TOTAL_AMOUNT FROM ASSET_HEADER_HISTORY WHERE USER_LOGIN_ID = " + Login.UserId + " ORDER BY ASSET_HEADER_HISTORY_ID DESC";
+            DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+
+            decimal firstnum, secondnum;
+            if (ldtbTable != null && ldtbTable.Rows.Count > 0)
+            {
+                firstnum = ldtbTable.Rows[0]["ASSET_TOTAL_AMOUNT"] != System.DBNull.Value ? Convert.ToDecimal(ldtbTable.Rows[0]["ASSET_TOTAL_AMOUNT"]) : 0m;
+                secondnum = ldtbTable.Rows[1]["ASSET_TOTAL_AMOUNT"] != System.DBNull.Value ? Convert.ToDecimal(ldtbTable.Rows[1]["ASSET_TOTAL_AMOUNT"]) : 0m;
+                if (secondnum - firstnum > 0 && secondnum != 0)
+                {
+                    lblChangeAmtValue.Text = Convert.ToString(secondnum - firstnum);
+                    lblChangeAmtPercValue.Text = Convert.ToString(Math.Round(Convert.ToDecimal(((secondnum - firstnum) * 100) / secondnum), 2)) + " %";
+                }
+                else if (firstnum - secondnum > 0 && secondnum != 0)
+                {
+                    lblChangeAmtValue.Text = Convert.ToString(firstnum - secondnum);
+                    lblChangeAmtPercValue.Text = Convert.ToString(Math.Round(Convert.ToDecimal(((firstnum - secondnum) * 100) / secondnum), 2)) + " %";
+                }
+                else
+                {
+                    lblChangeAmtValue.Text = "0";
+                    lblChangeAmtPercValue.Text = "0 %";
+                }
+            }
         }
 
         private void gridViewAsset_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -47,7 +74,7 @@ namespace ExpensesTracker.Project.Assets
 
         private void gridViewAsset_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            
+
         }
 
         private void btnAssetInsert_Click(object sender, EventArgs e)
@@ -75,8 +102,15 @@ namespace ExpensesTracker.Project.Assets
         {
             string lstrAmtQuery = "SELECT SUM(ASSET_AMOUNT) FROM ASSET_DETAIL WHERE ASSET_HEADER_ID = " + iintAssetHdrId;
             string lstrAmt = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrAmtQuery);
-            string lstrQuery = "Update ASSET_HEADER Set ASSET_TOTAL_AMOUNT = " + lstrAmt +" Where ASSET_HEADER_ID =" + iintAssetHdrId;
-            DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+
+            lstrAmtQuery = "SELECT TOP 1 ASSET_TOTAL_AMOUNT FROM ASSET_HEADER_HISTORY WHERE USER_LOGIN_ID = " + Login.UserId + " ORDER BY ASSET_HEADER_HISTORY_ID DESC";
+            string lstrAmtHistory = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrAmtQuery);
+
+            if (Convert.ToDecimal(lstrAmt) != Convert.ToDecimal(lstrAmtHistory))
+            {
+                string lstrQuery = "Update ASSET_HEADER Set ASSET_TOTAL_AMOUNT = " + lstrAmt + " Where ASSET_HEADER_ID =" + iintAssetHdrId;
+                DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+            }
             GetTotalAssetAmt();
         }
 
@@ -97,6 +131,13 @@ namespace ExpensesTracker.Project.Assets
                 DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, lstrQuery);
                 this.aSSET_PROCEDURETableAdapter1.Fill(this.assets1.ASSET_PROCEDURE, Login.UserId);
             }
+        }
+
+        private void lnkAssetsBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            ExpensesMain expenses = new ExpensesMain();
+            expenses.Show();
         }
     }
 }

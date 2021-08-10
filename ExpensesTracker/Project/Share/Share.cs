@@ -76,7 +76,7 @@ namespace ExpensesTracker.Project.Share
             }
             ldict.Add(TableEnum.enmSharesTrackerHeader.USER_ID.ToString(), Convert.ToString(Login.UserId));
             ldict.Add(TableEnum.enmSharesTrackerHeader.SERVICE_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_7);
-            ldict.Add(TableEnum.enmSharesTrackerHeader.SERVICE_CODE_VALUE.ToString(), ((KeyValuePair<string,string>)cmbSeviceDelivery.SelectedItem).Key);
+            ldict.Add(TableEnum.enmSharesTrackerHeader.SERVICE_CODE_VALUE.ToString(), ((KeyValuePair<string, string>)cmbSeviceDelivery.SelectedItem).Key);
 
             int id = DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_TRACKER_HEADER.ToString(), ldict);
             if (id != 0)
@@ -477,6 +477,10 @@ namespace ExpensesTracker.Project.Share
                 ldict.Add(TableEnum.enmShareDividend.SHARE_DESCRIPTION.ToString(), txtShareDividendDesc.Text);
             ldict.Add(TableEnum.enmShareDividend.USER_ID.ToString(), Login.UserId.ToString());
             ldict.Add(TableEnum.enmShareDividend.SHARES_PRICE_AMT.ToString(), txtShareAmountDividend.Text);
+            if (chkIsBankAccount.Checked)
+                ldict.Add(TableEnum.enmShareDividend.IS_BANK_ACCOUNT.ToString(), Constant.Common.Bit_Value.BIT_1);
+            else
+                ldict.Add(TableEnum.enmShareDividend.IS_BANK_ACCOUNT.ToString(), Constant.Common.Bit_Value.BIT_0);
             string str = dateTimePickerDividend.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateTimePickerDividend.Value.ToLongTimeString();
             ldict.Add(TableEnum.enmShareDividend.DIVIDEND_DATE.ToString(), str);
             DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARE_DIVIDEND.ToString(), ldict);
@@ -592,7 +596,7 @@ namespace ExpensesTracker.Project.Share
                 lblSummary4Value.Text = "You should have " + Rst + " in your Demat Account";
             }
         }
-        
+
         #endregion
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -607,6 +611,6 @@ namespace ExpensesTracker.Project.Share
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
 
-        
+
     }
 }

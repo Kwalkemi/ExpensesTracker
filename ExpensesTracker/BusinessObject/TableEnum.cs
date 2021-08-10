@@ -148,7 +148,8 @@ namespace ExpensesTracker.BusinessObject
             SHARES_PRICE_AMT,
             DIVIDEND_DATE,
             SHARE_DESCRIPTION,
-            USER_ID
+            USER_ID,
+            IS_BANK_ACCOUNT
         }
 
         public enum Month
