@@ -578,18 +578,20 @@ namespace ExpensesTracker.Project.Share
             lblResultOption.Text = Convert.ToString(dataGridViewOption.Rows.Cast<DataGridViewRow>().Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
             lblResultValueMaint.Text = Convert.ToString(dataGridViewMaintainence.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToByte(x.Cells[6].Value) == 1).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
             lblTotalDividendValue.Text = Convert.ToString(dataGridViewDividend.Rows.Cast<DataGridViewRow>().Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
+            string lstrTotalDividendValueInsideThePlatform = Convert.ToString(dataGridViewDividend.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToBoolean(x.Cells[4].Value) == false).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
+            string lstrTotalDividendValueOutsideThePlatform = Convert.ToString(dataGridViewDividend.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToBoolean(x.Cells[4].Value) == true).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
             lblResultPayValue.Text = Convert.ToString(dataGridViewPayInPayOut.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[1].Value) == "PAYO").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
                 - dataGridViewPayInPayOut.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[1].Value) == "PAYI").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
                 );
             lblTotalValueExtraIncmValue.Text = Convert.ToString(dataGridViewIncmOutg.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[4].Value) == "INCM").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
                 - dataGridViewIncmOutg.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[4].Value) == "OUTG").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
                 );
-            lblTotalIncomingSummaryValue.Text = lblTotalValueExtraIncmValue.Text;
+            lblTotalIncomingSummaryValue.Text = Convert.ToString(Convert.ToDecimal(lblTotalValueExtraIncmValue.Text) + Convert.ToDecimal(lstrTotalDividendValueOutsideThePlatform));
             decimal ldecTotalCurrentShare = dataGridViewCurrent.Rows.Cast<DataGridViewRow>().Sum(x => x.Cells[1].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[1].Value));
             lblTotalCurrentShare.Text = Convert.ToString(ldecTotalCurrentShare);
             lblSummary1Value.Text = Convert.ToString(Math.Abs(Convert.ToDecimal(lblResultPayValue.Text)));
-            lblSummary2Result.Text = Convert.ToString(Convert.ToDecimal(lblTotalValueDelivery.Text) + Convert.ToDecimal(lblResultOption.Text) + Convert.ToDecimal(lblTotalDividendValue.Text) - Convert.ToDecimal(lblResultValueMaint.Text));
-            lblFinalResultValue.Text = Convert.ToString(Convert.ToDecimal(lblSummary2Result.Text) + Convert.ToDecimal(lblTotalValueExtraIncmValue.Text));
+            lblSummary2Result.Text = Convert.ToString(Convert.ToDecimal(lblTotalValueDelivery.Text) + Convert.ToDecimal(lblResultOption.Text) + Convert.ToDecimal(lstrTotalDividendValueInsideThePlatform) - Convert.ToDecimal(lblResultValueMaint.Text));
+            lblFinalResultValue.Text = Convert.ToString(Convert.ToDecimal(lblSummary2Result.Text) + Convert.ToDecimal(lblTotalIncomingSummaryValue.Text));
             if (Convert.ToDecimal(lblResultPayValue.Text) < 0)
             {
                 decimal Rst = Convert.ToDecimal(lblSummary1Value.Text) + Convert.ToDecimal(lblSummary2Result.Text) - ldecTotalCurrentShare;

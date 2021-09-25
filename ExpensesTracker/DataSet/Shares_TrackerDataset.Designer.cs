@@ -1828,6 +1828,8 @@ namespace ExpensesTracker.DataSet {
             
             private global::System.Data.DataColumn columnSHARE_NAME;
             
+            private global::System.Data.DataColumn columnIS_BANK_ACCOUNT;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable() {
@@ -1895,6 +1897,14 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IS_BANK_ACCOUNTColumn {
+                get {
+                    return this.columnIS_BANK_ACCOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1930,13 +1940,14 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHARE_TRACKER_PROCEDURE_DIVIDENDRow AddSHARE_TRACKER_PROCEDURE_DIVIDENDRow(decimal SHARES_PRICE_AMT, System.DateTime DIVIDEND_DATE, string SHARE_NAME) {
+            public SHARE_TRACKER_PROCEDURE_DIVIDENDRow AddSHARE_TRACKER_PROCEDURE_DIVIDENDRow(decimal SHARES_PRICE_AMT, System.DateTime DIVIDEND_DATE, string SHARE_NAME, bool IS_BANK_ACCOUNT) {
                 SHARE_TRACKER_PROCEDURE_DIVIDENDRow rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow = ((SHARE_TRACKER_PROCEDURE_DIVIDENDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         SHARES_PRICE_AMT,
                         DIVIDEND_DATE,
-                        SHARE_NAME};
+                        SHARE_NAME,
+                        IS_BANK_ACCOUNT};
                 rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow);
                 return rowSHARE_TRACKER_PROCEDURE_DIVIDENDRow;
@@ -1970,6 +1981,7 @@ namespace ExpensesTracker.DataSet {
                 this.columnSHARES_PRICE_AMT = base.Columns["SHARES_PRICE_AMT"];
                 this.columnDIVIDEND_DATE = base.Columns["DIVIDEND_DATE"];
                 this.columnSHARE_NAME = base.Columns["SHARE_NAME"];
+                this.columnIS_BANK_ACCOUNT = base.Columns["IS_BANK_ACCOUNT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1983,6 +1995,8 @@ namespace ExpensesTracker.DataSet {
                 base.Columns.Add(this.columnDIVIDEND_DATE);
                 this.columnSHARE_NAME = new global::System.Data.DataColumn("SHARE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSHARE_NAME);
+                this.columnIS_BANK_ACCOUNT = new global::System.Data.DataColumn("IS_BANK_ACCOUNT", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIS_BANK_ACCOUNT);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSHARE_DIVIDEND_ID}, true));
                 this.columnSHARE_DIVIDEND_ID.AutoIncrement = true;
@@ -3698,6 +3712,23 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IS_BANK_ACCOUNT {
+                get {
+                    try {
+                        return ((bool)(this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.IS_BANK_ACCOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IS_BANK_ACCOUNT\' in table \'SHARE_TRACKER_PROCEDURE_DIVIDEND" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.IS_BANK_ACCOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSHARE_NAMENull() {
                 return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARE_NAMEColumn);
             }
@@ -3706,6 +3737,18 @@ namespace ExpensesTracker.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSHARE_NAMENull() {
                 this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.SHARE_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIS_BANK_ACCOUNTNull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.IS_BANK_ACCOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIS_BANK_ACCOUNTNull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_DIVIDEND.IS_BANK_ACCOUNTColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5254,6 +5297,7 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("SHARES_PRICE_AMT", "SHARES_PRICE_AMT");
             tableMapping.ColumnMappings.Add("DIVIDEND_DATE", "DIVIDEND_DATE");
             tableMapping.ColumnMappings.Add("SHARE_NAME", "SHARE_NAME");
+            tableMapping.ColumnMappings.Add("IS_BANK_ACCOUNT", "IS_BANK_ACCOUNT");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
