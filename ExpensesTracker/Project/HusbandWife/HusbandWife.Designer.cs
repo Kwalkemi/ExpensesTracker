@@ -385,9 +385,9 @@
             // 
             this.btnAddCtgry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAddCtgry.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAddCtgry.Location = new System.Drawing.Point(1061, 126);
+            this.btnAddCtgry.Location = new System.Drawing.Point(1057, 126);
             this.btnAddCtgry.Name = "btnAddCtgry";
-            this.btnAddCtgry.Size = new System.Drawing.Size(169, 44);
+            this.btnAddCtgry.Size = new System.Drawing.Size(185, 44);
             this.btnAddCtgry.TabIndex = 6;
             this.btnAddCtgry.Text = "Add Category";
             this.btnAddCtgry.UseVisualStyleBackColor = false;
@@ -397,7 +397,7 @@
             // 
             this.btnRmvCtgry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnRmvCtgry.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRmvCtgry.Location = new System.Drawing.Point(1052, 208);
+            this.btnRmvCtgry.Location = new System.Drawing.Point(1057, 208);
             this.btnRmvCtgry.Name = "btnRmvCtgry";
             this.btnRmvCtgry.Size = new System.Drawing.Size(185, 44);
             this.btnRmvCtgry.TabIndex = 7;
@@ -409,9 +409,9 @@
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnRefresh.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(1061, 290);
+            this.btnRefresh.Location = new System.Drawing.Point(1057, 290);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(169, 44);
+            this.btnRefresh.Size = new System.Drawing.Size(185, 44);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -421,9 +421,9 @@
             // 
             this.btnAnalysis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAnalysis.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAnalysis.Location = new System.Drawing.Point(1061, 375);
+            this.btnAnalysis.Location = new System.Drawing.Point(1057, 375);
             this.btnAnalysis.Name = "btnAnalysis";
-            this.btnAnalysis.Size = new System.Drawing.Size(169, 44);
+            this.btnAnalysis.Size = new System.Drawing.Size(185, 44);
             this.btnAnalysis.TabIndex = 9;
             this.btnAnalysis.Text = "Analysis";
             this.btnAnalysis.UseVisualStyleBackColor = false;

@@ -313,7 +313,7 @@ namespace ExpensesTracker.Project.HusbandWife
             if (promptValue != string.Empty)
             {
                 ldict.Add(TableEnum.enmExpenses_Category.EXPENSES_CATEGORY_NAME.ToString(), promptValue);
-                DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.HUSBAND_WIFE.ToString(), ldict);
+                DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.EXPENSES_CATEGORY.ToString(), ldict);
             }
         }
 

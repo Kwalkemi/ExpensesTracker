@@ -77,7 +77,7 @@ namespace ExpensesTracker.Project.HusbandWife
             cmbChartType.SelectedItem = Constant.Common.ChartType.MONTHLY;
             cmbYear.SelectedItem = Convert.ToString(DateTime.Today.Year);
             LoadCombobox();
-
+            
             LoadParameter(DateTime.Today.Year, DateTime.Today.Month);
             LoadChart();
             LoadList();

@@ -408,7 +408,7 @@ namespace ExpensesTracker.Project.Share
             cmbTransaction.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[1].Value);
             dateTransactiondate.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[3].Value);
             lblPayInPayOutValue.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[4].Value);
-            iintUpdateId = Convert.ToInt32(dataGridViewMaintainence.Rows[e.RowIndex].Cells[4].Value);
+            iintUpdateId = Convert.ToInt32(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[4].Value);
         }
 
         /// <summary>

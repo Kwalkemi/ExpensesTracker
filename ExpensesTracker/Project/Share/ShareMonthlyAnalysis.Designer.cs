@@ -58,11 +58,11 @@
             // 
             this.lblTotalSpend.AutoSize = true;
             this.lblTotalSpend.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalSpend.Location = new System.Drawing.Point(709, 28);
+            this.lblTotalSpend.Location = new System.Drawing.Point(703, 27);
             this.lblTotalSpend.Name = "lblTotalSpend";
-            this.lblTotalSpend.Size = new System.Drawing.Size(133, 27);
+            this.lblTotalSpend.Size = new System.Drawing.Size(146, 27);
             this.lblTotalSpend.TabIndex = 18;
-            this.lblTotalSpend.Text = "Total Spend: ";
+            this.lblTotalSpend.Text = "Total Earning: ";
             // 
             // listViewMonthlyAnalysis
             // 
