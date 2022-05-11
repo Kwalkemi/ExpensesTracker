@@ -74,7 +74,7 @@ namespace ExpensesTracker.Project.Share
         /// </summary>
         private void LoadCombobox()
         {
-
+            cmbYear.SelectedValue = DateTime.Now.Year;
         }
 
         /// <summary>

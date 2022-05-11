@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHAREDETAILPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shares_TrackerDataset = new ExpensesTracker.DataSet.Shares_TrackerDataset();
             this.lblShareName = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblResultValue = new System.Windows.Forms.Label();
@@ -42,19 +51,12 @@
             this.lblHdr = new System.Windows.Forms.Label();
             this.checkHeaderUpdate = new System.Windows.Forms.CheckBox();
             this.txtHdrId = new System.Windows.Forms.TextBox();
-            this.shares_TrackerDataset = new ExpensesTracker.DataSet.Shares_TrackerDataset();
-            this.sHAREDETAILPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sHARE_DETAIL_PROCEDURETableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_DETAIL_PROCEDURETableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAvgBuyValue = new System.Windows.Forms.Label();
+            this.lblAvgBuy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sHAREDETAILPROCEDUREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -81,6 +83,73 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "RECORD_TYPE";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Record Type";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TRADING_DATE";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Trading Date";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SHARES_AMT";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Shares Amt";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SHARES_QTY";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Shares Qty";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SHARES_CHARGES";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Shares Charges";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "TOTAL";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sHAREDETAILPROCEDUREBindingSource
+            // 
+            this.sHAREDETAILPROCEDUREBindingSource.DataMember = "SHARE_DETAIL_PROCEDURE";
+            this.sHAREDETAILPROCEDUREBindingSource.DataSource = this.shares_TrackerDataset;
+            // 
+            // shares_TrackerDataset
+            // 
+            this.shares_TrackerDataset.DataSetName = "Shares_TrackerDataset";
+            this.shares_TrackerDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lblShareName
             // 
             this.lblShareName.AutoSize = true;
@@ -95,17 +164,17 @@
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblResult.Location = new System.Drawing.Point(563, 20);
+            this.lblResult.Location = new System.Drawing.Point(689, 20);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(80, 27);
+            this.lblResult.Size = new System.Drawing.Size(70, 27);
             this.lblResult.TabIndex = 2;
-            this.lblResult.Text = "Result: ";
+            this.lblResult.Text = "Total: ";
             // 
             // lblResultValue
             // 
             this.lblResultValue.AutoSize = true;
             this.lblResultValue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblResultValue.Location = new System.Drawing.Point(649, 20);
+            this.lblResultValue.Location = new System.Drawing.Point(775, 20);
             this.lblResultValue.Name = "lblResultValue";
             this.lblResultValue.Size = new System.Drawing.Size(80, 27);
             this.lblResultValue.TabIndex = 3;
@@ -187,76 +256,29 @@
             this.txtHdrId.Size = new System.Drawing.Size(117, 22);
             this.txtHdrId.TabIndex = 69;
             // 
-            // shares_TrackerDataset
-            // 
-            this.shares_TrackerDataset.DataSetName = "Shares_TrackerDataset";
-            this.shares_TrackerDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sHAREDETAILPROCEDUREBindingSource
-            // 
-            this.sHAREDETAILPROCEDUREBindingSource.DataMember = "SHARE_DETAIL_PROCEDURE";
-            this.sHAREDETAILPROCEDUREBindingSource.DataSource = this.shares_TrackerDataset;
-            // 
             // sHARE_DETAIL_PROCEDURETableAdapter
             // 
             this.sHARE_DETAIL_PROCEDURETableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // lblAvgBuyValue
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "RECORD_TYPE";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Record Type";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lblAvgBuyValue.AutoSize = true;
+            this.lblAvgBuyValue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAvgBuyValue.Location = new System.Drawing.Point(405, 20);
+            this.lblAvgBuyValue.Name = "lblAvgBuyValue";
+            this.lblAvgBuyValue.Size = new System.Drawing.Size(100, 27);
+            this.lblAvgBuyValue.TabIndex = 71;
+            this.lblAvgBuyValue.Text = "Avg Buy: ";
             // 
-            // dataGridViewTextBoxColumn2
+            // lblAvgBuy
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TRADING_DATE";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Trading Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SHARES_AMT";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Shares Amt";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SHARES_QTY";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Shares Qty";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SHARES_CHARGES";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Shares Charges";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "TOTAL";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
+            this.lblAvgBuy.AutoSize = true;
+            this.lblAvgBuy.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAvgBuy.Location = new System.Drawing.Point(264, 20);
+            this.lblAvgBuy.Name = "lblAvgBuy";
+            this.lblAvgBuy.Size = new System.Drawing.Size(138, 27);
+            this.lblAvgBuy.TabIndex = 70;
+            this.lblAvgBuy.Text = "Average Buy: ";
             // 
             // ShareDetail
             // 
@@ -264,6 +286,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(976, 615);
+            this.Controls.Add(this.lblAvgBuyValue);
+            this.Controls.Add(this.lblAvgBuy);
             this.Controls.Add(this.txtHdrId);
             this.Controls.Add(this.checkHeaderUpdate);
             this.Controls.Add(this.lblHdr);
@@ -281,8 +305,8 @@
             this.Text = "ShareDetail";
             this.Load += new System.EventHandler(this.ShareDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sHAREDETAILPROCEDUREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +344,7 @@
         private System.Windows.Forms.BindingSource sHAREDETAILPROCEDUREBindingSource;
         private DataSet.Shares_TrackerDataset shares_TrackerDataset;
         private DataSet.Shares_TrackerDatasetTableAdapters.SHARE_DETAIL_PROCEDURETableAdapter sHARE_DETAIL_PROCEDURETableAdapter;
+        private System.Windows.Forms.Label lblAvgBuyValue;
+        private System.Windows.Forms.Label lblAvgBuy;
     }
 }

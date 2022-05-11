@@ -13,7 +13,7 @@
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Visual Studio Tools\Expenses Tracker\</PublishUrl>
+    <PublishUrl>F:\Visual Studio Tools\Expenses Tracker\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>36</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -297,9 +297,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\Share.resx">
       <DependentUpon>Share.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\ShareDetail.resx">
       <DependentUpon>ShareDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

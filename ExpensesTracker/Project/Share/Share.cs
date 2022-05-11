@@ -436,7 +436,7 @@ namespace ExpensesTracker.Project.Share
         private void btnAddPay_Click(object sender, EventArgs e)
         {
             Dictionary<string, string> ldict = new Dictionary<string, string>();
-            ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_CODE_ID.ToString(), "5");
+            ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_5);
             if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYIN)
                 ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_CODE_VALUE.ToString(), Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYIN);
             else if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYOUT)
@@ -458,8 +458,9 @@ namespace ExpensesTracker.Project.Share
         private void btnUpdatePay_Click(object sender, EventArgs e)
         {
             string strdate = dateTransactiondate.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateTransactiondate.Value.ToLongTimeString();
-            string str = "Update SHARES_PAYIN_PAYOUT SET SHARES_EXTRA_CHARGES_AMT = " + Convert.ToDecimal(txtExtraChargeAmt.Text) + ", SHARES_EXTRA_CHARGES_DESCRIPTION = '" + txtExtraChargeName.Text + "', SHARES_CHARGES_DATE = '" + strdate + "' Where SHARES_TRANSACTION_ID = " + iintUpdateId;
+            string str = "Update SHARES_PAYIN_PAYOUT SET SHARES_TRANSACTION_AMT = " + Convert.ToDecimal(txtShareAmount.Text) + ", SHARES_TRANSACTION_DATE = '" + strdate + "' Where SHARES_TRANSACTION_ID = " + iintUpdateId;
             DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
+            LoadForm();
             Sum();
         }
 
@@ -497,7 +498,7 @@ namespace ExpensesTracker.Project.Share
         {
             Dictionary<string, string> ldict = new Dictionary<string, string>();
             ldict.Add(TableEnum.enmExtraIncomingOutgoing.AMOUNT.ToString(), txtExtraOutgIncmAmt.Text);
-            ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_CODE_ID.ToString(), "3");
+            ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_3);
             if (rdoIncoming.Checked)
                 ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_CODE_VALUE.ToString(), Constant.Shares_Tracker.Incoming_Outgoing.INCOMING);
             else if (rdoOutgoing.Checked)
@@ -570,7 +571,7 @@ namespace ExpensesTracker.Project.Share
         }
 
         /// <summary>
-        /// 
+        /// This Method calculates the sum of all the transaction values
         /// </summary>
         private void Sum()
         {
@@ -580,11 +581,11 @@ namespace ExpensesTracker.Project.Share
             lblTotalDividendValue.Text = Convert.ToString(dataGridViewDividend.Rows.Cast<DataGridViewRow>().Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
             string lstrTotalDividendValueInsideThePlatform = Convert.ToString(dataGridViewDividend.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToBoolean(x.Cells[4].Value) == false).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
             string lstrTotalDividendValueOutsideThePlatform = Convert.ToString(dataGridViewDividend.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToBoolean(x.Cells[4].Value) == true).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)));
-            lblResultPayValue.Text = Convert.ToString(dataGridViewPayInPayOut.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[1].Value) == "PAYO").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
-                - dataGridViewPayInPayOut.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[1].Value) == "PAYI").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
+            lblResultPayValue.Text = Convert.ToString(dataGridViewPayInPayOut.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[1].Value) == Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYOUT).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
+                - dataGridViewPayInPayOut.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[1].Value) == Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYIN).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
                 );
-            lblTotalValueExtraIncmValue.Text = Convert.ToString(dataGridViewIncmOutg.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[4].Value) == "INCM").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
-                - dataGridViewIncmOutg.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[4].Value) == "OUTG").Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
+            lblTotalValueExtraIncmValue.Text = Convert.ToString(dataGridViewIncmOutg.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[4].Value) == Constant.Expenses_Tracker.Transaaction_Type.INCOMING).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
+                - dataGridViewIncmOutg.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[4].Value) == Constant.Expenses_Tracker.Transaaction_Type.OUTGOING).Sum(x => x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value))
                 );
             lblTotalIncomingSummaryValue.Text = Convert.ToString(Convert.ToDecimal(lblTotalValueExtraIncmValue.Text) + Convert.ToDecimal(lstrTotalDividendValueOutsideThePlatform));
             decimal ldecTotalCurrentShare = dataGridViewCurrent.Rows.Cast<DataGridViewRow>().Sum(x => x.Cells[1].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[1].Value));
@@ -612,7 +613,5 @@ namespace ExpensesTracker.Project.Share
             paddedBounds.Offset(1, yOffset);
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
-
-
     }
 }
