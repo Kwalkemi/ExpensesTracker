@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -343,6 +343,7 @@
     <None Include="Resources\Husband-Wife.jpg" />
     <None Include="Resources\expense-report.jpg" />
     <None Include="Resources\Shares.jpg" />
+    <None Include="Resources\isometric-businessmen-insure-assets-web-design-vector-25462741.jpg" />
     <Content Include="Xml\Entity.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

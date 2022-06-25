@@ -1172,6 +1172,8 @@ namespace ExpensesTracker.DataSet {
             
             private global::System.Data.DataColumn columnID;
             
+            private global::System.Data.DataColumn columnAVG_TOTAL;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SHARE_DETAIL_PROCEDUREDataTable() {
@@ -1263,6 +1265,14 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AVG_TOTALColumn {
+                get {
+                    return this.columnAVG_TOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1298,7 +1308,7 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHARE_DETAIL_PROCEDURERow AddSHARE_DETAIL_PROCEDURERow(string RECORD_TYPE, System.DateTime TRADING_DATE, decimal SHARES_AMT, int SHARES_QTY, decimal SHARES_CHARGES, decimal TOTAL, int ID) {
+            public SHARE_DETAIL_PROCEDURERow AddSHARE_DETAIL_PROCEDURERow(string RECORD_TYPE, System.DateTime TRADING_DATE, decimal SHARES_AMT, int SHARES_QTY, decimal SHARES_CHARGES, decimal TOTAL, int ID, decimal AVG_TOTAL) {
                 SHARE_DETAIL_PROCEDURERow rowSHARE_DETAIL_PROCEDURERow = ((SHARE_DETAIL_PROCEDURERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         RECORD_TYPE,
@@ -1307,7 +1317,8 @@ namespace ExpensesTracker.DataSet {
                         SHARES_QTY,
                         SHARES_CHARGES,
                         TOTAL,
-                        ID};
+                        ID,
+                        AVG_TOTAL};
                 rowSHARE_DETAIL_PROCEDURERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSHARE_DETAIL_PROCEDURERow);
                 return rowSHARE_DETAIL_PROCEDURERow;
@@ -1337,6 +1348,7 @@ namespace ExpensesTracker.DataSet {
                 this.columnSHARES_CHARGES = base.Columns["SHARES_CHARGES"];
                 this.columnTOTAL = base.Columns["TOTAL"];
                 this.columnID = base.Columns["ID"];
+                this.columnAVG_TOTAL = base.Columns["AVG_TOTAL"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1356,6 +1368,8 @@ namespace ExpensesTracker.DataSet {
                 base.Columns.Add(this.columnTOTAL);
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.columnAVG_TOTAL = new global::System.Data.DataColumn("AVG_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAVG_TOTAL);
                 this.columnRECORD_TYPE.ReadOnly = true;
                 this.columnRECORD_TYPE.MaxLength = 4;
                 this.columnTRADING_DATE.ReadOnly = true;
@@ -1364,6 +1378,7 @@ namespace ExpensesTracker.DataSet {
                 this.columnSHARES_CHARGES.ReadOnly = true;
                 this.columnTOTAL.ReadOnly = true;
                 this.columnID.ReadOnly = true;
+                this.columnAVG_TOTAL.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3493,6 +3508,22 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal AVG_TOTAL {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSHARE_DETAIL_PROCEDURE.AVG_TOTALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AVG_TOTAL\' in table \'SHARE_DETAIL_PROCEDURE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_DETAIL_PROCEDURE.AVG_TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsRECORD_TYPENull() {
                 return this.IsNull(this.tableSHARE_DETAIL_PROCEDURE.RECORD_TYPEColumn);
             }
@@ -3573,6 +3604,18 @@ namespace ExpensesTracker.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetIDNull() {
                 this[this.tableSHARE_DETAIL_PROCEDURE.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAVG_TOTALNull() {
+                return this.IsNull(this.tableSHARE_DETAIL_PROCEDURE.AVG_TOTALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAVG_TOTALNull() {
+                this[this.tableSHARE_DETAIL_PROCEDURE.AVG_TOTALColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4928,6 +4971,7 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("SHARES_CHARGES", "SHARES_CHARGES");
             tableMapping.ColumnMappings.Add("TOTAL", "TOTAL");
             tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("AVG_TOTAL", "AVG_TOTAL");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

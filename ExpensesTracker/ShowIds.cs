@@ -17,8 +17,6 @@ namespace ExpensesTracker
             InitializeComponent();
         }
 
-        public static int Login_Info_Id = 0;
-
         private void ShowIds_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'registration_TrackerDataset.LOGIN_INFO' table. You can move, or remove it, as needed.
@@ -27,8 +25,11 @@ namespace ExpensesTracker
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           Login.UserId = Convert.ToInt32(dataGridViewShow.Rows[e.RowIndex].Cells[0].Value);
+            string lstrUserId = Convert.ToString(dataGridViewShow.Rows[e.RowIndex].Cells[1].Value);
+            string lstrPassword = Convert.ToString(dataGridViewShow.Rows[e.RowIndex].Cells[2].Value);
             this.Hide();
+            Login parent = (Login)this.Owner;
+            parent.SetText(lstrUserId, lstrPassword);
         }
     }
 }

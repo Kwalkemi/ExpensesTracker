@@ -83,6 +83,16 @@ namespace ExpensesTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap isometric_businessmen_insure_assets_web_design_vector_25462741 {
+            get {
+                object obj = ResourceManager.GetObject("isometric-businessmen-insure-assets-web-design-vector-25462741", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);

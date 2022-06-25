@@ -75,7 +75,13 @@ namespace ExpensesTracker
         private void lnkShowIds_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShowIds showIds = new ShowIds();
-            showIds.Show();
+            showIds.Show(this);
         }
+
+        public void SetText(string astrUserId, string astrPassword)
+        {
+            txtUser.Text = astrUserId;
+            txtpassword.Text = astrPassword;
+         }
     }
 }

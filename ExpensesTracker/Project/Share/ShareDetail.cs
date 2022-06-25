@@ -62,9 +62,6 @@ namespace ExpensesTracker.Project.Share
             {
                 lblResultValue.Text = Convert.ToString(Convert.ToDecimal(dataGridView1.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[0].Value) == Constant.Shares_Tracker.Buy_Sell.SELL).Sum(x => x.Cells[5].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[5].Value))) -
                     Convert.ToDecimal(dataGridView1.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[0].Value) == Constant.Shares_Tracker.Buy_Sell.BUY).Sum(x => x.Cells[5].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[5].Value))));
-
-                lblAvgBuyValue.Text = Convert.ToString(Math.Round(Convert.ToDecimal(dataGridView1.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[0].Value) == Constant.Shares_Tracker.Buy_Sell.BUY).Sum(x => (x.Cells[2].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[2].Value)) * (x.Cells[3].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[3].Value))))
-                     / Convert.ToDecimal(dataGridView1.Rows.Cast<DataGridViewRow>().Where(x => Convert.ToString(x.Cells[0].Value) == Constant.Shares_Tracker.Buy_Sell.BUY).Sum(x => x.Cells[3].Value is DBNull ? 0 : Convert.ToDecimal(x.Cells[3].Value))),2 ));
             }
         }
 

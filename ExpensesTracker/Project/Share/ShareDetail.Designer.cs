@@ -52,8 +52,7 @@
             this.checkHeaderUpdate = new System.Windows.Forms.CheckBox();
             this.txtHdrId = new System.Windows.Forms.TextBox();
             this.sHARE_DETAIL_PROCEDURETableAdapter = new ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters.SHARE_DETAIL_PROCEDURETableAdapter();
-            this.lblAvgBuyValue = new System.Windows.Forms.Label();
-            this.lblAvgBuy = new System.Windows.Forms.Label();
+            this.AVG_TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sHAREDETAILPROCEDUREBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shares_TrackerDataset)).BeginInit();
@@ -72,7 +71,8 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.iDDataGridViewTextBoxColumn});
+            this.iDDataGridViewTextBoxColumn,
+            this.AVG_TOTAL});
             this.dataGridView1.DataSource = this.sHAREDETAILPROCEDUREBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 72);
             this.dataGridView1.Name = "dataGridView1";
@@ -260,25 +260,13 @@
             // 
             this.sHARE_DETAIL_PROCEDURETableAdapter.ClearBeforeFill = true;
             // 
-            // lblAvgBuyValue
+            // AVG_TOTAL
             // 
-            this.lblAvgBuyValue.AutoSize = true;
-            this.lblAvgBuyValue.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAvgBuyValue.Location = new System.Drawing.Point(405, 20);
-            this.lblAvgBuyValue.Name = "lblAvgBuyValue";
-            this.lblAvgBuyValue.Size = new System.Drawing.Size(100, 27);
-            this.lblAvgBuyValue.TabIndex = 71;
-            this.lblAvgBuyValue.Text = "Avg Buy: ";
-            // 
-            // lblAvgBuy
-            // 
-            this.lblAvgBuy.AutoSize = true;
-            this.lblAvgBuy.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAvgBuy.Location = new System.Drawing.Point(264, 20);
-            this.lblAvgBuy.Name = "lblAvgBuy";
-            this.lblAvgBuy.Size = new System.Drawing.Size(138, 27);
-            this.lblAvgBuy.TabIndex = 70;
-            this.lblAvgBuy.Text = "Average Buy: ";
+            this.AVG_TOTAL.DataPropertyName = "AVG_TOTAL";
+            this.AVG_TOTAL.HeaderText = "AVG Share Price";
+            this.AVG_TOTAL.MinimumWidth = 6;
+            this.AVG_TOTAL.Name = "AVG_TOTAL";
+            this.AVG_TOTAL.ReadOnly = true;
             // 
             // ShareDetail
             // 
@@ -286,8 +274,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(976, 615);
-            this.Controls.Add(this.lblAvgBuyValue);
-            this.Controls.Add(this.lblAvgBuy);
             this.Controls.Add(this.txtHdrId);
             this.Controls.Add(this.checkHeaderUpdate);
             this.Controls.Add(this.lblHdr);
@@ -344,7 +330,6 @@
         private System.Windows.Forms.BindingSource sHAREDETAILPROCEDUREBindingSource;
         private DataSet.Shares_TrackerDataset shares_TrackerDataset;
         private DataSet.Shares_TrackerDatasetTableAdapters.SHARE_DETAIL_PROCEDURETableAdapter sHARE_DETAIL_PROCEDURETableAdapter;
-        private System.Windows.Forms.Label lblAvgBuyValue;
-        private System.Windows.Forms.Label lblAvgBuy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AVG_TOTAL;
     }
 }

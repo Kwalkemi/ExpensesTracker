@@ -58,7 +58,7 @@
             this.lblMainHeading.AutoSize = true;
             this.lblMainHeading.BackColor = System.Drawing.Color.Transparent;
             this.lblMainHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainHeading.Location = new System.Drawing.Point(335, 9);
+            this.lblMainHeading.Location = new System.Drawing.Point(506, 11);
             this.lblMainHeading.Name = "lblMainHeading";
             this.lblMainHeading.Size = new System.Drawing.Size(187, 25);
             this.lblMainHeading.TabIndex = 1;
@@ -207,7 +207,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::ExpensesTracker.Properties.Resources.Shares;
+            this.pictureBox3.Image = global::ExpensesTracker.Properties.Resources.isometric_businessmen_insure_assets_web_design_vector_25462741;
             this.pictureBox3.Location = new System.Drawing.Point(6, 21);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(268, 287);
