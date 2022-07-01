@@ -25,6 +25,7 @@ namespace ExpensesTracker.Project.Share
 
         public int iintUpdateId { get; set; }
         public static int ShareHeaderId = 0;
+        public static string DematAccount = string.Empty;
 
         #endregion
 
@@ -37,7 +38,21 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void Share_Load(object sender, EventArgs e)
         {
-            LoadForm();
+            string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_DEMAT_ACCOUNT_NAME);
+            DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+            MyComboBox myComboBoxMain = new MyComboBox();
+            myComboBoxMain.Text = "Select Item";
+            myComboBoxMain.Value = "";
+            comboBoxDematAccount.Items.Add(myComboBoxMain);
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                MyComboBox myComboBox = new MyComboBox();
+                myComboBox.Text = GeneralFunction.GetStringValueFromDataRow(dr, TableEnum.enmCode_Value.CODE_VALUE_DESCRIPTION.ToString());
+                myComboBox.Value = GeneralFunction.GetStringValueFromDataRow(dr, TableEnum.enmCode_Value.CODE_VALUE.ToString());
+                comboBoxDematAccount.Items.Add(myComboBox);
+            }
+            comboBoxDematAccount.SelectedIndex = 0;
+            lblUserName.Text = GlobalFunction.GetFullNameById(Login.UserId);
             lblBuyId.Text = string.Empty;
             lblSellId.Text = string.Empty;
             lblBuyOption.Text = string.Empty;
@@ -321,6 +336,7 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void lnkBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Share.DematAccount = string.Empty;
             this.Hide();
             ExpensesMain expenses = new ExpensesMain();
             expenses.Show();
@@ -544,15 +560,15 @@ namespace ExpensesTracker.Project.Share
         private void LoadForm()
         {
             lblUserName.Text = GlobalFunction.GetFullNameById(Login.UserId);
-            this.sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERY, Login.UserId);
-            this.sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTION, Login.UserId);
-            this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES, Login.UserId);
-            this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT, Login.UserId);
-            this.sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDEND, Login.UserId);
+            this.sHARE_TRACKER_PROCEDURE_DELIVERYTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERY, Login.UserId, Share.DematAccount);
+            this.sHARE_TRACKER_PROCEDURE_OPTIONTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTION, Login.UserId, Share.DematAccount);
+            this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES, Login.UserId, Share.DematAccount);
+            this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT, Login.UserId, Share.DematAccount);
+            this.sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDEND, Login.UserId, Share.DematAccount);
             this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING, Login.UserId);
-            this.cURRENT_SHARE_PROCEDURETableAdapter.Fill(this.shares_TrackerDataset.CURRENT_SHARE_PROCEDURE, Login.UserId);
+            this.cURRENT_SHARE_PROCEDURETableAdapter.Fill(this.shares_TrackerDataset.CURRENT_SHARE_PROCEDURE, Login.UserId, Share.DematAccount);
             string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_LAST_DATE);
-            lstrQuery = string.Format(lstrQuery, Login.UserId);
+            lstrQuery = string.Format(lstrQuery, Login.UserId, Share.DematAccount);
             string Tilldate = DBFunction.FetchScalarFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
 
             Dictionary<string, string> servicesCombo = new Dictionary<string, string>();
@@ -566,8 +582,15 @@ namespace ExpensesTracker.Project.Share
             cmbSeviceDelivery.ValueMember = "Key";
 
             DateTime dateTime;
-            if (DateTime.TryParse(Tilldate, out dateTime))
+            if (comboBoxDematAccount.Text != "Select Item" && DateTime.TryParse(Tilldate, out dateTime))
+            {
                 lblTillDate.Text = "Your profile is updated till " + dateTime.ToShortDateString() + " date";
+                lblTillDate.Visible = true;
+            }
+            else
+            {
+                lblTillDate.Visible = false;
+            }
         }
 
         /// <summary>
@@ -612,6 +635,14 @@ namespace ExpensesTracker.Project.Share
             int yOffset = (e.State == DrawItemState.Selected) ? -2 : 1;
             paddedBounds.Offset(1, yOffset);
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
+        }
+
+        private void comboBoxDematAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string lstrDematAccount = Convert.ToString(((MyComboBox)comboBoxDematAccount.SelectedItem).Value);
+            if (lstrDematAccount.IsNotNullOrEmpty())
+                DematAccount = lstrDematAccount;
+            LoadForm();
         }
     }
 }

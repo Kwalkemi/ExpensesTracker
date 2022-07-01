@@ -1700,7 +1700,6 @@ namespace ExpensesTracker.DataSet {
                 this.columnSHARES_TRANSACTION_CODE_ID.AllowDBNull = false;
                 this.columnSHARES_TRANSACTION_CODE_VALUE.AllowDBNull = false;
                 this.columnSHARES_TRANSACTION_CODE_VALUE.MaxLength = 200;
-                this.columnSHARES_TRANSACTION_AMT.AllowDBNull = false;
                 this.columnSHARES_TRANSACTION_DATE.AllowDBNull = false;
             }
             
@@ -3670,7 +3669,13 @@ namespace ExpensesTracker.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal SHARES_TRANSACTION_AMT {
                 get {
-                    return ((decimal)(this[this.tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT.SHARES_TRANSACTION_AMTColumn]));
+                    try {
+                        return ((decimal)(this[this.tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT.SHARES_TRANSACTION_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SHARES_TRANSACTION_AMT\' in table \'SHARE_TRACKER_PROCEDURE_P" +
+                                "AYIN_PAYOUT\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT.SHARES_TRANSACTION_AMTColumn] = value;
@@ -3686,6 +3691,18 @@ namespace ExpensesTracker.DataSet {
                 set {
                     this[this.tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT.SHARES_TRANSACTION_DATEColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSHARES_TRANSACTION_AMTNull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT.SHARES_TRANSACTION_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSHARES_TRANSACTION_AMTNull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT.SHARES_TRANSACTION_AMTColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4620,19 +4637,26 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEMAT_ACCOUNT_VALUE", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERYDataTable dataTable, global::System.Nullable<int> USERID) {
+        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERYDataTable dataTable, global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4645,13 +4669,19 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERYDataTable GetData(global::System.Nullable<int> USERID) {
+        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERYDataTable GetData(global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERYDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DELIVERYDataTable();
             this.Adapter.Fill(dataTable);
@@ -4804,19 +4834,26 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEMAT_ACCOUNT_VALUE", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTIONDataTable dataTable, global::System.Nullable<int> USERID) {
+        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTIONDataTable dataTable, global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4829,13 +4866,19 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTIONDataTable GetData(global::System.Nullable<int> USERID) {
+        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTIONDataTable GetData(global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTIONDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_OPTIONDataTable();
             this.Adapter.Fill(dataTable);
@@ -5177,19 +5220,26 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEMAT_ACCOUNT_VALUE", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable dataTable, global::System.Nullable<int> USERID) {
+        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable dataTable, global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5202,13 +5252,19 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable GetData(global::System.Nullable<int> USERID) {
+        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable GetData(global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTDataTable();
             this.Adapter.Fill(dataTable);
@@ -5362,19 +5418,26 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEMAT_ACCOUNT_VALUE", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable dataTable, global::System.Nullable<int> USERID) {
+        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable dataTable, global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5387,13 +5450,19 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable GetData(global::System.Nullable<int> USERID) {
+        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable GetData(global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDENDDataTable();
             this.Adapter.Fill(dataTable);
@@ -5736,19 +5805,26 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEMAT_ACCOUNT_VALUE", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable dataTable, global::System.Nullable<int> USERID) {
+        public virtual int Fill(Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable dataTable, global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5761,13 +5837,19 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable GetData(global::System.Nullable<int> USERID) {
+        public virtual Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable GetData(global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable dataTable = new Shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGESDataTable();
             this.Adapter.Fill(dataTable);
@@ -5920,19 +6002,26 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USERID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEMAT_ACCOUNT_VALUE", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable dataTable, global::System.Nullable<int> USERID) {
+        public virtual int Fill(Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable dataTable, global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5945,13 +6034,19 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable GetData(global::System.Nullable<int> USERID) {
+        public virtual Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable GetData(global::System.Nullable<int> USERID, string DEMAT_ACCOUNT_VALUE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((USERID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(USERID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DEMAT_ACCOUNT_VALUE == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(DEMAT_ACCOUNT_VALUE));
             }
             Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable dataTable = new Shares_TrackerDataset.CURRENT_SHARE_PROCEDUREDataTable();
             this.Adapter.Fill(dataTable);

@@ -24,6 +24,7 @@ namespace ExpensesTracker
         }
 
         public static int UserId = 0;
+        
         private string istrPath { get; set; }
         private void btnLogin_Click(object sender, EventArgs e)
         {

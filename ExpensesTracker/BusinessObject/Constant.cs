@@ -83,6 +83,7 @@ namespace ExpensesTracker.BusinessObject
             public const string LOAD_MONTHLY_CHART_SHARE = "LoadMonthlyChart";
             public const string GET_SERVICE_NAMES = "GetServiceNames";
             public const string LOAD_MONTHLY_CHART_SERVICE = "LoadMonthlyChartService";
+            public const string GET_DEMAT_ACCOUNT_NAME = "GetDematAccountName";
         }
 
         public abstract class Error

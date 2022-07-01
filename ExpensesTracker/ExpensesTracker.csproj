@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="BusinessObject\Constant.cs" />
     <Compile Include="BusinessObject\GlobalFunction.cs" />
+    <Compile Include="BusinessObject\MyComboBox.cs" />
     <Compile Include="BusinessObject\TableEnum.cs" />
     <Compile Include="DataSet\Assets.Designer.cs">
       <AutoGen>True</AutoGen>

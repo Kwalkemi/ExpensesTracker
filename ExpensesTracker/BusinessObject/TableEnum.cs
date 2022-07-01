@@ -86,7 +86,9 @@ namespace ExpensesTracker.BusinessObject
             USER_ID,
             IS_INTRADAY,
             SERVICE_CODE_ID,
-            SERVICE_CODE_VALUE
+            SERVICE_CODE_VALUE,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE
         }
 
         public enum enmSharesTrackerBuy
@@ -127,7 +129,9 @@ namespace ExpensesTracker.BusinessObject
             SHARES_TRANSACTION_CODE_VALUE,
             SHARES_TRANSACTION_AMT,
             SHARES_TRANSACTION_DATE,
-            USER_ID
+            USER_ID,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE
         }
 
         public enum enmExtraIncomingOutgoing
