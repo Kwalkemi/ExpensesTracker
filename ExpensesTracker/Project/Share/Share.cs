@@ -74,6 +74,8 @@ namespace ExpensesTracker.Project.Share
             Dictionary<string, string> ldict = new Dictionary<string, string>();
 
             ldict.Add(TableEnum.enmSharesTrackerHeader.SHARE_TYPE_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_5);
+            ldict.Add(TableEnum.enmSharesTrackerHeader.DEMAT_ACCOUNT_ID.ToString(), Constant.Common.CodeId.CODE_ID_8);
+            ldict.Add(TableEnum.enmSharesTrackerHeader.DEMAT_ACCOUNT_VALUE.ToString(), DematAccount);
             if (DeliveryTab.CanFocus)
             {
                 ldict.Add(TableEnum.enmSharesTrackerHeader.SHARE_TYPE_CODE_VALUE.ToString(), Constant.Shares_Tracker.Shares_Type.DELIVERY);
@@ -138,7 +140,7 @@ namespace ExpensesTracker.Project.Share
                     ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_TRACKER_HEADER_ID.ToString(), lblBuyId.Text);
                     ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_PRICE_AMT.ToString(), txtBuyPrice.Text);
                     ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_QUANTITY.ToString(), txtBuyQty.Text);
-                    ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_BUY_DATE.ToString(), Convert.ToDateTime(dateBuy.Text).ToString("yyyy-MM-dd"));
+                    ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_BUY_DATE.ToString(), Convert.ToDateTime(dateBuy.Text).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd));
                     if (txtBuyCharges.Text != string.Empty)
                         ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_CHARGES_AMT.ToString(), txtBuyCharges.Text);
                     DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_TRACKER_BUY.ToString(), ldict);
@@ -155,7 +157,7 @@ namespace ExpensesTracker.Project.Share
                     ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_TRACKER_HEADER_ID.ToString(), lblBuyOption.Text);
                     ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_PRICE_AMT.ToString(), txtBuyPriceOptn.Text);
                     ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_QUANTITY.ToString(), txtBuyQtyOptn.Text);
-                    ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_BUY_DATE.ToString(), Convert.ToDateTime(dateBuyOptn.Text).ToString("yyyy-MM-dd"));
+                    ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_BUY_DATE.ToString(), Convert.ToDateTime(dateBuyOptn.Text).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd));
                     if (txtBuyChargesOptn.Text != string.Empty)
                         ldict.Add(TableEnum.enmSharesTrackerBuy.SHARES_CHARGES_AMT.ToString(), txtBuyChargesOptn.Text);
                     DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_TRACKER_BUY.ToString(), ldict);
@@ -183,7 +185,7 @@ namespace ExpensesTracker.Project.Share
                     ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_TRACKER_HEADER_ID.ToString(), lblSellId.Text);
                     ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_PRICE_AMT.ToString(), txtSellPrice.Text);
                     ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_QUANTITY.ToString(), txtSellQty.Text);
-                    ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_SELL_DATE.ToString(), Convert.ToDateTime(dateSell.Text).ToString("yyyy-MM-dd"));
+                    ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_SELL_DATE.ToString(), Convert.ToDateTime(dateSell.Text).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd));
                     if (txtSellCharges.Text != string.Empty)
                         ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_CHARGES_AMT.ToString(), txtSellCharges.Text);
                     DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_TRACKER_SELL.ToString(), ldict);
@@ -201,7 +203,7 @@ namespace ExpensesTracker.Project.Share
                     ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_TRACKER_HEADER_ID.ToString(), lblSelloption.Text);
                     ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_PRICE_AMT.ToString(), txtSellPriceOptn.Text);
                     ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_QUANTITY.ToString(), txtSellQtyOptn.Text);
-                    ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_SELL_DATE.ToString(), Convert.ToDateTime(dateSellOptn.Text).ToString("yyyy-MM-dd"));
+                    ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_SELL_DATE.ToString(), Convert.ToDateTime(dateSellOptn.Text).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd));
                     if (txtSellChargesOptn.Text != string.Empty)
                         ldict.Add(TableEnum.enmSharesTrackerSell.SHARES_CHARGES_AMT.ToString(), txtSellChargesOptn.Text);
                     DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_TRACKER_SELL.ToString(), ldict);
@@ -372,7 +374,9 @@ namespace ExpensesTracker.Project.Share
             Dictionary<string, string> ldict = new Dictionary<string, string>();
             ldict.Add(TableEnum.enmSharesTrackerExtraCharges.SHARES_EXTRA_CHARGES_AMT.ToString(), txtExtraChargeAmt.Text);
             ldict.Add(TableEnum.enmSharesTrackerExtraCharges.SHARES_EXTRA_CHARGES_DESCRIPTION.ToString(), txtExtraChargeName.Text);
-            ldict.Add(TableEnum.enmSharesTrackerExtraCharges.SHARES_CHARGES_DATE.ToString(), Convert.ToDateTime(dateExtraCharge.Text).ToString("yyyy-MM-dd"));
+            ldict.Add(TableEnum.enmSharesTrackerExtraCharges.DEMAT_ACCOUNT_ID.ToString(), Constant.Common.CodeId.CODE_ID_8);
+            ldict.Add(TableEnum.enmSharesTrackerExtraCharges.DEMAT_ACCOUNT_VALUE.ToString(), DematAccount);
+            ldict.Add(TableEnum.enmSharesTrackerExtraCharges.SHARES_CHARGES_DATE.ToString(), Convert.ToDateTime(dateExtraCharge.Text).ToString(Constant.Common.DATE_FORMAT_yyyy_MM_dd));
             if (CheckIsConsider.Checked)
                 ldict.Add(TableEnum.enmSharesTrackerExtraCharges.IS_CONSIDER.ToString(), Constant.Common.Bit_Value.BIT_1);
             else
@@ -453,6 +457,8 @@ namespace ExpensesTracker.Project.Share
         {
             Dictionary<string, string> ldict = new Dictionary<string, string>();
             ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_5);
+            ldict.Add(TableEnum.enmSharesPayInPayOut.DEMAT_ACCOUNT_ID.ToString(), Constant.Common.CodeId.CODE_ID_8);
+            ldict.Add(TableEnum.enmSharesPayInPayOut.DEMAT_ACCOUNT_VALUE.ToString(), DematAccount);
             if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYIN)
                 ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_CODE_VALUE.ToString(), Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYIN);
             else if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYOUT)
@@ -460,7 +466,7 @@ namespace ExpensesTracker.Project.Share
             ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_AMT.ToString(), txtShareAmount.Text);
             string str = dateTransactiondate.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateTransactiondate.Value.ToLongTimeString();
             ldict.Add(TableEnum.enmSharesPayInPayOut.SHARES_TRANSACTION_DATE.ToString(), str);
-            ldict.Add("USER_ID", Login.UserId.ToString());
+            ldict.Add(TableEnum.enmSharesPayInPayOut.USER_ID.ToString(), Login.UserId.ToString());
             DBFunction.InsertIntoTable(Constant.Common.DATABASE_NAME, TableEnum.enmTableName.SHARES_PAYIN_PAYOUT.ToString(), ldict);
             LoadForm();
             Sum();
@@ -494,6 +500,8 @@ namespace ExpensesTracker.Project.Share
                 ldict.Add(TableEnum.enmShareDividend.SHARE_DESCRIPTION.ToString(), txtShareDividendDesc.Text);
             ldict.Add(TableEnum.enmShareDividend.USER_ID.ToString(), Login.UserId.ToString());
             ldict.Add(TableEnum.enmShareDividend.SHARES_PRICE_AMT.ToString(), txtShareAmountDividend.Text);
+            ldict.Add(TableEnum.enmShareDividend.DEMAT_ACCOUNT_ID.ToString(), Constant.Common.CodeId.CODE_ID_8);
+            ldict.Add(TableEnum.enmShareDividend.DEMAT_ACCOUNT_VALUE.ToString(), DematAccount);
             if (chkIsBankAccount.Checked)
                 ldict.Add(TableEnum.enmShareDividend.IS_BANK_ACCOUNT.ToString(), Constant.Common.Bit_Value.BIT_1);
             else
@@ -506,7 +514,7 @@ namespace ExpensesTracker.Project.Share
         }
 
         /// <summary>
-        /// 
+        /// Tracker - Button Trigger of Extra Incoming and Outgoing of Demat Acccount
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -515,11 +523,13 @@ namespace ExpensesTracker.Project.Share
             Dictionary<string, string> ldict = new Dictionary<string, string>();
             ldict.Add(TableEnum.enmExtraIncomingOutgoing.AMOUNT.ToString(), txtExtraOutgIncmAmt.Text);
             ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_CODE_ID.ToString(), Constant.Common.CodeId.CODE_ID_3);
+            ldict.Add(TableEnum.enmExtraIncomingOutgoing.DEMAT_ACCOUNT_ID.ToString(), Constant.Common.CodeId.CODE_ID_8);
+            ldict.Add(TableEnum.enmExtraIncomingOutgoing.DEMAT_ACCOUNT_VALUE.ToString(), DematAccount);
             if (rdoIncoming.Checked)
                 ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_CODE_VALUE.ToString(), Constant.Shares_Tracker.Incoming_Outgoing.INCOMING);
             else if (rdoOutgoing.Checked)
                 ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_CODE_VALUE.ToString(), Constant.Shares_Tracker.Incoming_Outgoing.OUTGOING);
-            ldict.Add("USER_ID", Login.UserId.ToString());
+            ldict.Add(TableEnum.enmExtraIncomingOutgoing.USER_ID.ToString(), Login.UserId.ToString());
             ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_DESCRIPTION.ToString(), txtExtraOutgIncmDesc.Text);
             string str = dateExtraOutgIncmDate.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateExtraOutgIncmDate.Value.ToLongTimeString();
             ldict.Add(TableEnum.enmExtraIncomingOutgoing.INCOMING_OUTGOING_DATE.ToString(), str);
@@ -535,8 +545,15 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void btnMonthEarningAnalysis_Click(object sender, EventArgs e)
         {
-            ShareMonthlyAnalysis shareMonthlyAnalysis = new ShareMonthlyAnalysis();
-            shareMonthlyAnalysis.Show();
+            if (Share.DematAccount != string.Empty)
+            {
+                ShareMonthlyAnalysis shareMonthlyAnalysis = new ShareMonthlyAnalysis(Share.DematAccount);
+                shareMonthlyAnalysis.Show();
+            }
+            else
+            {
+                errorProvider1.SetError(btnMonthEarningAnalysis, GlobalFunction.GetMessageById(Constant.Error.ERROR_17));
+            }
         }
 
         /// <summary>
@@ -565,7 +582,7 @@ namespace ExpensesTracker.Project.Share
             this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES, Login.UserId, Share.DematAccount);
             this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT, Login.UserId, Share.DematAccount);
             this.sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDEND, Login.UserId, Share.DematAccount);
-            this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING, Login.UserId);
+            this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING, Login.UserId,Share.DematAccount);
             this.cURRENT_SHARE_PROCEDURETableAdapter.Fill(this.shares_TrackerDataset.CURRENT_SHARE_PROCEDURE, Login.UserId, Share.DematAccount);
             string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_LAST_DATE);
             lstrQuery = string.Format(lstrQuery, Login.UserId, Share.DematAccount);

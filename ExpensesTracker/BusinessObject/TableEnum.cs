@@ -119,7 +119,9 @@ namespace ExpensesTracker.BusinessObject
             SHARES_CHARGES_DATE,
             SHARES_TRACKER_HEADER_ID,
             IS_CONSIDER,
-            USER_ID
+            USER_ID,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE
         }
 
         public enum enmSharesPayInPayOut
@@ -142,7 +144,9 @@ namespace ExpensesTracker.BusinessObject
             INCOMING_OUTGOING_CODE_VALUE,
             INCOMING_OUTGOING_DATE,
             USER_ID,
-            INCOMING_OUTGOING_DESCRIPTION
+            INCOMING_OUTGOING_DESCRIPTION,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE
         }
 
         public enum enmShareDividend
@@ -153,7 +157,9 @@ namespace ExpensesTracker.BusinessObject
             DIVIDEND_DATE,
             SHARE_DESCRIPTION,
             USER_ID,
-            IS_BANK_ACCOUNT
+            IS_BANK_ACCOUNT,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE
         }
 
         public enum Month

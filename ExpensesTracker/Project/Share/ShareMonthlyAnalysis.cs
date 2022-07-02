@@ -17,13 +17,15 @@ namespace ExpensesTracker.Project.Share
     /// </summary>
     public partial class ShareMonthlyAnalysis : Form
     {
+        private readonly string istrDematAccountType;
         #region Constructor
         /// <summary>
         /// 
         /// </summary>
-        public ShareMonthlyAnalysis()
+        public ShareMonthlyAnalysis(string astrDematAccountType)
         {
             InitializeComponent();
+            this.istrDematAccountType = astrDematAccountType;
         }
         #endregion
 
@@ -119,7 +121,7 @@ namespace ExpensesTracker.Project.Share
 
                 string query = GlobalFunction.GetQueryById(Constant.Query.LOAD_MONTHLY_CHART_SHARE);
                 //Year_Parameter = 2018;
-                query = string.Format(query, User_Parameter, Year_Parameter);
+                query = string.Format(query, User_Parameter, Year_Parameter, this.istrDematAccountType);
                 DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, query);
 
                 if (Convert.ToString(cmbChartType.SelectedItem) == Constant.Common.ChartType.MONTHLY)
@@ -175,28 +177,31 @@ namespace ExpensesTracker.Project.Share
             dataTable.Columns.Add("Earning", typeof(Int32));
             string lstrItem = string.Empty;
             List<string> lstNum = new List<string>();
-            for (int i = 1; i <= 12; i++)
+            if (adtbTable.IsNotNull() && adtbTable.Rows.Count > 0)
             {
-                lstNum.Add(i.ToString());
-                DataRow[] dataRows = adtbTable.Select("SHARE_MONTH = " + i);
-                if (dataRows.Count() > 0)
+                for (int i = 1; i <= 12; i++)
                 {
-                    DataRow dataRow = dataTable.NewRow();
-                    dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString();
-                    dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
-                    lintTotal = lintTotal + Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
-                    dataTable.Rows.Add(dataRow);
-                    lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
-                    listViewMonthlyAnalysis.Items.Add(lstrItem);
-                }
-                else
-                {
-                    DataRow dataRow = dataTable.NewRow();
-                    dataRow["Month"] = ((TableEnum.Month)i).ToString(); ;
-                    dataRow["Earning"] = 0;
-                    dataTable.Rows.Add(dataRow);
-                    lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
-                    listViewMonthlyAnalysis.Items.Add(lstrItem);
+                    lstNum.Add(i.ToString());
+                    DataRow[] dataRows = adtbTable.Select("SHARE_MONTH = " + i);
+                    if (dataRows.Count() > 0)
+                    {
+                        DataRow dataRow = dataTable.NewRow();
+                        dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString();
+                        dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
+                        lintTotal = lintTotal + Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
+                        dataTable.Rows.Add(dataRow);
+                        lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
+                        listViewMonthlyAnalysis.Items.Add(lstrItem);
+                    }
+                    else
+                    {
+                        DataRow dataRow = dataTable.NewRow();
+                        dataRow["Month"] = ((TableEnum.Month)i).ToString(); ;
+                        dataRow["Earning"] = 0;
+                        dataTable.Rows.Add(dataRow);
+                        lstrItem = Convert.ToString(dataRow["Month"]) + " : " + Convert.ToString(dataRow["Earning"]);
+                        listViewMonthlyAnalysis.Items.Add(lstrItem);
+                    }
                 }
             }
             lblTotalSpendResult.Text = lintTotal.ToString();
@@ -216,26 +221,28 @@ namespace ExpensesTracker.Project.Share
             dataTable.Columns.Add("Earning", typeof(Int32));
             string lstrItem = string.Empty;
             List<string> lstNum = new List<string>();
-            for (int i = 1; i <= 12; i++)
+            if (adtbTable.IsNotNull() && adtbTable.Rows.Count > 0)
             {
-                lstNum.Add(i.ToString());
-                DataRow[] dataRows = adtbTable.Select("SHARE_MONTH = " + i);
-                if (dataRows.Count() > 0)
+                for (int i = 1; i <= 12; i++)
                 {
-                    DataRow dataRow = dataTable.NewRow();
-                    dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString().GetQuarterFromMonthName();
-                    dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
-                    dataTable.Rows.Add(dataRow);
-                }
-                else
-                {
-                    DataRow dataRow = dataTable.NewRow();
-                    dataRow["Month"] = ((TableEnum.Month)i).ToString().GetQuarterFromMonthName();
-                    dataRow["Earning"] = 0;
-                    dataTable.Rows.Add(dataRow);
+                    lstNum.Add(i.ToString());
+                    DataRow[] dataRows = adtbTable.Select("SHARE_MONTH = " + i);
+                    if (dataRows.Count() > 0)
+                    {
+                        DataRow dataRow = dataTable.NewRow();
+                        dataRow["Month"] = ((TableEnum.Month)(dataRows[0]["SHARE_MONTH"])).ToString().GetQuarterFromMonthName();
+                        dataRow["Earning"] = Convert.ToInt32(dataRows[0]["PROFIT_LOSS"]);
+                        dataTable.Rows.Add(dataRow);
+                    }
+                    else
+                    {
+                        DataRow dataRow = dataTable.NewRow();
+                        dataRow["Month"] = ((TableEnum.Month)i).ToString().GetQuarterFromMonthName();
+                        dataRow["Earning"] = 0;
+                        dataTable.Rows.Add(dataRow);
+                    }
                 }
             }
-
             var Member = dataTable.AsEnumerable().GroupBy(x => x.Field<string>("Month"));
             dataTableNew = dataTable.Clone();
             foreach (var group in Member)

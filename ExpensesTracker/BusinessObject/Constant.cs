@@ -36,6 +36,7 @@ namespace ExpensesTracker.BusinessObject
                 public const string CODE_ID_5 = "5";
                 public const string CODE_ID_6 = "6";
                 public const string CODE_ID_7 = "7";
+                public const string CODE_ID_8 = "8";
             }
 
             public abstract class Bit_Value
@@ -104,6 +105,7 @@ namespace ExpensesTracker.BusinessObject
             public const string ERROR_14 = "Error_14";
             public const string ERROR_15 = "Error_15";
             public const string ERROR_16 = "Error_16";
+            public const string ERROR_17 = "Error_17";
         }
 
         public abstract class Message
