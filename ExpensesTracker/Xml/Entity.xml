@@ -37,7 +37,7 @@
 			On SELL.SHARES_TRACKER_HEADER_ID = SH.SHARES_TRACKER_HEADER_ID where User_Id = {0} AND SH.DEMAT_ACCOUNT_VALUE = '{1}'
 			Union All
 			Select MAX(SHARES_CHARGES_DATE) As Last_Date from [dbo].[SHARES_TRACKER_EXTRA_CHARGES] where USER_ID = {0}
-			and Is_Consider = 1 
+			and Is_Consider = 1 and DEMAT_ACCOUNT_VALUE = '{1}'
 			Union All
 			Select MAX(SHARES_TRANSACTION_DATE) As Last_Date from [dbo].[SHARES_PAYIN_PAYOUT] where user_id = {0} AND DEMAT_ACCOUNT_VALUE = '{1}'
 			Union All

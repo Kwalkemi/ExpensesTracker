@@ -298,17 +298,20 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void lnkRefresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Controls.Clear();
+            this.InitializeComponent();
+            LoadForm();
+
+            LoadDematAccount();
+
+            //comboBoxDematAccount.SelectedIndex = 0;
+
             if (OptionTab.CanFocus)
-            {
-                this.Controls.Clear();
-                this.InitializeComponent();
-                LoadForm();
+            {   
                 tabControl1.SelectedIndex = 1;
             }
             else
             {
-                this.Controls.Clear();
-                this.InitializeComponent();
                 LoadForm();
             }
             lblBuyId.Text = string.Empty;
@@ -426,6 +429,10 @@ namespace ExpensesTracker.Project.Share
         {
             txtShareAmount.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[2].Value);
             cmbTransaction.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[1].Value);
+            if (cmbTransaction.Text == Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYIN)
+                cmbTransaction.SelectedItem = Constant.Shares_Tracker.PayIn_PayOut.PAYIN;
+            else if (cmbTransaction.Text == Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYOUT)
+                cmbTransaction.SelectedItem = Constant.Shares_Tracker.PayIn_PayOut.PAYOUT;
             dateTransactiondate.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[3].Value);
             lblPayInPayOutValue.Text = Convert.ToString(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[4].Value);
             iintUpdateId = Convert.ToInt32(dataGridViewPayInPayOut.Rows[e.RowIndex].Cells[4].Value);
@@ -479,8 +486,13 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void btnUpdatePay_Click(object sender, EventArgs e)
         {
+            string lstrPayInOut = string.Empty;
+            if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYIN)
+                lstrPayInOut = Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYIN;
+            else if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYOUT)
+                lstrPayInOut = Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYOUT;
             string strdate = dateTransactiondate.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateTransactiondate.Value.ToLongTimeString();
-            string str = "Update SHARES_PAYIN_PAYOUT SET SHARES_TRANSACTION_AMT = " + Convert.ToDecimal(txtShareAmount.Text) + ", SHARES_TRANSACTION_DATE = '" + strdate + "' Where SHARES_TRANSACTION_ID = " + iintUpdateId;
+            string str = "Update SHARES_PAYIN_PAYOUT SET SHARES_TRANSACTION_AMT = " + Convert.ToDecimal(txtShareAmount.Text) + ", SHARES_TRANSACTION_DATE = '" + strdate + "', SHARES_TRANSACTION_CODE_VALUE = '"+ lstrPayInOut +"' Where SHARES_TRANSACTION_ID = " + iintUpdateId;
             DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
             LoadForm();
             Sum();
@@ -654,12 +666,43 @@ namespace ExpensesTracker.Project.Share
             TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
         }
 
+        private void LoadDematAccount()
+        {
+            string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_DEMAT_ACCOUNT_NAME);
+            DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
+            MyComboBox myComboBoxMain = new MyComboBox();
+            myComboBoxMain.Text = "Select Item";
+            myComboBoxMain.Value = "";
+            comboBoxDematAccount.Items.Add(myComboBoxMain);
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                MyComboBox myComboBox = new MyComboBox();
+                myComboBox.Text = GeneralFunction.GetStringValueFromDataRow(dr, TableEnum.enmCode_Value.CODE_VALUE_DESCRIPTION.ToString());
+                myComboBox.Value = GeneralFunction.GetStringValueFromDataRow(dr, TableEnum.enmCode_Value.CODE_VALUE.ToString());
+                comboBoxDematAccount.Items.Add(myComboBox);
+            }
+
+            for (int i = 0; i < comboBoxDematAccount.Items.Count; i++)
+            {
+                if (Convert.ToString(((MyComboBox)comboBoxDematAccount.Items[i]).Value) == DematAccount)
+                {
+                    comboBoxDematAccount.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
+
         private void comboBoxDematAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
             string lstrDematAccount = Convert.ToString(((MyComboBox)comboBoxDematAccount.SelectedItem).Value);
             if (lstrDematAccount.IsNotNullOrEmpty())
                 DematAccount = lstrDematAccount;
+            else
+            {
+                DematAccount = string.Empty;
+            }
             LoadForm();
+            Sum();
         }
     }
 }

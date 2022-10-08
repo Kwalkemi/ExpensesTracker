@@ -42,7 +42,7 @@ namespace ExpensesTracker.Project.Assets
             DataTable ldtbTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, lstrQuery);
 
             decimal firstnum, secondnum;
-            if (ldtbTable != null && ldtbTable.Rows.Count > 0)
+            if (ldtbTable != null && ldtbTable.Rows.Count > 1)
             {
                 firstnum = ldtbTable.Rows[0]["ASSET_TOTAL_AMOUNT"] != System.DBNull.Value ? Convert.ToDecimal(ldtbTable.Rows[0]["ASSET_TOTAL_AMOUNT"]) : 0m;
                 secondnum = ldtbTable.Rows[1]["ASSET_TOTAL_AMOUNT"] != System.DBNull.Value ? Convert.ToDecimal(ldtbTable.Rows[1]["ASSET_TOTAL_AMOUNT"]) : 0m;
