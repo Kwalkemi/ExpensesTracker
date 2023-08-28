@@ -85,6 +85,7 @@ namespace ExpensesTracker.BusinessObject
             public const string GET_SERVICE_NAMES = "GetServiceNames";
             public const string LOAD_MONTHLY_CHART_SERVICE = "LoadMonthlyChartService";
             public const string GET_DEMAT_ACCOUNT_NAME = "GetDematAccountName";
+            public const string UPDATE_MUTUAL_FUND_HEADER = "UpdateMutualFundHeader";
         }
 
         public abstract class Error
@@ -106,6 +107,7 @@ namespace ExpensesTracker.BusinessObject
             public const string ERROR_15 = "Error_15";
             public const string ERROR_16 = "Error_16";
             public const string ERROR_17 = "Error_17";
+            public const string ERROR_18 = "Error_18";
         }
 
         public abstract class Message

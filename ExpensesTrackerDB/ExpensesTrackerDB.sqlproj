@@ -92,6 +92,11 @@
     <Build Include="Trigger\TR_ASSET_HEADER.sql" />
     <Build Include="Trigger\TR_ASSET_HEADER_INSERT.sql" />
     <Build Include="StoreProcedure\ASSET_PROCEDURE.sql" />
+    <Build Include="Table\MUTUAL_FUND_HEADER.sql" />
+    <Build Include="Table\MUTUAL_FUND_BUY.sql" />
+    <Build Include="Table\MUTUAL_FUND_SELL.sql" />
+    <Build Include="Table\MUTUAL_FUND_PAYIN_PAYOUT.sql" />
+    <Build Include="StoreProcedure\MUTUAL_FUND_HEADER_PROCEDURE.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ExpensesTrackerDB.sqlproj.user" />

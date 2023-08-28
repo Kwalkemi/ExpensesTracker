@@ -95,5 +95,12 @@ namespace ExpensesTracker.Project
             Assets.Assets assets = new Assets.Assets();
             assets.Show();
         }
+
+        private void btnMutualFund_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Mutual_Fund.MutualFund mutualFund = new Mutual_Fund.MutualFund();
+            mutualFund.Show();
+        }
     }
 }

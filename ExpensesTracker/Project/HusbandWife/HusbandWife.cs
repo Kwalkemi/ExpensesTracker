@@ -265,13 +265,13 @@ namespace ExpensesTracker.Project.HusbandWife
         /// <param name="e"></param>
         private void btnUpdateHusb_Click(object sender, EventArgs e)
         {
-            if (txtwifespend.Text == string.Empty)
+            if (txthusband.Text == string.Empty)
             {
                 errorProvider1.SetError(txthusband, GlobalFunction.GetMessageById(Constant.Error.ERROR_11));
             }
             else if (errorProvider1.GetError(txthusband) == string.Empty)
             {
-                UpdateAmount(iintUpdateId, txthusband.Text, dateTimePickerhusb.Text, null);
+                UpdateAmount(iintUpdateId, txthusband.Text, dateTimePickerhusb.Text, 24);
                 this.hUSBANDWIFEPROCEDURETableAdapter.Fill(this.husband_WifeDataset.HUSBANDWIFEPROCEDURE);
             }
             Sum();

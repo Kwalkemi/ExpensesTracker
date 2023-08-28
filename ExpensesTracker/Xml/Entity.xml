@@ -114,6 +114,9 @@
 			ORDER BY SHARE_YEAR desc, SHARE_MONTH DESC
 		</query>
 		<query Id="GetDematAccountName">SELECT CODE_VALUE, CODE_VALUE_DESCRIPTION FROM CODE_VALUE WHERE CODE_ID = 8</query>
+		<query Id="UpdateMutualFundHeader">UPDATE MUTUAL_FUND_HEADER SET MUTUAL_FUND_NAME = '{0}', MUTUAL_FUND_CREATED_DATE = '{1}'
+			,EXIT_LOAD = {2}, IS_SIP = '{3}' WHERE MUTUAL_FUND_HEADER_ID = {4}
+		</query>
 	</queries>
 
 
@@ -135,6 +138,7 @@
 		<message Id="Error_15">Please enter the asset description.</message>
 		<message Id="Error_16">Please enter the asset amount.</message>
 		<message Id="Error_17">Please select the demat account value.</message>
+		<message Id="Error_18">Please enter the mutual fund name.</message>
 		<message Id="RegSuc">Registration Successfully</message>
 		<message Id="HusbandGive">Husband will give {0} Rs to Wife.</message>
 		<message Id="WifeExtra">Wife have {0} extra Rs</message>

@@ -43,6 +43,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnAssetsTracker = new System.Windows.Forms.Button();
+            this.groupBoxMutualFund = new System.Windows.Forms.GroupBox();
+            this.pictureBoxMutualFund = new System.Windows.Forms.PictureBox();
+            this.btnMutualFund = new System.Windows.Forms.Button();
             this.groupBoxHusbWife.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHusbWife)).BeginInit();
             this.groupBoxExpenses.SuspendLayout();
@@ -51,6 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBoxMutualFund.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMutualFund)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMainHeading
@@ -198,7 +203,7 @@
             // 
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.btnAssetsTracker);
-            this.groupBox1.Location = new System.Drawing.Point(935, 64);
+            this.groupBox1.Location = new System.Drawing.Point(1252, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(280, 421);
             this.groupBox1.TabIndex = 66;
@@ -228,12 +233,47 @@
             this.btnAssetsTracker.UseVisualStyleBackColor = false;
             this.btnAssetsTracker.Click += new System.EventHandler(this.btnAssetsTracker_Click);
             // 
+            // groupBoxMutualFund
+            // 
+            this.groupBoxMutualFund.Controls.Add(this.pictureBoxMutualFund);
+            this.groupBoxMutualFund.Controls.Add(this.btnMutualFund);
+            this.groupBoxMutualFund.Location = new System.Drawing.Point(942, 62);
+            this.groupBoxMutualFund.Name = "groupBoxMutualFund";
+            this.groupBoxMutualFund.Size = new System.Drawing.Size(280, 421);
+            this.groupBoxMutualFund.TabIndex = 67;
+            this.groupBoxMutualFund.TabStop = false;
+            this.groupBoxMutualFund.Text = "Mutual Fund";
+            // 
+            // pictureBoxMutualFund
+            // 
+            this.pictureBoxMutualFund.Image = global::ExpensesTracker.Properties.Resources.mutualfund;
+            this.pictureBoxMutualFund.Location = new System.Drawing.Point(6, 21);
+            this.pictureBoxMutualFund.Name = "pictureBoxMutualFund";
+            this.pictureBoxMutualFund.Size = new System.Drawing.Size(268, 287);
+            this.pictureBoxMutualFund.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMutualFund.TabIndex = 2;
+            this.pictureBoxMutualFund.TabStop = false;
+            // 
+            // btnMutualFund
+            // 
+            this.btnMutualFund.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnMutualFund.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnMutualFund.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMutualFund.Location = new System.Drawing.Point(3, 314);
+            this.btnMutualFund.Name = "btnMutualFund";
+            this.btnMutualFund.Size = new System.Drawing.Size(274, 104);
+            this.btnMutualFund.TabIndex = 1;
+            this.btnMutualFund.Text = "Mutual Fund";
+            this.btnMutualFund.UseVisualStyleBackColor = false;
+            this.btnMutualFund.Click += new System.EventHandler(this.btnMutualFund_Click);
+            // 
             // ExpensesMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ClientSize = new System.Drawing.Size(1240, 497);
+            this.ClientSize = new System.Drawing.Size(1572, 497);
+            this.Controls.Add(this.groupBoxMutualFund);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lnkLogout);
             this.Controls.Add(this.groupBoxShare);
@@ -252,6 +292,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBoxMutualFund.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMutualFund)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,5 +315,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnAssetsTracker;
+        private System.Windows.Forms.GroupBox groupBoxMutualFund;
+        private System.Windows.Forms.PictureBox pictureBoxMutualFund;
+        private System.Windows.Forms.Button btnMutualFund;
     }
 }

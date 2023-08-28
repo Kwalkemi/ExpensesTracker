@@ -24,7 +24,10 @@ namespace ExpensesTracker.BusinessObject
             SHARE_DIVIDEND,
             ASSET_HEADER,
             ASSET_DETAIL,
-            ASSET_HEADER_HISTORY
+            ASSET_HEADER_HISTORY,
+            MUTUAL_FUND_HEADER,
+            MUTUAL_FUND_BUY,
+            MUTUAL_FUND_SELL
         }
 
         public enum enmLogin_Info
@@ -192,6 +195,50 @@ namespace ExpensesTracker.BusinessObject
             ASSET_HEADER_ID,
             ASSET_DESCIPTION,
             ASSET_AMOUNT,
+        }
+
+        public enum enmMutualFundHeader
+        {
+            MUTUAL_FUND_HEADER_ID,
+            MUTUAL_FUND_NAME,
+            MUTUAL_FUND_CREATED_DATE,
+            USER_ID,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE,
+            EXIT_LOAD,
+            IS_SIP
+        }
+
+        public enum enmMutualFundBuy
+        {
+            MUTUAL_FUND_BUY_ID,
+            MUTUAL_FUND_HEADER_ID,
+            MUTUAL_FUND_AMOUNT,
+            MUTUAL_FUND_QUANTITY,
+            MUTUAL_FUND_DATE,
+            MUTUAL_FUND_CHARGES
+        }
+
+        public enum enmMutualFundSell
+        {
+            MUTUAL_FUND_SELL_ID,
+            MUTUAL_FUND_HEADER_ID,
+            MUTUAL_FUND_AMOUNT,
+            MUTUAL_FUND_QUANTITY,
+            MUTUAL_FUND_DATE,
+            MUTUAL_FUND_CHARGES
+        }
+
+        public enum enmMutualPayInPayOut
+        {
+            MUTUAL_FUND_PAYIN_PAYOUT_ID,
+            MUTUAL_FUND_TRANSACTION_CODE_ID,
+            MUTUAL_FUND_TRANSACTION_CODE_VALUE,
+            MUTUAL_FUND_TRANSACTION_AMT,
+            MUTUAL_FUND_TRANSACTION_DATE,
+            USER_ID,
+            DEMAT_ACCOUNT_ID,
+            DEMAT_ACCOUNT_VALUE,
         }
     }
 }

@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>38</ApplicationRevision>
+    <ApplicationRevision>42</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -104,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\Mutual_FundDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mutual_FundDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\Registration_TrackerDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -168,6 +173,18 @@
     <Compile Include="Project\HusbandWife\HusbandWifeAnalysis.Designer.cs">
       <DependentUpon>HusbandWifeAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Mutual Fund\MutualFund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Mutual Fund\MutualFund.Designer.cs">
+      <DependentUpon>MutualFund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Mutual Fund\MutualFundDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Mutual Fund\MutualFundDetail.Designer.cs">
+      <DependentUpon>MutualFundDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project\Share\Share.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +228,12 @@
     <EmbeddedResource Include="Project\Assets\Assets.resx">
       <DependentUpon>Assets.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Project\Mutual Fund\MutualFund.resx">
+      <DependentUpon>MutualFund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Mutual Fund\MutualFundDetail.resx">
+      <DependentUpon>MutualFundDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\ShareMonthlyAnalysis.resx">
       <DependentUpon>ShareMonthlyAnalysis.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +275,17 @@
     </None>
     <None Include="DataSet\Husband_WifeDataset.xss">
       <DependentUpon>Husband_WifeDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Mutual_FundDataSet.xsc">
+      <DependentUpon>Mutual_FundDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Mutual_FundDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Mutual_FundDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Mutual_FundDataSet.xss">
+      <DependentUpon>Mutual_FundDataSet.xsd</DependentUpon>
     </None>
     <None Include="DataSet\Registration_TrackerDataset.xsc">
       <DependentUpon>Registration_TrackerDataset.xsd</DependentUpon>
@@ -345,6 +379,7 @@
     <None Include="Resources\expense-report.jpg" />
     <None Include="Resources\Shares.jpg" />
     <None Include="Resources\isometric-businessmen-insure-assets-web-design-vector-25462741.jpg" />
+    <None Include="Resources\mutualfund.jpg" />
     <Content Include="Xml\Entity.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
