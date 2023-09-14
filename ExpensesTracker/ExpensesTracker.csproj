@@ -209,6 +209,12 @@
     <Compile Include="Project\Share\ShareServiceAnalysis.Designer.cs">
       <DependentUpon>ShareServiceAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Share\TotalFamilyShare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Share\TotalFamilyShare.Designer.cs">
+      <DependentUpon>TotalFamilyShare.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\ShareServiceAnalysis.resx">
       <DependentUpon>ShareServiceAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Share\TotalFamilyShare.resx">
+      <DependentUpon>TotalFamilyShare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowIds.resx">
       <DependentUpon>ShowIds.cs</DependentUpon>
@@ -402,12 +411,12 @@
   <ItemGroup>
     <PublishFile Include="Xml\Entity.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

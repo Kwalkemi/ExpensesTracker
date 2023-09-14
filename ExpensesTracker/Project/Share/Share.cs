@@ -241,7 +241,7 @@ namespace ExpensesTracker.Project.Share
         /// <param name="e"></param>
         private void dataGridViewDelivery_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewDelivery.Rows[e.RowIndex].Cells[6].Selected)
+            if (dataGridViewDelivery.Rows[e.RowIndex].Cells[7].Selected)
             {
                 ShareHeaderId = Convert.ToInt32(dataGridViewDelivery.Rows[e.RowIndex].Cells[5].Value);
                 ShareDetail shareDetail = new ShareDetail();
@@ -307,7 +307,7 @@ namespace ExpensesTracker.Project.Share
             //comboBoxDematAccount.SelectedIndex = 0;
 
             if (OptionTab.CanFocus)
-            {   
+            {
                 tabControl1.SelectedIndex = 1;
             }
             else
@@ -492,7 +492,7 @@ namespace ExpensesTracker.Project.Share
             else if (Convert.ToString(cmbTransaction.SelectedItem) == Constant.Shares_Tracker.PayIn_PayOut.PAYOUT)
                 lstrPayInOut = Constant.Shares_Tracker.Code_Value_PayIn_PayOut.PAYOUT;
             string strdate = dateTransactiondate.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateTransactiondate.Value.ToLongTimeString();
-            string str = "Update SHARES_PAYIN_PAYOUT SET SHARES_TRANSACTION_AMT = " + Convert.ToDecimal(txtShareAmount.Text) + ", SHARES_TRANSACTION_DATE = '" + strdate + "', SHARES_TRANSACTION_CODE_VALUE = '"+ lstrPayInOut +"' Where SHARES_TRANSACTION_ID = " + iintUpdateId;
+            string str = "Update SHARES_PAYIN_PAYOUT SET SHARES_TRANSACTION_AMT = " + Convert.ToDecimal(txtShareAmount.Text) + ", SHARES_TRANSACTION_DATE = '" + strdate + "', SHARES_TRANSACTION_CODE_VALUE = '" + lstrPayInOut + "' Where SHARES_TRANSACTION_ID = " + iintUpdateId;
             DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
             LoadForm();
             Sum();
@@ -594,7 +594,7 @@ namespace ExpensesTracker.Project.Share
             this.sHARE_TRACKER_PROCEDURE_EXTRA_CHARGESTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_CHARGES, Login.UserId, Share.DematAccount);
             this.sHARE_TRACKER_PROCEDURE_PAYIN_PAYOUTTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_PAYIN_PAYOUT, Login.UserId, Share.DematAccount);
             this.sHARE_TRACKER_PROCEDURE_DIVIDENDTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_DIVIDEND, Login.UserId, Share.DematAccount);
-            this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING, Login.UserId,Share.DematAccount);
+            this.sHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOINGTableAdapter.Fill(this.shares_TrackerDataset.SHARE_TRACKER_PROCEDURE_EXTRA_INCOMING_OUTGOING, Login.UserId, Share.DematAccount);
             this.cURRENT_SHARE_PROCEDURETableAdapter.Fill(this.shares_TrackerDataset.CURRENT_SHARE_PROCEDURE, Login.UserId, Share.DematAccount);
             string lstrQuery = GlobalFunction.GetQueryById(Constant.Query.GET_LAST_DATE);
             lstrQuery = string.Format(lstrQuery, Login.UserId, Share.DematAccount);
@@ -650,6 +650,19 @@ namespace ExpensesTracker.Project.Share
                 decimal Rst = Convert.ToDecimal(lblSummary1Value.Text) + Convert.ToDecimal(lblSummary2Result.Text) - ldecTotalCurrentShare;
                 lblSummary4Value.Text = "You should have " + Rst + " in your Demat Account";
             }
+            else
+            {
+                decimal Rst =  Convert.ToDecimal(lblSummary2Result.Text) - Convert.ToDecimal(lblSummary1Value.Text) - ldecTotalCurrentShare;
+                lblSummary4Value.Text = "You should have " + Rst + " in your Demat Account";
+            }
+            decimal temp;
+            if (dataGridViewDelivery.Rows.Count > 0)
+            {
+                string lstrHighestProfit = Convert.ToString(dataGridViewDelivery.Rows.Cast<DataGridViewRow>().Max(x => decimal.TryParse(x.Cells[2].Value.ToString(), out temp) ? temp : 0));
+                string lstrHighestShareName = Convert.ToString(dataGridViewDelivery.Rows.Cast<DataGridViewRow>().Max(x => decimal.TryParse(x.Cells[2].Value.ToString(), out temp) ? temp : 0));
+                lblHighestProfitTransaction.Text = "You have highest profit transaction Amount is " + lstrHighestProfit + " Rs";
+            }
+            SetContractNotePassword();
         }
 
         #endregion
@@ -703,6 +716,55 @@ namespace ExpensesTracker.Project.Share
             }
             LoadForm();
             Sum();
+        }
+
+        private void dataGridViewDividend_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtShareAmountDividend.Text = Convert.ToString(dataGridViewDividend.Rows[e.RowIndex].Cells[2].Value);
+            txtShareDividendDesc.Text = Convert.ToString(dataGridViewDividend.Rows[e.RowIndex].Cells[1].Value);
+            dateTimePickerDividend.Value = Convert.ToDateTime(dataGridViewDividend.Rows[e.RowIndex].Cells[3].Value);
+            if (Convert.ToBoolean(dataGridViewDividend.Rows[e.RowIndex].Cells[4].Value) == true)
+                chkIsBankAccount.Checked = true;
+            else
+                chkIsBankAccount.Checked = false;
+            iintUpdateId = Convert.ToInt32(dataGridViewDividend.Rows[e.RowIndex].Cells[0].Value);
+        }
+
+        private void btnDividendUpdate_Click(object sender, EventArgs e)
+        {
+            string lstrbool = chkIsBankAccount.Checked == true ? "1" : "0";
+            string strdate = dateTimePickerDividend.Value.ToString(Constant.Common.DATE_FORMAT) + Constant.Common.SPACE + dateTransactiondate.Value.ToLongTimeString();
+            string str = "UPDATE SHARE_DIVIDEND SET SHARES_PRICE_AMT = " + txtShareAmountDividend.Text + ", SHARE_DESCRIPTION = '" + txtShareDividendDesc.Text + "', DIVIDEND_DATE = '" + strdate + "', IS_BANK_ACCOUNT = " + lstrbool + " where SHARE_DIVIDEND_ID = " + iintUpdateId;
+            DBFunction.UpdateTable(Constant.Common.DATABASE_NAME, str);
+            LoadForm();
+            Sum();
+        }
+
+        private void btnFamilyTotalShare_Click(object sender, EventArgs e)
+        {
+            TotalFamilyShare totalFamilyShare = new TotalFamilyShare();
+            totalFamilyShare.Show();
+        }
+
+        private void SetContractNotePassword()
+        {
+            string lstrDematAccount = Convert.ToString(((ExpensesTracker.BusinessObject.MyComboBox)comboBoxDematAccount.SelectedItem).Value);
+            if (comboBoxDematAccount.Text != "Select Item")
+            {
+                if (Login.UserId == 1 && lstrDematAccount == "PAIS")
+                    lblContractNotePassValue.Text = "ANSPT8584D";
+                if (Login.UserId == 1 && lstrDematAccount == "GROW")
+                    lblContractNotePassValue.Text = "ANSPT8584D";
+                if (Login.UserId == 1 && lstrDematAccount == "MOTI")
+                    lblContractNotePassValue.Text = "ANSPT8584D";
+
+                if (Login.UserId == 2 && lstrDematAccount == "PAIS")
+                    lblContractNotePassValue.Text = "BCOPC166F";
+                if (Login.UserId == 2 && lstrDematAccount == "GROW")
+                    lblContractNotePassValue.Text = "ANSPT8584D";
+                if (Login.UserId == 2 && lstrDematAccount == "IIFL")
+                    lblContractNotePassValue.Text = "83587384";
+            }
         }
     }
 }

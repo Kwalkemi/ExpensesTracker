@@ -534,6 +534,8 @@ namespace ExpensesTracker.DataSet {
             
             private global::System.Data.DataColumn columnSERVICES;
             
+            private global::System.Data.DataColumn columnIS_DP_BILL;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SHARE_TRACKER_PROCEDURE_DELIVERYDataTable() {
@@ -609,6 +611,14 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IS_DP_BILLColumn {
+                get {
+                    return this.columnIS_DP_BILL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -644,14 +654,15 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHARE_TRACKER_PROCEDURE_DELIVERYRow AddSHARE_TRACKER_PROCEDURE_DELIVERYRow(string SHARES_NAME, decimal SHARE_AMT, string PROFIT_LOSS, string SERVICES) {
+            public SHARE_TRACKER_PROCEDURE_DELIVERYRow AddSHARE_TRACKER_PROCEDURE_DELIVERYRow(string SHARES_NAME, decimal SHARE_AMT, string PROFIT_LOSS, string SERVICES, string IS_DP_BILL) {
                 SHARE_TRACKER_PROCEDURE_DELIVERYRow rowSHARE_TRACKER_PROCEDURE_DELIVERYRow = ((SHARE_TRACKER_PROCEDURE_DELIVERYRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         SHARES_NAME,
                         SHARE_AMT,
                         PROFIT_LOSS,
-                        SERVICES};
+                        SERVICES,
+                        IS_DP_BILL};
                 rowSHARE_TRACKER_PROCEDURE_DELIVERYRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSHARE_TRACKER_PROCEDURE_DELIVERYRow);
                 return rowSHARE_TRACKER_PROCEDURE_DELIVERYRow;
@@ -686,6 +697,7 @@ namespace ExpensesTracker.DataSet {
                 this.columnSHARE_AMT = base.Columns["SHARE_AMT"];
                 this.columnPROFIT_LOSS = base.Columns["PROFIT_LOSS"];
                 this.columnSERVICES = base.Columns["SERVICES"];
+                this.columnIS_DP_BILL = base.Columns["IS_DP_BILL"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -701,6 +713,8 @@ namespace ExpensesTracker.DataSet {
                 base.Columns.Add(this.columnPROFIT_LOSS);
                 this.columnSERVICES = new global::System.Data.DataColumn("SERVICES", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSERVICES);
+                this.columnIS_DP_BILL = new global::System.Data.DataColumn("IS_DP_BILL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIS_DP_BILL);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSHARES_TRACKER_HEADER_ID}, true));
                 this.columnSHARES_TRACKER_HEADER_ID.AutoIncrement = true;
@@ -716,6 +730,8 @@ namespace ExpensesTracker.DataSet {
                 this.columnPROFIT_LOSS.MaxLength = 6;
                 this.columnSERVICES.ReadOnly = true;
                 this.columnSERVICES.MaxLength = 1000;
+                this.columnIS_DP_BILL.ReadOnly = true;
+                this.columnIS_DP_BILL.MaxLength = 11;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3248,6 +3264,23 @@ namespace ExpensesTracker.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string IS_DP_BILL {
+                get {
+                    try {
+                        return ((string)(this[this.tableSHARE_TRACKER_PROCEDURE_DELIVERY.IS_DP_BILLColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IS_DP_BILL\' in table \'SHARE_TRACKER_PROCEDURE_DELIVERY\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSHARE_TRACKER_PROCEDURE_DELIVERY.IS_DP_BILLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSHARE_AMTNull() {
                 return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_DELIVERY.SHARE_AMTColumn);
             }
@@ -3280,6 +3313,18 @@ namespace ExpensesTracker.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetSERVICESNull() {
                 this[this.tableSHARE_TRACKER_PROCEDURE_DELIVERY.SERVICESColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIS_DP_BILLNull() {
+                return this.IsNull(this.tableSHARE_TRACKER_PROCEDURE_DELIVERY.IS_DP_BILLColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIS_DP_BILLNull() {
+                this[this.tableSHARE_TRACKER_PROCEDURE_DELIVERY.IS_DP_BILLColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4617,6 +4662,7 @@ namespace ExpensesTracker.DataSet.Shares_TrackerDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("SHARE_AMT", "SHARE_AMT");
             tableMapping.ColumnMappings.Add("PROFIT_LOSS", "PROFIT_LOSS");
             tableMapping.ColumnMappings.Add("SERVICES", "SERVICES");
+            tableMapping.ColumnMappings.Add("IS_DP_BILL", "IS_DP_BILL");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

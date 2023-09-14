@@ -60,6 +60,7 @@
     <Folder Include="Table" />
     <Folder Include="Script" />
     <Folder Include="Trigger" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="StoreProcedure\HusbandWifeProcedure.sql" />
