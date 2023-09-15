@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>42</ApplicationRevision>
+    <ApplicationRevision>43</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -209,6 +209,12 @@
     <Compile Include="Project\Share\ShareServiceAnalysis.Designer.cs">
       <DependentUpon>ShareServiceAnalysis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project\Share\ShareStockNameWiseAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Share\ShareStockNameWiseAnalysis.Designer.cs">
+      <DependentUpon>ShareStockNameWiseAnalysis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project\Share\TotalFamilyShare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\ShareServiceAnalysis.resx">
       <DependentUpon>ShareServiceAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Share\ShareStockNameWiseAnalysis.resx">
+      <DependentUpon>ShareStockNameWiseAnalysis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Project\Share\TotalFamilyShare.resx">
       <DependentUpon>TotalFamilyShare.cs</DependentUpon>
@@ -411,12 +420,12 @@
   <ItemGroup>
     <PublishFile Include="Xml\Entity.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

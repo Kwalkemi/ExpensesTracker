@@ -766,5 +766,11 @@ namespace ExpensesTracker.Project.Share
                     lblContractNotePassValue.Text = "83587384";
             }
         }
+
+        private void btnShareWiseAnalysis_Click(object sender, EventArgs e)
+        {
+            ShareStockNameWiseAnalysis shareStockNameWiseAnalysis = new ShareStockNameWiseAnalysis();
+            shareStockNameWiseAnalysis.Show();
+        }
     }
 }

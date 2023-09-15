@@ -205,6 +205,7 @@ namespace ExpensesTracker.Project.Share
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(894, 610);
             this.Controls.Add(this.lblFamilySumValue);
             this.Controls.Add(this.lblFamilySum);
