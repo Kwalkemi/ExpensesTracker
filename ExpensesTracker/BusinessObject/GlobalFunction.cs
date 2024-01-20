@@ -1,6 +1,11 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Linq;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,7 +28,7 @@ namespace ExpensesTracker.BusinessObject
         public static string GetFullNameById(int Id)
         {
             string lstrFullName = string.Empty;
-            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
+            string istrPath = System.IO.Path.Combine(Application.StartupPath, Constant.Common.XML);
             string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.GET_USER_INFO_BY_ID);
             str = String.Format(str, Id);
             DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, str);
@@ -42,7 +47,7 @@ namespace ExpensesTracker.BusinessObject
         public static string GetUserNameById(int Id)
         {
             string lstrFullName = string.Empty;
-            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
+            string istrPath = System.IO.Path.Combine(Application.StartupPath, Constant.Common.XML);
             string str = XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, Constant.Query.GET_USER_INFO_BY_ID);
             str = String.Format(str, Id);
             DataTable dataTable = DBFunction.FetchDataFromDatabase(Constant.Common.DATABASE_NAME, str);
@@ -60,7 +65,7 @@ namespace ExpensesTracker.BusinessObject
         /// <returns></returns>
         public static string GetMessageById(string astrMessage)
         {
-            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
+            string istrPath = System.IO.Path.Combine(Application.StartupPath, Constant.Common.XML);
             return XmlFunction.GetMessageById(istrPath, Constant.Common.ENTITY_NAME, astrMessage);
         }
 
@@ -71,7 +76,7 @@ namespace ExpensesTracker.BusinessObject
         /// <returns></returns>
         public static string GetQueryById(string astrMessage)
         {
-            string istrPath = Path.Combine(Application.StartupPath, Constant.Common.XML);
+            string istrPath = System.IO.Path.Combine(Application.StartupPath, Constant.Common.XML);
             return XmlFunction.GetQueriesById(istrPath, Constant.Common.ENTITY_NAME, astrMessage);
         }
 
@@ -297,6 +302,117 @@ namespace ExpensesTracker.BusinessObject
                 default:
                     return "No Qtr";
             }
+        }
+
+
+        public static string pdfText()
+        {
+            //PdfReader reader = new PdfReader(@"C:\Users\HP\Desktop\statement\ABC.pdf");
+            string text = string.Empty;
+
+            //for (int page = 1; page <= reader.NumberOfPages; page++)
+            //{
+            //    text += PdfTextExtractor.GetTextFromPage(reader, page);
+            //}
+            //reader.Close();
+
+
+            using (var doc = WordprocessingDocument.Open(@"C:\Users\HP\Desktop\statement\ABC.docx", false))
+            {
+                // To create a temporary table   
+                DataTable dt = new DataTable();
+                int rowCount = 0;
+
+                // Find the first table in the document.   
+                List<Table> lsttable = doc.MainDocumentPart.Document.Body.Elements<Table>().ToList();
+
+                foreach (Table table in lsttable)
+                {
+                     rowCount = 0;
+                    dt = new DataTable();
+                    // To get all rows from table  
+                    IEnumerable<TableRow> rows = table.Elements<TableRow>();
+
+                    try
+                    {
+                        // To read data from rows and to add records to the temporary table  
+                        foreach (TableRow row in rows)
+                        {
+                            if (rowCount == 0)
+                            {
+                                foreach (TableCell cell in row.Descendants<TableCell>())
+                                {
+                                    dt.Columns.Add(cell.InnerText);
+                                }
+                                rowCount += 1;
+                            }
+                            else
+                            {
+                                dt.Rows.Add();
+                                int i = 0;
+                                foreach (TableCell cell in row.Descendants<TableCell>())
+                                {
+                                    dt.Rows[dt.Rows.Count - 1][i] = cell.InnerText;
+                                    i++;
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                // To display the result   
+                // Bind datatable(temporary table) to the datagridview   
+                //dgvTable.DataSource = dt;
+            }
+
+
+
+
+
+
+
+
+            return text;
+        }
+
+        public static string XMPPDFParser(string astrNode)
+        {
+            StringBuilder lstrbNodeData = new StringBuilder();
+            string lstrNode = astrNode ?? "EBN";
+            try
+            {
+                var lReader = File.ReadLines(@"C:\Users\HP\Desktop\statement\ABC.pdf");
+                int lintStartIndex = 0, lintLastIndex = 0;
+                lintStartIndex = lReader.ToList().FindIndex(x => x.StartsWith("<" + lstrNode));
+                if (lstrNode != "EBN" && lintStartIndex == -1)
+                {
+                    lstrNode = "EBN";
+                    lintStartIndex = lReader.ToList().FindIndex(x => x.StartsWith("<" + lstrNode));
+                }
+                lintLastIndex = lReader.ToList().FindIndex(x => x.StartsWith("</" + lstrNode + ">"));
+                string[] larrOutput = lReader.ToList().GetRange(lintStartIndex, lintLastIndex - lintStartIndex + 1).ToArray();
+                foreach (string lstrLines in larrOutput)
+                {
+                    string lstTempData = lstrLines;
+                    if (lstrLines.ToLower().Contains("code>"))
+                    {
+                        int lstrFirstPartLength = lstrLines.Substring(0, lstrLines.IndexOf("</")).Length;
+                        string lstrCodeTrimData = lstrLines.Substring(0, lstrLines.IndexOf("</")).TrimEnd();
+                        string lstrCodeend = lstrLines.Substring(lstrLines.IndexOf("</"), lstrLines.Length - lstrFirstPartLength);
+                        lstTempData = lstrCodeTrimData + lstrCodeend;
+                    }
+                    lstrbNodeData.Append(lstTempData);
+                    lstrbNodeData.AppendLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return lstrbNodeData.ToString();
         }
     }
 }

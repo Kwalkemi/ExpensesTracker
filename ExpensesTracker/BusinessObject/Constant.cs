@@ -82,6 +82,7 @@ namespace ExpensesTracker.BusinessObject
             public const string GET_LAST_DATE = "GetLastDate";
             public const string GET_USER_LIST = "GetUserList";
             public const string LOAD_MONTHLY_CHART_SHARE = "LoadMonthlyChart";
+            public const string LOAD_YEARLY_CHART_SHARE = "LoadYearlyChart";
             public const string GET_SERVICE_NAMES = "GetServiceNames";
             public const string LOAD_MONTHLY_CHART_SERVICE = "LoadMonthlyChartService";
             public const string GET_DEMAT_ACCOUNT_NAME = "GetDematAccountName";

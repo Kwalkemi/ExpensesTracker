@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HusbandWife));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.cmbcategory = new System.Windows.Forms.ComboBox();
@@ -487,6 +488,7 @@
             this.Controls.Add(this.txtwifespend);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.splitter1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HusbandWife";
             this.Text = "Husband Wife Money Tracker";
             this.Load += new System.EventHandler(this.HusbandWife_Load);

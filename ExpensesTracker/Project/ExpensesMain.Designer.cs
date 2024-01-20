@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpensesMain));
             this.lblMainHeading = new System.Windows.Forms.Label();
             this.lblUserMain = new System.Windows.Forms.Label();
             this.groupBoxHusbWife = new System.Windows.Forms.GroupBox();
@@ -281,6 +282,7 @@
             this.Controls.Add(this.groupBoxHusbWife);
             this.Controls.Add(this.lblUserMain);
             this.Controls.Add(this.lblMainHeading);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExpensesMain";
             this.Text = "Expenses Tracker";
             this.Load += new System.EventHandler(this.ExpensesMain_Load);

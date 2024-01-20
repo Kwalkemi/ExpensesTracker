@@ -30,13 +30,26 @@ namespace ExpensesTracker.Project.Mutual_Fund
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MutualFund));
             this.tabControlMutualFund = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkBoxIsSip = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtboxExitLoad = new System.Windows.Forms.TextBox();
             this.lblExitLoad = new System.Windows.Forms.Label();
             this.lblMutualFundStartDate = new System.Windows.Forms.Label();
             this.dateStartDateMutual = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewMutualFund = new System.Windows.Forms.DataGridView();
+            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sHAREAMTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pROFITLOSSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EXIT_LOAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IS_SIP = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.MUTUAL_FUND_CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ViewDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.mUTUALFUNDHEADERPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mutual_FundDataSet = new ExpensesTracker.DataSet.Mutual_FundDataSet();
             this.panelSell = new System.Windows.Forms.Panel();
             this.txtSellCharges = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,29 +84,17 @@ namespace ExpensesTracker.Project.Mutual_Fund
             this.lnkLogout = new System.Windows.Forms.LinkLabel();
             this.lblUserName = new System.Windows.Forms.Label();
             this.errorProvidermutual = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxIsSip = new System.Windows.Forms.CheckBox();
-            this.mUTUALFUNDHEADERPROCEDUREBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mutual_FundDataSet = new ExpensesTracker.DataSet.Mutual_FundDataSet();
             this.mUTUAL_FUND_HEADER_PROCEDURETableAdapter = new ExpensesTracker.DataSet.Mutual_FundDataSetTableAdapters.MUTUAL_FUND_HEADER_PROCEDURETableAdapter();
             this.lnkRefresh = new System.Windows.Forms.LinkLabel();
             this.lnkBack = new System.Windows.Forms.LinkLabel();
-            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sHAREAMTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pROFITLOSSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EXIT_LOAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IS_SIP = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.MUTUAL_FUND_CREATED_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ViewDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControlMutualFund.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMutualFund)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mUTUALFUNDHEADERPROCEDUREBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mutual_FundDataSet)).BeginInit();
             this.panelSell.SuspendLayout();
             this.panelbuy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidermutual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mUTUALFUNDHEADERPROCEDUREBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mutual_FundDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMutualFund
@@ -129,6 +130,26 @@ namespace ExpensesTracker.Project.Mutual_Fund
             this.tabPage1.Size = new System.Drawing.Size(1233, 661);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mutual Fund";
+            // 
+            // checkBoxIsSip
+            // 
+            this.checkBoxIsSip.AutoSize = true;
+            this.checkBoxIsSip.Location = new System.Drawing.Point(250, 139);
+            this.checkBoxIsSip.Name = "checkBoxIsSip";
+            this.checkBoxIsSip.Size = new System.Drawing.Size(120, 21);
+            this.checkBoxIsSip.TabIndex = 81;
+            this.checkBoxIsSip.Text = "checkBoxIsSip";
+            this.checkBoxIsSip.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(147, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 23);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Is SIP: ";
             // 
             // txtboxExitLoad
             // 
@@ -186,6 +207,81 @@ namespace ExpensesTracker.Project.Mutual_Fund
             this.dataGridViewMutualFund.Size = new System.Drawing.Size(635, 632);
             this.dataGridViewMutualFund.TabIndex = 75;
             this.dataGridViewMutualFund.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMutualFund_CellClick);
+            // 
+            // mUTUALFUNDHEADERIDDataGridViewTextBoxColumn
+            // 
+            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.DataPropertyName = "MUTUAL_FUND_HEADER_ID";
+            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.HeaderText = "Mutual Fund Header Id";
+            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.Name = "mUTUALFUNDHEADERIDDataGridViewTextBoxColumn";
+            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mUTUALFUNDNAMEDataGridViewTextBoxColumn
+            // 
+            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.DataPropertyName = "MUTUAL_FUND_NAME";
+            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.HeaderText = "Mutual Fund Name";
+            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.Name = "mUTUALFUNDNAMEDataGridViewTextBoxColumn";
+            // 
+            // sHAREAMTDataGridViewTextBoxColumn
+            // 
+            this.sHAREAMTDataGridViewTextBoxColumn.DataPropertyName = "SHARE_AMT";
+            this.sHAREAMTDataGridViewTextBoxColumn.HeaderText = "Share Amount";
+            this.sHAREAMTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sHAREAMTDataGridViewTextBoxColumn.Name = "sHAREAMTDataGridViewTextBoxColumn";
+            this.sHAREAMTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pROFITLOSSDataGridViewTextBoxColumn
+            // 
+            this.pROFITLOSSDataGridViewTextBoxColumn.DataPropertyName = "PROFIT_LOSS";
+            this.pROFITLOSSDataGridViewTextBoxColumn.HeaderText = "PROFIT_LOSS";
+            this.pROFITLOSSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pROFITLOSSDataGridViewTextBoxColumn.Name = "pROFITLOSSDataGridViewTextBoxColumn";
+            this.pROFITLOSSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pROFITLOSSDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // EXIT_LOAD
+            // 
+            this.EXIT_LOAD.DataPropertyName = "EXIT_LOAD";
+            this.EXIT_LOAD.HeaderText = "EXIT_LOAD";
+            this.EXIT_LOAD.MinimumWidth = 6;
+            this.EXIT_LOAD.Name = "EXIT_LOAD";
+            this.EXIT_LOAD.Visible = false;
+            // 
+            // IS_SIP
+            // 
+            this.IS_SIP.DataPropertyName = "IS_SIP";
+            this.IS_SIP.HeaderText = "IS_SIP";
+            this.IS_SIP.MinimumWidth = 6;
+            this.IS_SIP.Name = "IS_SIP";
+            this.IS_SIP.Visible = false;
+            // 
+            // MUTUAL_FUND_CREATED_DATE
+            // 
+            this.MUTUAL_FUND_CREATED_DATE.DataPropertyName = "MUTUAL_FUND_CREATED_DATE";
+            this.MUTUAL_FUND_CREATED_DATE.HeaderText = "MUTUAL_FUND_CREATED_DATE";
+            this.MUTUAL_FUND_CREATED_DATE.MinimumWidth = 6;
+            this.MUTUAL_FUND_CREATED_DATE.Name = "MUTUAL_FUND_CREATED_DATE";
+            this.MUTUAL_FUND_CREATED_DATE.Visible = false;
+            // 
+            // ViewDetail
+            // 
+            this.ViewDetail.HeaderText = "Detail";
+            this.ViewDetail.MinimumWidth = 6;
+            this.ViewDetail.Name = "ViewDetail";
+            this.ViewDetail.Text = "View Detail";
+            this.ViewDetail.ToolTipText = "View Detail";
+            this.ViewDetail.UseColumnTextForButtonValue = true;
+            // 
+            // mUTUALFUNDHEADERPROCEDUREBindingSource
+            // 
+            this.mUTUALFUNDHEADERPROCEDUREBindingSource.DataMember = "MUTUAL_FUND_HEADER_PROCEDURE";
+            this.mUTUALFUNDHEADERPROCEDUREBindingSource.DataSource = this.mutual_FundDataSet;
+            // 
+            // mutual_FundDataSet
+            // 
+            this.mutual_FundDataSet.DataSetName = "Mutual_FundDataSet";
+            this.mutual_FundDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panelSell
             // 
@@ -521,36 +617,6 @@ namespace ExpensesTracker.Project.Mutual_Fund
             // 
             this.errorProvidermutual.ContainerControl = this;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 23);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "Is SIP: ";
-            // 
-            // checkBoxIsSip
-            // 
-            this.checkBoxIsSip.AutoSize = true;
-            this.checkBoxIsSip.Location = new System.Drawing.Point(250, 139);
-            this.checkBoxIsSip.Name = "checkBoxIsSip";
-            this.checkBoxIsSip.Size = new System.Drawing.Size(120, 21);
-            this.checkBoxIsSip.TabIndex = 81;
-            this.checkBoxIsSip.Text = "checkBoxIsSip";
-            this.checkBoxIsSip.UseVisualStyleBackColor = true;
-            // 
-            // mUTUALFUNDHEADERPROCEDUREBindingSource
-            // 
-            this.mUTUALFUNDHEADERPROCEDUREBindingSource.DataMember = "MUTUAL_FUND_HEADER_PROCEDURE";
-            this.mUTUALFUNDHEADERPROCEDUREBindingSource.DataSource = this.mutual_FundDataSet;
-            // 
-            // mutual_FundDataSet
-            // 
-            this.mutual_FundDataSet.DataSetName = "Mutual_FundDataSet";
-            this.mutual_FundDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // mUTUAL_FUND_HEADER_PROCEDURETableAdapter
             // 
             this.mUTUAL_FUND_HEADER_PROCEDURETableAdapter.ClearBeforeFill = true;
@@ -576,71 +642,6 @@ namespace ExpensesTracker.Project.Mutual_Fund
             this.lnkBack.Text = "Back";
             this.lnkBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBack_LinkClicked);
             // 
-            // mUTUALFUNDHEADERIDDataGridViewTextBoxColumn
-            // 
-            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.DataPropertyName = "MUTUAL_FUND_HEADER_ID";
-            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.HeaderText = "Mutual Fund Header Id";
-            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.Name = "mUTUALFUNDHEADERIDDataGridViewTextBoxColumn";
-            this.mUTUALFUNDHEADERIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mUTUALFUNDNAMEDataGridViewTextBoxColumn
-            // 
-            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.DataPropertyName = "MUTUAL_FUND_NAME";
-            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.HeaderText = "Mutual Fund Name";
-            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mUTUALFUNDNAMEDataGridViewTextBoxColumn.Name = "mUTUALFUNDNAMEDataGridViewTextBoxColumn";
-            // 
-            // sHAREAMTDataGridViewTextBoxColumn
-            // 
-            this.sHAREAMTDataGridViewTextBoxColumn.DataPropertyName = "SHARE_AMT";
-            this.sHAREAMTDataGridViewTextBoxColumn.HeaderText = "Share Amount";
-            this.sHAREAMTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sHAREAMTDataGridViewTextBoxColumn.Name = "sHAREAMTDataGridViewTextBoxColumn";
-            this.sHAREAMTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pROFITLOSSDataGridViewTextBoxColumn
-            // 
-            this.pROFITLOSSDataGridViewTextBoxColumn.DataPropertyName = "PROFIT_LOSS";
-            this.pROFITLOSSDataGridViewTextBoxColumn.HeaderText = "PROFIT_LOSS";
-            this.pROFITLOSSDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pROFITLOSSDataGridViewTextBoxColumn.Name = "pROFITLOSSDataGridViewTextBoxColumn";
-            this.pROFITLOSSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pROFITLOSSDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // EXIT_LOAD
-            // 
-            this.EXIT_LOAD.DataPropertyName = "EXIT_LOAD";
-            this.EXIT_LOAD.HeaderText = "EXIT_LOAD";
-            this.EXIT_LOAD.MinimumWidth = 6;
-            this.EXIT_LOAD.Name = "EXIT_LOAD";
-            this.EXIT_LOAD.Visible = false;
-            // 
-            // IS_SIP
-            // 
-            this.IS_SIP.DataPropertyName = "IS_SIP";
-            this.IS_SIP.HeaderText = "IS_SIP";
-            this.IS_SIP.MinimumWidth = 6;
-            this.IS_SIP.Name = "IS_SIP";
-            this.IS_SIP.Visible = false;
-            // 
-            // MUTUAL_FUND_CREATED_DATE
-            // 
-            this.MUTUAL_FUND_CREATED_DATE.DataPropertyName = "MUTUAL_FUND_CREATED_DATE";
-            this.MUTUAL_FUND_CREATED_DATE.HeaderText = "MUTUAL_FUND_CREATED_DATE";
-            this.MUTUAL_FUND_CREATED_DATE.MinimumWidth = 6;
-            this.MUTUAL_FUND_CREATED_DATE.Name = "MUTUAL_FUND_CREATED_DATE";
-            this.MUTUAL_FUND_CREATED_DATE.Visible = false;
-            // 
-            // ViewDetail
-            // 
-            this.ViewDetail.HeaderText = "Detail";
-            this.ViewDetail.MinimumWidth = 6;
-            this.ViewDetail.Name = "ViewDetail";
-            this.ViewDetail.Text = "View Detail";
-            this.ViewDetail.ToolTipText = "View Detail";
-            this.ViewDetail.UseColumnTextForButtonValue = true;
-            // 
             // MutualFund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -654,6 +655,7 @@ namespace ExpensesTracker.Project.Mutual_Fund
             this.Controls.Add(this.cmbDematAccountMutual);
             this.Controls.Add(this.lblDematAccountMutual);
             this.Controls.Add(this.tabControlMutualFund);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MutualFund";
             this.Text = "Mutual Fund";
             this.Load += new System.EventHandler(this.MutualFund_Load);
@@ -661,13 +663,13 @@ namespace ExpensesTracker.Project.Mutual_Fund
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMutualFund)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mUTUALFUNDHEADERPROCEDUREBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mutual_FundDataSet)).EndInit();
             this.panelSell.ResumeLayout(false);
             this.panelSell.PerformLayout();
             this.panelbuy.ResumeLayout(false);
             this.panelbuy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidermutual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mUTUALFUNDHEADERPROCEDUREBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mutual_FundDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

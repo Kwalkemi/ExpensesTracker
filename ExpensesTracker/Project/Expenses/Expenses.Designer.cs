@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expenses));
             this.lblTotal_Exp = new System.Windows.Forms.Label();
             this.lblValue_Exp = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -555,6 +556,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblValue_Exp);
             this.Controls.Add(this.lblTotal_Exp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Expenses";
             this.Text = "Form1";
