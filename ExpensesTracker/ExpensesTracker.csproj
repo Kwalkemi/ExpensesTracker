@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dibujo-23_119885.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -417,6 +420,7 @@
     <None Include="Resources\Shares.jpg" />
     <None Include="Resources\isometric-businessmen-insure-assets-web-design-vector-25462741.jpg" />
     <None Include="Resources\mutualfund.jpg" />
+    <Content Include="dibujo-23_119885.ico" />
     <Content Include="Xml\Entity.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

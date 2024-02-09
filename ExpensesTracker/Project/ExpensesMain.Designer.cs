@@ -76,7 +76,7 @@
             this.lblUserMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserMain.Location = new System.Drawing.Point(1128, 16);
             this.lblUserMain.Name = "lblUserMain";
-            this.lblUserMain.Size = new System.Drawing.Size(42, 17);
+            this.lblUserMain.Size = new System.Drawing.Size(40, 16);
             this.lblUserMain.TabIndex = 2;
             this.lblUserMain.Text = "User";
             // 
@@ -194,7 +194,7 @@
             this.lnkLogout.LinkColor = System.Drawing.Color.Blue;
             this.lnkLogout.Location = new System.Drawing.Point(15, 9);
             this.lnkLogout.Name = "lnkLogout";
-            this.lnkLogout.Size = new System.Drawing.Size(52, 17);
+            this.lnkLogout.Size = new System.Drawing.Size(48, 16);
             this.lnkLogout.TabIndex = 65;
             this.lnkLogout.TabStop = true;
             this.lnkLogout.Text = "Logout";
